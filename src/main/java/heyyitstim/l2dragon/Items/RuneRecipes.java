@@ -51,7 +51,7 @@ public class RuneRecipes {
 
     private ShapedRecipe createStrengthRune() {
         ItemStack strengthRune = new ItemStack(Material.FIREWORK_STAR, 1);
-        FireworkEffectMeta metaFw = (FireworkEffectMeta) stengthRune.getItemMeta();
+        FireworkEffectMeta metaFw = (FireworkEffectMeta) strengthRune.getItemMeta();
         FireworkEffect aa = FireworkEffect.builder().withColor(Color.RED).build();
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&cStrength Rune"));
