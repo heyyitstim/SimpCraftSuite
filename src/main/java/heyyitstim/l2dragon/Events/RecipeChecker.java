@@ -10,7 +10,15 @@ import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class RecipeChecker implements Listener {
+
+    private final ArrayList<Material> gearToTransfer = new ArrayList<>(Arrays.asList(
+            Material.NETHERITE_HELMET, Material.NETHERITE_CHESTPLATE, Material.NETHERITE_LEGGINGS, Material.NETHERITE_BOOTS,
+            Material.NETHERITE_SWORD, Material.NETHERITE_PICKAXE, Material.NETHERITE_SHOVEL, Material.NETHERITE_AXE
+    ));
 
     @EventHandler
     public void onCraft(PrepareItemCraftEvent e) {
@@ -29,17 +37,18 @@ public class RecipeChecker implements Listener {
                 if (!item.getItemMeta().getDisplayName().equalsIgnoreCase(ChatUtil.color("&cDragon Scale"))) {
                     inv.setResult(new ItemStack(Material.AIR));
                 }
-            } else {
+            } else if (gearToTransfer.contains(item.getType())) {
                 ItemMeta meta = item.getItemMeta();
 
+                ItemStack crafting = inv.getResult();
+                ItemMeta craftingMeta = crafting.getItemMeta();
+                crafting.setDurability(item.getDurability());
+
                 if (meta.hasEnchants()) {
-                    ItemStack crafting = inv.getResult();
-                    ItemMeta craftingMeta = crafting.getItemMeta();
-
                     meta.getEnchants().forEach((enchantment, integer) -> craftingMeta.addEnchant(enchantment, integer, true));
-
-                    crafting.setItemMeta(craftingMeta);
                 }
+
+                crafting.setItemMeta(craftingMeta);
             }
         }
     }
