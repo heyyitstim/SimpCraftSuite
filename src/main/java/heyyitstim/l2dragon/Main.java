@@ -1,5 +1,6 @@
 package heyyitstim.l2dragon;
 
+import heyyitstim.l2dragon.Events.GenerateLoot;
 import heyyitstim.l2dragon.Events.RecipeChecker;
 import heyyitstim.l2dragon.Items.ArmorRecipes;
 import heyyitstim.l2dragon.Events.DragonHandler;
@@ -32,6 +33,7 @@ public final class Main extends JavaPlugin {
         // Events
         Bukkit.getPluginManager().registerEvents(new DragonHandler(), this);
         Bukkit.getPluginManager().registerEvents(new RecipeChecker(), this);
+        Bukkit.getPluginManager().registerEvents(new GenerateLoot(), this);
 
         System.out.println("L2Dragon has been enabled!");
     }
