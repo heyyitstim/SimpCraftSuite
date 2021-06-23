@@ -24,7 +24,6 @@ public class RecipeChecker implements Listener {
 
     private void handleScales(CraftingInventory inv) {
         for (ItemStack item : inv.getMatrix()) {
-            System.out.println(inv.getMatrix());
             if (item == null || item.getType() == Material.AIR) continue;
             if (item.getType() == Material.IRON_NUGGET) {
                 if (!item.getItemMeta().getDisplayName().equalsIgnoreCase(ChatUtil.color("&cDragon Scale"))) {
@@ -39,7 +38,7 @@ public class RecipeChecker implements Listener {
 
                     meta.getEnchants().forEach((enchantment, integer) -> craftingMeta.addEnchant(enchantment, integer, true));
 
-                    crafting.setItemMeta(meta);
+                    crafting.setItemMeta(craftingMeta);
                 }
             }
         }
