@@ -23,7 +23,7 @@ public class ScoreboardHandler {
 
         Objective objective = board.registerNewObjective("EnderDragon", "dummy"); // Sets the scoreboard name to game name and it can only change with commands
         objective.setDisplaySlot(DisplaySlot.SIDEBAR); // Set the position to be the sidebar
-        objective.setDisplayName(ChatUtil.color("&5EnderDragon")); // Added the scoreboard header of UHC-?
+        objective.setDisplayName(ChatUtil.color("&d&lEnder Dragon Statistics")); // Added the scoreboard header of UHC-?
 
         for (int i = 0; i < 15; i++) {
             lines.add(new ScoreboardLine(objective, "", i));
@@ -32,10 +32,11 @@ public class ScoreboardHandler {
 
     // Updates the players stats
     private void updateBoard() {
-        lines.get(3).update(" ");
-        lines.get(2).update(" ");
-        lines.get(1).update(" &dYour Damage » " + DragonHandler.damagers.get(player.getUniqueId()));
-        lines.get(0).update("    ");
+        lines.get(4).update(" ");
+        lines.get(3).update("  &cDragon Health » &f" + DragonHandler.DragonHealth + " &c♥");
+        lines.get(2).update("  ");
+        lines.get(1).update("  &eYour Damage » &f" + DragonHandler.damagers.get(player.getUniqueId()) + " &c♥");
+        lines.get(0).update("   ");
     }
 
     // Sends an updated scoreboard to all players

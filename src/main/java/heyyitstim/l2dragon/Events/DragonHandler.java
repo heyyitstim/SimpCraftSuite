@@ -19,11 +19,13 @@ import java.util.*;
 public class DragonHandler implements Listener {
 
     public static final HashMap<UUID, Double> damagers = new HashMap<>();
+    public static double DragonHealth = 0;
     private final ArrayList<ScoreboardHandler> scoreboards = new ArrayList<>();
 
     @EventHandler
     public void onDamageDragon(EntityDamageByEntityEvent e) {
         if (e.getEntity() instanceof EnderDragon) { // Checks if the entity damaged was the dragon.
+            EnderDragon dragon = (EnderDragon) e.getEntity();
 
             Player damager = e.getDamager() instanceof Player ? (Player) e.getDamager() : null;
 
@@ -51,6 +53,7 @@ public class DragonHandler implements Listener {
 
             // Update the scoreboard each time damage is done
             sendToPlayers();
+            DragonHealth = twoDecimals(dragon.getHealth());
         }
     }
 
@@ -81,13 +84,13 @@ public class DragonHandler implements Listener {
             if (topDamagers.size() >= 2) {
                 Player player = Bukkit.getPlayer(topDamagers.get(1).getKey());
                 ChatUtil.broadcastToWorld("&d 2nd » " + player.getDisplayName() + " " + topDamagers.get(1).getValue(), e.getEntity().getWorld());
-                DragonDrops.rewardPlayer(player, 0.6);
+                DragonDrops.rewardPlayer(player, 0.75);
             }
 
             if (topDamagers.size() >= 3) {
                 Player player = Bukkit.getPlayer(topDamagers.get(2).getKey());
                 ChatUtil.broadcastToWorld("&d 3rd » " + player.getDisplayName() + " " + topDamagers.get(2).getValue(), e.getEntity().getWorld());
-                DragonDrops.rewardPlayer(player, 0.3);
+                DragonDrops.rewardPlayer(player, 0.5);
             }
 
             damagers.clear(); // Resets the damages done by players until the next fight. We don't clear it until after we get the top damagers.
@@ -105,6 +108,7 @@ public class DragonHandler implements Listener {
 
             dragon.setMaxHealth(dragon.getHealth() * 2);
             dragon.setHealth(dragon.getHealth() * 2);
+            DragonHealth = dragon.getHealth();
         }
     }
 
@@ -140,6 +144,6 @@ public class DragonHandler implements Listener {
                 return s;
             }
         }
-        return scoreboards.get(scoreboards.size() - 1);
+        return null;
     }
 }
