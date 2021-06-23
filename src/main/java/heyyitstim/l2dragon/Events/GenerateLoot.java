@@ -26,7 +26,7 @@ public class GenerateLoot implements Listener {
     public GenerateLoot() {
         lootTable = new CustomLootTable(0); // The 0 doesn't matter other than filling a custom chest
 
-        lootTable.addItem(SCALE, 1000); // 100 doesn't matter either as it's the only item currently. Just an item weight.
+        lootTable.addItem(SCALE, 1000);
 
         SCALE.setAmount(2);
         lootTable.addItem(SCALE, 200);
