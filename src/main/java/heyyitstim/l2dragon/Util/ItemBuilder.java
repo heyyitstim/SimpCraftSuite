@@ -15,8 +15,7 @@ public class ItemBuilder {
     private List<String> lore = new ArrayList<>();
 
     public ItemBuilder(Material m) {
-        item = new ItemStack(m);
-        meta = item.getItemMeta();
+        this(m, 1);
     }
 
     public ItemBuilder(Material m, int s) {

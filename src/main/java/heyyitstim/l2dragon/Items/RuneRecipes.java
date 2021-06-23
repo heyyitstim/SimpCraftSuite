@@ -9,6 +9,7 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.FireworkEffectMeta;
 import org.bukkit.Color;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class RuneRecipes {

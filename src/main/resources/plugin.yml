@@ -1,7 +1,10 @@
 name: L2Dragon
 version: ${project.version}
-main: heyyitstim.l2dragon.L2Dragon
+main: heyyitstim.l2dragon.Main
 api-version: 1.17
 prefix: [ L2Dragon ]
 authors: [ heyyitstim, christianwdev ]
 description: Buffs ender dragon, adds new craftable items, and upgrades for the craftable items
+
+commands:
+  test:

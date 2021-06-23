@@ -1,7 +1,6 @@
 package heyyitstim.l2dragon.Items;
 
 import heyyitstim.l2dragon.Main;
-import heyyitstim.l2dragon.Util.ChatUtil;
 import heyyitstim.l2dragon.Util.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -37,12 +36,14 @@ public class ArmorRecipes {
     }
 
     private ShapedRecipe createDragonHelmet() {
-        ItemStack dragonHelmet = new ItemBuilder(Material.NETHERITE_HELMET, 1)
+        ItemStack dragonHelmet = new ItemBuilder(Material.NETHERITE_HELMET)
                 .setName("&cDragon Helmet")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("you can now apply runes to this armor piece!")
+                .addLore("&7&oyou can now apply runes to this armor piece!")
                 .setCustomModelNumber(1).build();
+
+        Main.nuggetRecipes.add(dragonHelmet);
 
         ShapedRecipe dragonHelmetRecipe = new ShapedRecipe(dragonHelmet);
         dragonHelmetRecipe.shape(
@@ -57,12 +58,14 @@ public class ArmorRecipes {
     }
 
     private ShapedRecipe createDragonChestplate() {
-        ItemStack dragonPlate = new ItemBuilder(Material.NETHERITE_CHESTPLATE, 1)
+        ItemStack dragonPlate = new ItemBuilder(Material.NETHERITE_CHESTPLATE)
                 .setName("&cDragon Chestplate")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("you can now apply runes to this armor piece!")
+                .addLore("&7&oyou can now apply runes to this armor piece!")
                 .setCustomModelNumber(1).build();
+
+        Main.nuggetRecipes.add(dragonPlate);
 
         ShapedRecipe dragonPlateRecipe = new ShapedRecipe(dragonPlate);
         dragonPlateRecipe.shape(
@@ -77,12 +80,14 @@ public class ArmorRecipes {
     }
 
     private ShapedRecipe createDragonLeggings() {
-        ItemStack dragonLeggings = new ItemBuilder(Material.NETHERITE_LEGGINGS, 1)
+        ItemStack dragonLeggings = new ItemBuilder(Material.NETHERITE_LEGGINGS)
                 .setName("&cDragon Greaves")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("you can now apply runes to this armor piece!")
+                .addLore("&7&oyou can now apply runes to this armor piece!")
                 .setCustomModelNumber(1).build();
+
+        Main.nuggetRecipes.add(dragonLeggings);
 
         ShapedRecipe dragonLeggingsRecipe = new ShapedRecipe(dragonLeggings);
         dragonLeggingsRecipe.shape(
@@ -97,12 +102,14 @@ public class ArmorRecipes {
     }
 
     private ShapedRecipe createDragonBoots() {
-        ItemStack dragonBoots = new ItemBuilder(Material.NETHERITE_BOOTS, 1)
-                .setName("&cDragon Greaves")
+        ItemStack dragonBoots = new ItemBuilder(Material.NETHERITE_BOOTS)
+                .setName("&cDragon Boots")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("you can now apply runes to this armor piece!")
+                .addLore("&7&oyou can now apply runes to this armor piece!")
                 .setCustomModelNumber(1).build();
+
+        Main.nuggetRecipes.add(dragonBoots);
 
         ShapedRecipe dragonBootsRecipe = new ShapedRecipe(dragonBoots);
         dragonBootsRecipe.shape(
@@ -117,12 +124,14 @@ public class ArmorRecipes {
     }
 
     private ShapedRecipe createDragonBootsAlternate() {
-        ItemStack dragonBootsAlternate = new ItemBuilder(Material.NETHERITE_BOOTS, 1)
-                .setName("&cDragon Greaves")
+        ItemStack dragonBootsAlternate = new ItemBuilder(Material.NETHERITE_BOOTS)
+                .setName("&cDragon Boots")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("you can now apply runes to this armor piece!")
+                .addLore("&7&oyou can now apply runes to this armor piece!")
                 .setCustomModelNumber(1).build();
+
+        Main.nuggetRecipes.add(dragonBootsAlternate);
 
         ShapedRecipe dragonBootsAlternateRecipe = new ShapedRecipe(dragonBootsAlternate);
         dragonBootsAlternateRecipe.shape(
