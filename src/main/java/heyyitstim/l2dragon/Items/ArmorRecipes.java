@@ -32,6 +32,7 @@ public class ArmorRecipes {
         Main.instance.getServer().addRecipe(dragonPlateRecipe);
         Main.instance.getServer().addRecipe(dragonLeggingsRecipe);
         Main.instance.getServer().addRecipe(dragonBootsRecipe);
+        Main.instance.getServer().addRecipe(dragonBootsAlternateRecipe);
     }
 
     private ShapedRecipe createDragonHelmet() {

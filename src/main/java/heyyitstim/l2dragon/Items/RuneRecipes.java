@@ -36,6 +36,10 @@ public class RuneRecipes {
         Main.instance.getServer().addRecipe(flightRuneRecipe);
         Main.instance.getServer().addRecipe(strengthRuneRecipe);
         Main.instance.getServer().addRecipe(nvRuneRecipe);
+        Main.instance.getServer().addRecipe(speedRuneRecipe);
+        Main.instance.getServer().addRecipe(jumpRuneRecipe);
+        Main.instance.getServer().addRecipe(fireRuneRecipe);
+        Main.instance.getServer().addRecipe(waterRuneRecipe);
     }
 
     private ShapedRecipe createFlightRune() {
