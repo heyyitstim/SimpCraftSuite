@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;
 import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
@@ -39,10 +40,12 @@ public class RecipeChecker implements Listener {
                 }
             } else if (gearToTransfer.contains(item.getType())) {
                 ItemMeta meta = item.getItemMeta();
+                Damageable damagedOriginal = (Damageable) meta;
 
                 ItemStack crafting = inv.getResult();
                 ItemMeta craftingMeta = crafting.getItemMeta();
-                crafting.setDurability(item.getDurability());
+                Damageable damagedNew = (Damageable) craftingMeta;
+                damagedNew.setDamage(damagedOriginal.getDamage());
 
                 if (meta.hasEnchants()) {
                     meta.getEnchants().forEach((enchantment, integer) -> craftingMeta.addEnchant(enchantment, integer, true));
