@@ -31,6 +31,7 @@ public class DragonHandler implements Listener {
 
             if (e.getDamager() instanceof Arrow) { // Checks if it's an arrow
                 Arrow arrow = (Arrow) e.getDamager(); // Casts it to an arrow
+                arrow.setDamage(e.getDamage() * 0.75); // Nerfs dragon arrow damage.
 
                 if (arrow.getShooter() instanceof Player) // Checks if it was from a player
                     damager = (Player) arrow.getShooter(); // Sets the damager to a player

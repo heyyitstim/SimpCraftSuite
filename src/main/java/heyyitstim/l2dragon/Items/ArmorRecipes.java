@@ -3,6 +3,8 @@ package heyyitstim.l2dragon.Items;
 import heyyitstim.l2dragon.Main;
 import heyyitstim.l2dragon.Util.ItemBuilder;
 import org.bukkit.Material;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -41,6 +43,9 @@ public class ArmorRecipes {
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
                 .addLore("&7&oyou can now apply runes to this armor piece!")
+                .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.FEET)
+                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 3, EquipmentSlot.FEET)
+                .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 5, EquipmentSlot.FEET)
                 .setCustomModelNumber(1).build();
 
         Main.nuggetRecipes.add(dragonHelmet);
@@ -63,6 +68,9 @@ public class ArmorRecipes {
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
                 .addLore("&7&oyou can now apply runes to this armor piece!")
+                .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.CHEST)
+                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 3, EquipmentSlot.CHEST)
+                .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 10, EquipmentSlot.CHEST)
                 .setCustomModelNumber(1).build();
 
         Main.nuggetRecipes.add(dragonPlate);
@@ -85,6 +93,9 @@ public class ArmorRecipes {
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
                 .addLore("&7&oyou can now apply runes to this armor piece!")
+                .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.LEGS)
+                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 3, EquipmentSlot.LEGS)
+                .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 8, EquipmentSlot.LEGS)
                 .setCustomModelNumber(1).build();
 
         Main.nuggetRecipes.add(dragonLeggings);
@@ -107,6 +118,9 @@ public class ArmorRecipes {
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
                 .addLore("&7&oyou can now apply runes to this armor piece!")
+                .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.FEET)
+                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 3, EquipmentSlot.FEET)
+                .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 5, EquipmentSlot.FEET)
                 .setCustomModelNumber(1).build();
 
         Main.nuggetRecipes.add(dragonBoots);
@@ -129,6 +143,9 @@ public class ArmorRecipes {
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
                 .addLore("&7&oyou can now apply runes to this armor piece!")
+                .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.FEET)
+                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 3, EquipmentSlot.FEET)
+                .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 5, EquipmentSlot.FEET)
                 .setCustomModelNumber(1).build();
 
         Main.nuggetRecipes.add(dragonBootsAlternate);

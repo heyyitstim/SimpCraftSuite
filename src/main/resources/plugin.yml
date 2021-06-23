@@ -5,6 +5,3 @@ api-version: 1.17
 prefix: [ L2Dragon ]
 authors: [ heyyitstim, christianwdev ]
 description: Buffs ender dragon, adds new craftable items, and upgrades for the craftable items
-
-commands:
-  test:

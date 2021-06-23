@@ -9,12 +9,11 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.FireworkEffectMeta;
 import org.bukkit.Color;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
-public class RuneRecipes {
+public class ArmorRuneRecipes {
 
-    public RuneRecipes() {
+    public ArmorRuneRecipes() {
         registerRecipes();
     }
 
@@ -50,9 +49,10 @@ public class RuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&bFlight Rune"));
         metaFw.setLore(Arrays.asList(
+                ChatUtil.color("&7&oDragon Chestplate Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oApply this to a &c&oDragon Chestplate"),
-                ChatUtil.color("&7&oto &b&ofly &7&olike you're wearing an elytra!")));
+                ChatUtil.color("&7&oAllows you to &b&ofly &7&oas if"),
+                ChatUtil.color("&7&oyou were wearing an elytra!")));
         flightRune.setItemMeta(metaFw);
 
         ShapedRecipe flightRuneRecipe = new ShapedRecipe(flightRune);
@@ -75,9 +75,10 @@ public class RuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&cStrength Rune"));
         metaFw.setLore(Arrays.asList(
+                ChatUtil.color("&7&oDragon Armor Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oApply this to any &c&oDragon Armor"),
-                ChatUtil.color("&7&oto gain permanent &c&oStrength 1&7&o!")));
+                ChatUtil.color("&7&oWith this rune applied, you will"),
+                ChatUtil.color("&7&ogain permanent &c&oStrength 1&7&o!")));
         strengthRune.setItemMeta(metaFw);
 
         ShapedRecipe strengthRuneRecipe = new ShapedRecipe(strengthRune);
@@ -100,6 +101,7 @@ public class RuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&eNight Vision Rune"));
         metaFw.setLore(Arrays.asList(
+                ChatUtil.color("&7&oDragon Helmet Upgrade"),
                 ChatUtil.color(""),
                 ChatUtil.color("&7&oApply this to a &c&oDragon Helmet"),
                 ChatUtil.color("&7&oto gain permanent &e&onight vision&7&o!")));
@@ -125,8 +127,9 @@ public class RuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&3Speed Rune"));
         metaFw.setLore(Arrays.asList(
+                ChatUtil.color("&7&oDragon Boots Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oApply this to any &c&oDragon Armor"),
+                ChatUtil.color("&7&oApply this to &c&oDragon Boots"),
                 ChatUtil.color("&7&oto gain permanent &3&oSpeed 1&7&o!")));
         speedRune.setItemMeta(metaFw);
 
@@ -150,9 +153,10 @@ public class RuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&aJumping Rune"));
         metaFw.setLore(Arrays.asList(
+                ChatUtil.color("&7&oDragon Greaves Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oApply this to &c&oDragon Boots"),
-                ChatUtil.color("&7&oto gain permanent &a&oJump Boost 1&7&o!")));
+                ChatUtil.color("&7&oAllows the wearer to gain"),
+                ChatUtil.color("&7&opermanent &a&oJump Boost 1&7&o!")));
         jumpRune.setItemMeta(metaFw);
 
         ShapedRecipe jumpRuneRecipe = new ShapedRecipe(jumpRune);
@@ -175,9 +179,10 @@ public class RuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&6Fire Resistance Rune"));
         metaFw.setLore(Arrays.asList(
+                ChatUtil.color("&7&oDragon Armor Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oApply this to any &c&oDragon Armor"),
-                ChatUtil.color("&7&oto gain permanent &6&oFire Resistance 1&7&o!")));
+                ChatUtil.color("&7&oThe magical properties of this rune"),
+                ChatUtil.color("&7&ogrant permanent &6&oFire Resistance 1&7&o!")));
         fireRune.setItemMeta(metaFw);
 
         ShapedRecipe fireRuneRecipe = new ShapedRecipe(fireRune);
@@ -200,9 +205,10 @@ public class RuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&1Water Breathing Rune"));
         metaFw.setLore(Arrays.asList(
+                ChatUtil.color("&7&oDragon Helmet Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oApply this to a &c&oDragon Helmet"),
-                ChatUtil.color("&7&oto gain permanent &1&oWater Breathing&7&o!")));
+                ChatUtil.color("&7&oThe magical properties of this rune"),
+                ChatUtil.color("&7&ogrant permanent &1&oWater Breathing&7&o!")));
         waterRune.setItemMeta(metaFw);
 
         ShapedRecipe waterRuneRecipe = new ShapedRecipe(waterRune);

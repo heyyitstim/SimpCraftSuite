@@ -19,11 +19,13 @@ public class ToolRecipes {
         ShapedRecipe dragonPickaxeRecipe = createDragonPickaxe();
         ShapedRecipe dragonShovelRecipe = createDragonShovel();
         ShapedRecipe dragonAxeRecipe = createDragonAxe();
+        ShapedRecipe dragonBowRecipe = createDragonBow();
 
         Main.instance.getServer().addRecipe(dragonPickaxeRecipe);
         Main.instance.getServer().addRecipe(dragonSwordRecipe);
         Main.instance.getServer().addRecipe(dragonShovelRecipe);
         Main.instance.getServer().addRecipe(dragonAxeRecipe);
+        Main.instance.getServer().addRecipe(dragonBowRecipe);
     }
 
     private ShapedRecipe createDragonPickaxe() {
@@ -112,5 +114,27 @@ public class ToolRecipes {
         dragonAxeRecipe.setIngredient('Z', Material.NETHERITE_AXE);
 
         return dragonAxeRecipe;
+    }
+
+    private ShapedRecipe createDragonBow() {
+        ItemStack dragonBow = new ItemBuilder(Material.BOW)
+                .setName("&cDragon Scale Axe")
+                .addLore("")
+                .addLore("&7&oImbued with the power of the Ender Dragon,")
+                .addLore("&7&oyou can now apply runes to this axe!")
+                .setCustomModelNumber(1).build();
+
+        Main.nuggetRecipes.add(dragonBow);
+
+        ShapedRecipe dragonBowRecipe = new ShapedRecipe(dragonBow);
+        dragonBowRecipe.shape(
+                " X ",
+                "XZX",
+                " X ");
+
+        dragonBowRecipe.setIngredient('X', Material.IRON_NUGGET);
+        dragonBowRecipe.setIngredient('Z', Material.BOW);
+
+        return dragonBowRecipe;
     }
 }

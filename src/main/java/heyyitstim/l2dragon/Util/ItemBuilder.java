@@ -2,11 +2,15 @@ package heyyitstim.l2dragon.Util;
 
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class ItemBuilder {
 
@@ -47,6 +51,11 @@ public class ItemBuilder {
 
     public ItemBuilder setCustomModelNumber(int num) {
         meta.setCustomModelData(num);
+        return this;
+    }
+
+    public ItemBuilder addAttribute(Attribute attribute, String name, double amount, EquipmentSlot slot) {
+        meta.addAttributeModifier(attribute, new AttributeModifier(UUID.randomUUID(), name, amount, AttributeModifier.Operation.ADD_NUMBER, slot));
         return this;
     }
 
