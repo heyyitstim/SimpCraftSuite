@@ -28,10 +28,10 @@ public class ToolRecipes {
 
     private ShapedRecipe createDragonPickaxe() {
         ItemStack dragonPickaxe = new ItemBuilder(Material.NETHERITE_PICKAXE)
-                .setName("&cDragon Pickaxe")
+                .setName("&cDragon Scale Pickaxe")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("you can now apply runes to this pickaxe!")
+                .addLore("&7&oyou can now apply runes to this pickaxe!")
                 .setCustomModelNumber(1).build();
 
         Main.nuggetRecipes.add(dragonPickaxe);
@@ -50,10 +50,10 @@ public class ToolRecipes {
 
     private ShapedRecipe createDragonSword() {
         ItemStack dragonSword = new ItemBuilder(Material.NETHERITE_SWORD)
-                .setName("&cDragon Sword")
+                .setName("&cDragon Scale Sword")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("you can now apply runes to this sword!")
+                .addLore("&7&oyou can now apply runes to this sword!")
                 .setCustomModelNumber(1).build();
 
         Main.nuggetRecipes.add(dragonSword);
@@ -72,10 +72,10 @@ public class ToolRecipes {
 
     private ShapedRecipe createDragonShovel() {
         ItemStack dragonShovel = new ItemBuilder(Material.NETHERITE_SHOVEL)
-                .setName("&cDragon Shovel")
+                .setName("&cDragon Scale Shovel")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("you can now apply runes to this shovel!")
+                .addLore("&7&oyou can now apply runes to this shovel!")
                 .setCustomModelNumber(1).build();
 
         Main.nuggetRecipes.add(dragonShovel);
@@ -94,10 +94,10 @@ public class ToolRecipes {
 
     private ShapedRecipe createDragonAxe() {
         ItemStack dragonAxe = new ItemBuilder(Material.NETHERITE_AXE)
-                .setName("&cDragon Axe")
+                .setName("&cDragon Scale Axe")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("you can now apply runes to this axe!")
+                .addLore("&7&oyou can now apply runes to this axe!")
                 .setCustomModelNumber(1).build();
 
         Main.nuggetRecipes.add(dragonAxe);

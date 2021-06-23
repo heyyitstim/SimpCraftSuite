@@ -23,7 +23,7 @@ public class ScoreboardHandler {
 
         Objective objective = board.registerNewObjective("EnderDragon", "dummy"); // Sets the scoreboard name to game name and it can only change with commands
         objective.setDisplaySlot(DisplaySlot.SIDEBAR); // Set the position to be the sidebar
-        objective.setDisplayName(ChatUtil.color("&d&lEnder Dragon Statistics")); // Added the scoreboard header of UHC-?
+        objective.setDisplayName(ChatUtil.color("&6&lEnder Dragon Statistics")); // Added the scoreboard header of UHC-?
 
         for (int i = 0; i < 15; i++) {
             lines.add(new ScoreboardLine(objective, "", i));

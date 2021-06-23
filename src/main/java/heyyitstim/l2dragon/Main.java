@@ -4,6 +4,7 @@ import heyyitstim.l2dragon.Events.RecipeChecker;
 import heyyitstim.l2dragon.Items.ArmorRecipes;
 import heyyitstim.l2dragon.Events.DragonHandler;
 import heyyitstim.l2dragon.Items.RuneRecipes;
+import heyyitstim.l2dragon.Items.ToolRecipes;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
@@ -24,6 +25,7 @@ public final class Main extends JavaPlugin {
         // Recipes
         new ArmorRecipes();
         new RuneRecipes();
+        new ToolRecipes();
 
         // Events
         Bukkit.getPluginManager().registerEvents(new DragonHandler(), this);

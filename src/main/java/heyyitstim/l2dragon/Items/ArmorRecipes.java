@@ -37,7 +37,7 @@ public class ArmorRecipes {
 
     private ShapedRecipe createDragonHelmet() {
         ItemStack dragonHelmet = new ItemBuilder(Material.NETHERITE_HELMET)
-                .setName("&cDragon Helmet")
+                .setName("&cDragon Scale Helmet")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
                 .addLore("&7&oyou can now apply runes to this armor piece!")
@@ -59,7 +59,7 @@ public class ArmorRecipes {
 
     private ShapedRecipe createDragonChestplate() {
         ItemStack dragonPlate = new ItemBuilder(Material.NETHERITE_CHESTPLATE)
-                .setName("&cDragon Chestplate")
+                .setName("&cDragon Scale Chestplate")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
                 .addLore("&7&oyou can now apply runes to this armor piece!")
@@ -81,7 +81,7 @@ public class ArmorRecipes {
 
     private ShapedRecipe createDragonLeggings() {
         ItemStack dragonLeggings = new ItemBuilder(Material.NETHERITE_LEGGINGS)
-                .setName("&cDragon Greaves")
+                .setName("&cDragon Scale Greaves")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
                 .addLore("&7&oyou can now apply runes to this armor piece!")
@@ -103,7 +103,7 @@ public class ArmorRecipes {
 
     private ShapedRecipe createDragonBoots() {
         ItemStack dragonBoots = new ItemBuilder(Material.NETHERITE_BOOTS)
-                .setName("&cDragon Boots")
+                .setName("&cDragon Scale Boots")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
                 .addLore("&7&oyou can now apply runes to this armor piece!")
@@ -125,7 +125,7 @@ public class ArmorRecipes {
 
     private ShapedRecipe createDragonBootsAlternate() {
         ItemStack dragonBootsAlternate = new ItemBuilder(Material.NETHERITE_BOOTS)
-                .setName("&cDragon Boots")
+                .setName("&cDragon Scale Boots")
                 .addLore("")
                 .addLore("&7&oImbued with the power of the Ender Dragon,")
                 .addLore("&7&oyou can now apply runes to this armor piece!")
