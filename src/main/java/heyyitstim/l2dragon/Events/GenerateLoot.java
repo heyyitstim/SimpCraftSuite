@@ -16,27 +16,33 @@ public class GenerateLoot implements Listener {
 
     private static CustomLootTable lootTable;
 
-    private static final ItemStack SCALE = new ItemBuilder(Material.IRON_NUGGET, 1)
-            .setName("&cDragon Scale")
-            .addLore("")
-            .addLore("&7&oTaken from a slain dragon, this")
-            .addLore("&7&oscale hums with magical energy.")
-            .build();
-
     public GenerateLoot() {
-        lootTable = new CustomLootTable(0); // The 0 doesn't matter other than filling a custom chest
+        /* The 0 is the percent that a slot is filled. Since we're not over writing chest data we set this to 0 as we don't need it as the
+        * get single item method doesn't use this. It's only used for populating inventories. */
+        lootTable = new CustomLootTable(0);
 
-        lootTable.addItem(SCALE, 1000);
+        ItemStack GoldCoin = new ItemBuilder(Material.GOLD_NUGGET, 1)
+                .setName("&6Gold Coin")
+                .build();
+        lootTable.addItem(GoldCoin, 1000);
 
-        SCALE.setAmount(2);
-        lootTable.addItem(SCALE, 200);
+        GoldCoin = new ItemBuilder(Material.GOLD_NUGGET, 2)
+                .setName("&6Gold Coin")
+                .build();
+        lootTable.addItem(GoldCoin, 200);
 
-        SCALE.setAmount(3);
-        lootTable.addItem(SCALE, 100);
+        GoldCoin = new ItemBuilder(Material.GOLD_NUGGET, 3)
+                .setName("&6Gold Coin")
+                .build();
+        lootTable.addItem(GoldCoin, 100);
     }
 
     @EventHandler
     public void lootGenerationEvent(LootGenerateEvent e) {
+        int doesSpawn = getRandomInt(100);
+        if (doesSpawn > 10) // 10 is the percent chance that a special item from the loot table spawns.
+            return;
+
         ArrayList<Integer> emptySlots = getEmptySlots(e.getInventoryHolder().getInventory()); // Leave these two lines alone
         int randomSlot = emptySlots.get(getRandomInt(emptySlots.size())); // Generates a random slot to use from the ones available.
 

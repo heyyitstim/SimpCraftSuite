@@ -1,5 +1,6 @@
 package heyyitstim.l2dragon.Util;
 
+import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
@@ -23,7 +24,14 @@ public class CustomLootTable {
         totalWeight += weight;
     }
 
+    public void addItem(Material material, int amount, int weight) {
+        addItem(new ItemStack(material, amount), weight);
+    }
+
     public void populateInventory(Inventory inv) {
+        if (chanceToFillSlot == 0)
+            return;
+
         for (int slot = 0; slot < inv.getSize(); slot++) {
             int doesFillSlot = ThreadLocalRandom.current().nextInt(0, 100);
 

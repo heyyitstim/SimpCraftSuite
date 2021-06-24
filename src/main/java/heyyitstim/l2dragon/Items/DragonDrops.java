@@ -15,6 +15,7 @@ public class DragonDrops {
             .addLore("")
             .addLore("&7&oTaken from a slain dragon, this")
             .addLore("&7&oscale hums with magical energy.")
+            .addGlow()
             .build();
 
     public static void rewardPlayer(Player player, double scale) {

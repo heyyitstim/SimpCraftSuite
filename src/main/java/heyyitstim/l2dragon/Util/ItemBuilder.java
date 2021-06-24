@@ -3,6 +3,7 @@ package heyyitstim.l2dragon.Util;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.attribute.Attribute;
@@ -56,6 +57,12 @@ public class ItemBuilder {
 
     public ItemBuilder addAttribute(Attribute attribute, String name, double amount, EquipmentSlot slot) {
         meta.addAttributeModifier(attribute, new AttributeModifier(UUID.randomUUID(), name, amount, AttributeModifier.Operation.ADD_NUMBER, slot));
+        return this;
+    }
+
+    public ItemBuilder addGlow() {
+        addEnchant(Enchantment.LURE, 0);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         return this;
     }
 
