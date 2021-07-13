@@ -5,8 +5,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
-import java.util.UUID;
-
 public class JerryHandler implements Listener {
     /*
         - If players first time clicking on Jerry, have some dialogue or something, need to figure that out
