@@ -55,6 +55,8 @@ public class ArmorRuneRecipes {
                 ChatUtil.color("&7&oyou were wearing an elytra!")));
         flightRune.setItemMeta(metaFw);
 
+        Main.nuggetRecipes.add(flightRune);
+
         ShapedRecipe flightRuneRecipe = new ShapedRecipe(flightRune);
         flightRuneRecipe.shape(
                 "YXY",
@@ -80,6 +82,8 @@ public class ArmorRuneRecipes {
                 ChatUtil.color("&7&oWith this rune applied, you will"),
                 ChatUtil.color("&7&ogain permanent &c&oStrength 1&7&o!")));
         strengthRune.setItemMeta(metaFw);
+
+        Main.nuggetRecipes.add(strengthRune);
 
         ShapedRecipe strengthRuneRecipe = new ShapedRecipe(strengthRune);
         strengthRuneRecipe.shape(
@@ -107,6 +111,8 @@ public class ArmorRuneRecipes {
                 ChatUtil.color("&7&oto gain permanent &e&onight vision&7&o!")));
         nvRune.setItemMeta(metaFw);
 
+        Main.nuggetRecipes.add(nvRune);
+
         ShapedRecipe nvRuneRecipe = new ShapedRecipe(nvRune);
         nvRuneRecipe.shape(
                 "YXY",
@@ -132,6 +138,8 @@ public class ArmorRuneRecipes {
                 ChatUtil.color("&7&oApply this to &c&oDragon Boots"),
                 ChatUtil.color("&7&oto gain permanent &3&oSpeed 1&7&o!")));
         speedRune.setItemMeta(metaFw);
+
+        Main.nuggetRecipes.add(speedRune);
 
         ShapedRecipe speedRuneRecipe = new ShapedRecipe(speedRune);
         speedRuneRecipe.shape(
@@ -159,6 +167,8 @@ public class ArmorRuneRecipes {
                 ChatUtil.color("&7&opermanent &a&oJump Boost 1&7&o!")));
         jumpRune.setItemMeta(metaFw);
 
+        Main.nuggetRecipes.add(jumpRune);
+
         ShapedRecipe jumpRuneRecipe = new ShapedRecipe(jumpRune);
         jumpRuneRecipe.shape(
                 "YXY",
@@ -185,6 +195,8 @@ public class ArmorRuneRecipes {
                 ChatUtil.color("&7&ogrant permanent &6&oFire Resistance 1&7&o!")));
         fireRune.setItemMeta(metaFw);
 
+        Main.nuggetRecipes.add(fireRune);
+
         ShapedRecipe fireRuneRecipe = new ShapedRecipe(fireRune);
         fireRuneRecipe.shape(
                 "YXY",
@@ -210,6 +222,8 @@ public class ArmorRuneRecipes {
                 ChatUtil.color("&7&oThe magical properties of this rune"),
                 ChatUtil.color("&7&ogrant permanent &1&oWater Breathing&7&o!")));
         waterRune.setItemMeta(metaFw);
+
+        Main.nuggetRecipes.add(waterRune);
 
         ShapedRecipe waterRuneRecipe = new ShapedRecipe(waterRune);
         waterRuneRecipe.shape(

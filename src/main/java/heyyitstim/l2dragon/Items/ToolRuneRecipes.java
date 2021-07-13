@@ -40,6 +40,8 @@ public class ToolRuneRecipes {
                 ChatUtil.color("&7&owill &4&oauto-smelt &7&oblocks!")));
         smeltRune.setItemMeta(metaFw);
 
+        Main.nuggetRecipes.add(smeltRune);
+
         ShapedRecipe smeltRuneRecipe = new ShapedRecipe(smeltRune);
         smeltRuneRecipe.shape(
                 "YXY",
@@ -65,6 +67,8 @@ public class ToolRuneRecipes {
                 ChatUtil.color("&7&oAllows your pickaxe to mine in a"),
                 ChatUtil.color("&7&o3x3 area, and increases tool durability!")));
         hammerRune.setItemMeta(metaFw);
+
+        Main.nuggetRecipes.add(hammerRune);
 
         ShapedRecipe hammerRuneRecipe = new ShapedRecipe(hammerRune);
         hammerRuneRecipe.shape(
