@@ -21,20 +21,20 @@ public class GenerateLoot implements Listener {
         * get single item method doesn't use this. It's only used for populating inventories. */
         lootTable = new CustomLootTable(0);
 
-        ItemStack GoldCoin = new ItemBuilder(Material.GOLD_NUGGET, 1)
+        ItemStack GoldCoin = new ItemBuilder(Material.GOLD_NUGGET, 3)
                 .setName("&6Gold Coin")
                 .build();
-        lootTable.addItem(GoldCoin, 1000);
+        lootTable.addItem(GoldCoin, 700);
 
-        GoldCoin = new ItemBuilder(Material.GOLD_NUGGET, 2)
+        GoldCoin = new ItemBuilder(Material.GOLD_NUGGET, 5)
+                .setName("&6Gold Coin")
+                .build();
+        lootTable.addItem(GoldCoin, 400);
+
+        GoldCoin = new ItemBuilder(Material.GOLD_NUGGET, 8)
                 .setName("&6Gold Coin")
                 .build();
         lootTable.addItem(GoldCoin, 200);
-
-        GoldCoin = new ItemBuilder(Material.GOLD_NUGGET, 3)
-                .setName("&6Gold Coin")
-                .build();
-        lootTable.addItem(GoldCoin, 100);
     }
 
     @EventHandler
