@@ -40,7 +40,7 @@ public class GenerateLoot implements Listener {
     @EventHandler
     public void lootGenerationEvent(LootGenerateEvent e) {
         int doesSpawn = getRandomInt(100);
-        if (doesSpawn > 10) // 10 is the percent chance that a special item from the loot table spawns.
+        if (doesSpawn < 10) // 10 is the percent chance that a special item from the loot table spawns.
             return;
 
         ArrayList<Integer> emptySlots = getEmptySlots(e.getInventoryHolder().getInventory()); // Leave these two lines alone
