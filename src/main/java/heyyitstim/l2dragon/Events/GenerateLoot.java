@@ -39,7 +39,7 @@ public class GenerateLoot implements Listener {
 
     @EventHandler
     public void lootGenerationEvent(LootGenerateEvent e) {
-        int doesSpawn = getRandomInt(100);
+        int doesSpawn = getRandomInt(101);
         if (doesSpawn < 10) // 10 is the percent chance that a special item from the loot table spawns.
             return;
 
