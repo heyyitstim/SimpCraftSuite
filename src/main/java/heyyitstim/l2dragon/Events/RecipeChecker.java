@@ -2,6 +2,7 @@ package heyyitstim.l2dragon.Events;
 
 import heyyitstim.l2dragon.Main;
 import heyyitstim.l2dragon.Util.ChatUtil;
+import heyyitstim.l2dragon.Util.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,6 +16,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class RecipeChecker implements Listener {
+
+    private static final ItemStack SCALE = new ItemBuilder(Material.IRON_NUGGET)
+            .setName("&cDragon Scale")
+            .addLore("")
+            .addLore("&7&oTaken from a slain dragon, this")
+            .addLore("&7&oscale hums with magical energy.")
+            .addGlow()
+            .build();
 
     private final ArrayList<Material> gearToTransfer = new ArrayList<>(Arrays.asList(
             Material.NETHERITE_HELMET, Material.NETHERITE_CHESTPLATE, Material.NETHERITE_LEGGINGS, Material.NETHERITE_BOOTS,
@@ -35,7 +44,7 @@ public class RecipeChecker implements Listener {
         for (ItemStack item : inv.getMatrix()) {
             if (item == null || item.getType() == Material.AIR) continue;
             if (item.getType() == Material.IRON_NUGGET) {
-                if (!item.getItemMeta().getDisplayName().equalsIgnoreCase(ChatUtil.color("&cDragon Scale"))) {
+                if (!isScale(item)) {
                     inv.setResult(new ItemStack(Material.AIR));
                 }
             } else if (gearToTransfer.contains(item.getType())) {
@@ -43,6 +52,11 @@ public class RecipeChecker implements Listener {
                 Damageable damagedOriginal = (Damageable) meta;
 
                 ItemStack crafting = inv.getResult();
+
+                if (crafting == null) {
+                    return;
+                }
+
                 ItemMeta craftingMeta = crafting.getItemMeta();
                 Damageable damagedNew = (Damageable) craftingMeta;
                 damagedNew.setDamage(damagedOriginal.getDamage());
@@ -54,5 +68,9 @@ public class RecipeChecker implements Listener {
                 crafting.setItemMeta(craftingMeta);
             }
         }
+    }
+
+    private boolean isScale(ItemStack item) {
+        return item.getItemMeta().getDisplayName().equals(SCALE.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(SCALE.getItemMeta().getLore());
     }
 }
