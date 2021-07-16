@@ -71,6 +71,10 @@ public class RecipeChecker implements Listener {
     }
 
     private boolean isScale(ItemStack item) {
+        if (!item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName()) {
+            return false;
+        }
+
         return item.getItemMeta().getDisplayName().equals(SCALE.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(SCALE.getItemMeta().getLore());
     }
 }
