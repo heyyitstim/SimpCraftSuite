@@ -6,9 +6,9 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 
-public class ToolRecipes {
+public class DragonToolRecipes {
 
-    public ToolRecipes() {
+    public DragonToolRecipes() {
         registerRecipes();
     }
 

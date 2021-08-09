@@ -11,9 +11,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
 
-public class ArmorRecipes {
+public class DragonArmorRecipes {
 
-    public ArmorRecipes() {
+    public DragonArmorRecipes() {
         registerRecipes();
     }
 
