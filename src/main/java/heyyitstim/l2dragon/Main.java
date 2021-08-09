@@ -1,10 +1,14 @@
 package heyyitstim.l2dragon;
 
+import heyyitstim.l2dragon.Enchantments.Beheading;
 import heyyitstim.l2dragon.Events.GenerateLoot;
 import heyyitstim.l2dragon.Events.RecipeChecker;
 import heyyitstim.l2dragon.Items.*;
 import heyyitstim.l2dragon.Events.DragonHandler;
 import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -34,6 +38,11 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new DragonHandler(), this);
         Bukkit.getPluginManager().registerEvents(new RecipeChecker(), this);
         Bukkit.getPluginManager().registerEvents(new GenerateLoot(), this);
+
+        // Enchantments
+        Bukkit.getPluginManager().registerEvents(new Beheading(), this);
+
+        getCommand("test").setExecutor(this);
 
         System.out.println("L2Dragon has been enabled!");
     }
