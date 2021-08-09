@@ -14,13 +14,17 @@ public class WeaponRecipes {
 
     private void registerRecipes() {
         ShapedRecipe vorpalSword = createVorpalSword();
+        ShapedRecipe adornedVorpalSword = createAdornedVorpalSword();
+        ShapedRecipe undeadSword = createUndeadSword();
 
         Main.instance.getServer().addRecipe(vorpalSword);
+        Main.instance.getServer().addRecipe(adornedVorpalSword);
+        Main.instance.getServer().addRecipe(undeadSword);
     }
 
     private ShapedRecipe createVorpalSword() {
         ItemStack vorpalSword = new ItemBuilder(Material.NETHERITE_SWORD)
-                .setName("&aVorpal Sword")
+                .setName("&eVorpal Sword")
                 .addLore("")
                 .addLore("&7&oThrough unknown methods, this sword seems to")
                 .addLore("&7&oprovide bonus chance for wither skeleton skulls!")
@@ -40,7 +44,7 @@ public class WeaponRecipes {
 
     private ShapedRecipe createAdornedVorpalSword() {
         ItemStack adornedVorpalSword = new ItemBuilder(Material.NETHERITE_SWORD)
-                .setName("&aAdorned Vorpal Sword")
+                .setName("&9Adorned Vorpal Sword")
                 .addLore("")
                 .addLore("&7&oAn upgraded version of the vorpal sword.")
                 .addLore("&7&oEven more wither skulls!")
@@ -56,5 +60,25 @@ public class WeaponRecipes {
         adornedVorpalSwordRecipe.setIngredient('Z', Material.NETHERITE_SWORD); // vorpal sword
 
         return adornedVorpalSwordRecipe;
+    }
+
+    private ShapedRecipe createUndeadSword() {
+        ItemStack undeadSword = new ItemBuilder(Material.IRON_SWORD)
+                .setName("&eUndead Sword")
+                .addLore("")
+                .addLore("&7&oMade of zombie flesh. Gross!")
+                .addLore("&7&oSeems like it might do extra damage to undead...")
+                .setCustomModelNumber(1).build();
+
+        ShapedRecipe undeadSwordRecipe = new ShapedRecipe(undeadSword);
+        undeadSwordRecipe.shape(
+                " X ",
+                " X ",
+                " Z ");
+
+        undeadSwordRecipe.setIngredient('X', Material.ROTTEN_FLESH); // compressed rotten flesh
+        undeadSwordRecipe.setIngredient('Z', Material.IRON_SWORD); // vorpal sword
+
+        return undeadSwordRecipe;
     }
 }

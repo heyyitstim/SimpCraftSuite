@@ -2,11 +2,8 @@ package heyyitstim.l2dragon;
 
 import heyyitstim.l2dragon.Events.GenerateLoot;
 import heyyitstim.l2dragon.Events.RecipeChecker;
-import heyyitstim.l2dragon.Items.DragonArmorRecipes;
+import heyyitstim.l2dragon.Items.*;
 import heyyitstim.l2dragon.Events.DragonHandler;
-import heyyitstim.l2dragon.Items.ArmorRuneRecipes;
-import heyyitstim.l2dragon.Items.DragonToolRecipes;
-import heyyitstim.l2dragon.Items.ToolRuneRecipes;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
@@ -29,6 +26,9 @@ public final class Main extends JavaPlugin {
         new DragonToolRecipes();
         new ArmorRuneRecipes();
         new ToolRuneRecipes();
+        new WeaponRecipes();
+        new UtilityItemRecipes();
+        new CraftingIngredientRecipes();
 
         // Events
         Bukkit.getPluginManager().registerEvents(new DragonHandler(), this);
