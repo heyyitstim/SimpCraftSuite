@@ -70,6 +70,8 @@ public class WeaponRecipes {
                 .addLore("&7&oSeems like it might do extra damage to undead...")
                 .setCustomModelNumber(1).build();
 
+        Main.rottenFleshRecipes.add(undeadSword);
+
         ShapedRecipe undeadSwordRecipe = new ShapedRecipe(undeadSword);
         undeadSwordRecipe.shape(
                 " X ",

@@ -36,7 +36,7 @@ public class Undead implements Listener {
 
     @EventHandler
     public void damageUndead(EntityDamageByEntityEvent e) {
-        if (!isUndead(e.getEntity()) || e.getDamager() instanceof Player)
+        if (!isUndead(e.getEntity()) || !(e.getDamager() instanceof Player))
             return;
 
         Player player = (Player) e.getDamager();

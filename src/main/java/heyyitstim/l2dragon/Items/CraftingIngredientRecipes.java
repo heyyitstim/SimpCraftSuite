@@ -27,13 +27,11 @@ public class CraftingIngredientRecipes {
                 .addLore("&7&oVery tightly packed meat.")
                 .setCustomModelNumber(1).build();
 
-        Main.rottenFleshRecipes.add(compressedRottenFlesh);
-
         ShapedRecipe compressedRottenFleshRecipe = new ShapedRecipe(compressedRottenFlesh);
         compressedRottenFleshRecipe.shape(
-                " X ",
-                " X ",
-                " X ");
+                "XXX",
+                "XXX",
+                "XXX");
 
         compressedRottenFleshRecipe.setIngredient('X', Material.ROTTEN_FLESH);
 
@@ -47,8 +45,6 @@ public class CraftingIngredientRecipes {
                 .addLore("&7&oYou can feel this object pulsing with")
                 .addLore("&7&oan arcane energy you don't understand.")
                 .setCustomModelNumber(1).build();
-
-        Main.enderPearlRecipes.add(shiningEnderPearl);
 
         ShapedRecipe shiningEnderPearlRecipe = new ShapedRecipe(shiningEnderPearl);
         shiningEnderPearlRecipe.shape(

@@ -51,26 +51,29 @@ public class RecipeChecker implements Listener {
             return;
 
         if (Main.nuggetRecipes.contains(e.getRecipe().getResult())) {
-            handleScales(e.getInventory());
+            handleCustomItems(e.getInventory(), Material.IRON_NUGGET, SCALE, true);
+            return;
         }
 
         if (Main.enderPearlRecipes.contains((e.getRecipe().getResult()))) {
-            handleEnderPearls(e.getInventory());
+            handleCustomItems(e.getInventory(), Material.ENDER_PEARL, SHININGENDERPEARL, false);
+            return;
         }
 
         if (Main.rottenFleshRecipes.contains((e.getRecipe().getResult()))) {
-            handleRottenFlesh(e.getInventory());
+            handleCustomItems(e.getInventory(), Material.ROTTEN_FLESH, COMPRESSEDROTTENFLESH, false);
+            return;
         }
     }
 
-    private void handleScales(CraftingInventory inv) {
+    private void handleCustomItems(CraftingInventory inv, Material toCheck, ItemStack compareTo, boolean transfer) {
         for (ItemStack item : inv.getMatrix()) {
             if (item == null || item.getType() == Material.AIR) continue;
-            if (item.getType() == Material.IRON_NUGGET) {
-                if (!isScale(item)) {
+            if (item.getType() == toCheck) {
+                if (!isItem(item, compareTo)) {
                     inv.setResult(new ItemStack(Material.AIR));
                 }
-            } else if (gearToTransfer.contains(item.getType())) {
+            } else if (transfer && gearToTransfer.contains(item.getType())) {
                 ItemMeta meta = item.getItemMeta();
                 Damageable damagedOriginal = (Damageable) meta;
 
@@ -93,49 +96,10 @@ public class RecipeChecker implements Listener {
         }
     }
 
-    private void handleRottenFlesh(CraftingInventory inv) {
-        for (ItemStack item : inv.getMatrix()) {
-            if (item == null || item.getType() == Material.AIR) continue;
-            if (item.getType() == Material.ROTTEN_FLESH) {
-                if (!isScale(item)) {
-                    inv.setResult(new ItemStack(Material.AIR));
-                }
-            }
-        }
-    }
-
-    private void handleEnderPearls(CraftingInventory inv) {
-        for (ItemStack item : inv.getMatrix()) {
-            if (item == null || item.getType() == Material.AIR) continue;
-            if (item.getType() == Material.ROTTEN_FLESH) {
-                if (!isScale(item)) {
-                    inv.setResult(new ItemStack(Material.AIR));
-                }
-            }
-        }
-    }
-
-    private boolean isScale(ItemStack item) {
-        if (!item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName()) {
+    private boolean isItem(ItemStack item, ItemStack compareTo) {
+        if (!item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName())
             return false;
-        }
 
-        return item.getItemMeta().getDisplayName().equals(SCALE.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(SCALE.getItemMeta().getLore());
-    }
-
-    private boolean isFlesh(ItemStack item) {
-        if (!item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName()) {
-            return false;
-        }
-
-        return item.getItemMeta().getDisplayName().equals(COMPRESSEDROTTENFLESH.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(COMPRESSEDROTTENFLESH.getItemMeta().getLore());
-    }
-
-    private boolean isEnderPearl(ItemStack item) {
-        if (!item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName()) {
-            return false;
-        }
-
-        return item.getItemMeta().getDisplayName().equals(COMPRESSEDROTTENFLESH.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(COMPRESSEDROTTENFLESH.getItemMeta().getLore());
+        return item.getItemMeta().getDisplayName().equals(compareTo.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(compareTo.getItemMeta().getLore());
     }
 }
