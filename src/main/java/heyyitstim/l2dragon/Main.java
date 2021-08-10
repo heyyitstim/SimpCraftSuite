@@ -1,6 +1,7 @@
 package heyyitstim.l2dragon;
 
 import heyyitstim.l2dragon.Enchantments.Beheading;
+import heyyitstim.l2dragon.Enchantments.Undead;
 import heyyitstim.l2dragon.Events.GenerateLoot;
 import heyyitstim.l2dragon.Events.RecipeChecker;
 import heyyitstim.l2dragon.Items.*;
@@ -38,8 +39,7 @@ public final class Main extends JavaPlugin {
 
         // Enchantments
         Bukkit.getPluginManager().registerEvents(new Beheading(), this);
-
-        getCommand("test").setExecutor(this);
+        Bukkit.getPluginManager().registerEvents(new Undead(), this);
 
         System.out.println("L2Dragon has been enabled!");
     }

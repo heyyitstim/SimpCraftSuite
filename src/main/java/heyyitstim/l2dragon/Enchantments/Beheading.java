@@ -57,12 +57,9 @@ public class Beheading implements Listener {
         ItemStack item = player.getInventory().getItemInMainHand();
         int chance = getChance(item);
 
-        System.out.println("Chance is " + chance);
-
         if (chance <= 0 || hasSkull(e.getDrops()) || ThreadLocalRandom.current().nextInt(0, 101) > chance)
             return;
 
         e.getDrops().add(new ItemStack(Material.WITHER_SKELETON_SKULL, 1));
-        System.out.println("ADDED A WITHER SKELETON SKULL!");
     }
 }
