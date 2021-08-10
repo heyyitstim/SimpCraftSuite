@@ -28,13 +28,16 @@ public class UtilityItemRecipes {
                 .addLore("&7&oBreaks after one use.")
                 .setCustomModelNumber(1).build();
 
+        Main.enderPearlRecipes.add(enderBed);
+
         ShapedRecipe enderBedRecipe = new ShapedRecipe(enderBed);
         enderBedRecipe.shape(
-                " X ",
-                " X ",
-                " X ");
+                "   ",
+                "XXX",
+                "YYY");
 
         enderBedRecipe.setIngredient('X', Material.ENDER_PEARL); // shining ender pearl
+        enderBedRecipe.setIngredient('Y', Material.END_STONE); // end stone
 
         return enderBedRecipe;
     }
@@ -47,6 +50,8 @@ public class UtilityItemRecipes {
                 .addLore("&7&oprotect you from the ever-hungry void!")
                 .addLore("&7&oShatters after one use.")
                 .setCustomModelNumber(1).build();
+
+        Main.enderPearlRecipes.add(voidCrystal);
 
         ShapedRecipe voidCrystalRecipe = new ShapedRecipe(voidCrystal);
         voidCrystalRecipe.shape(

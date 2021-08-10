@@ -17,6 +17,8 @@ public final class Main extends JavaPlugin {
 
     public static Main instance;
     public static ArrayList<ItemStack> nuggetRecipes = new ArrayList<>();
+    public static ArrayList<ItemStack> rottenFleshRecipes = new ArrayList<>();
+    public static ArrayList<ItemStack> enderPearlRecipes = new ArrayList<>();
     public static ArrayList<ShapedRecipe> potionRecipes = new ArrayList<>();
 
     @Override

@@ -25,6 +25,21 @@ public class RecipeChecker implements Listener {
             .addGlow()
             .build();
 
+    private static final ItemStack COMPRESSEDROTTENFLESH = new ItemBuilder(Material.ROTTEN_FLESH)
+            .setName("&aCompressed Rotten Flesh")
+            .addLore("")
+            .addLore("&7&oVery tightly packed meat.")
+            .addGlow()
+            .build();
+
+    private static final ItemStack SHININGENDERPEARL = new ItemBuilder(Material.ENDER_PEARL)
+            .setName("&aShining Ender Pearl")
+            .addLore("")
+            .addLore("&7&oYou can feel this object pulsing with")
+            .addLore("&7&oan arcane energy you don't understand.")
+            .addGlow()
+            .build();
+
     private final ArrayList<Material> gearToTransfer = new ArrayList<>(Arrays.asList(
             Material.NETHERITE_HELMET, Material.NETHERITE_CHESTPLATE, Material.NETHERITE_LEGGINGS, Material.NETHERITE_BOOTS,
             Material.NETHERITE_SWORD, Material.NETHERITE_PICKAXE, Material.NETHERITE_SHOVEL, Material.NETHERITE_AXE
@@ -37,6 +52,14 @@ public class RecipeChecker implements Listener {
 
         if (Main.nuggetRecipes.contains(e.getRecipe().getResult())) {
             handleScales(e.getInventory());
+        }
+
+        if (Main.enderPearlRecipes.contains((e.getRecipe().getResult()))) {
+            handleEnderPearls(e.getInventory());
+        }
+
+        if (Main.rottenFleshRecipes.contains((e.getRecipe().getResult()))) {
+            handleRottenFlesh(e.getInventory());
         }
     }
 
@@ -70,11 +93,49 @@ public class RecipeChecker implements Listener {
         }
     }
 
+    private void handleRottenFlesh(CraftingInventory inv) {
+        for (ItemStack item : inv.getMatrix()) {
+            if (item == null || item.getType() == Material.AIR) continue;
+            if (item.getType() == Material.ROTTEN_FLESH) {
+                if (!isScale(item)) {
+                    inv.setResult(new ItemStack(Material.AIR));
+                }
+            }
+        }
+    }
+
+    private void handleEnderPearls(CraftingInventory inv) {
+        for (ItemStack item : inv.getMatrix()) {
+            if (item == null || item.getType() == Material.AIR) continue;
+            if (item.getType() == Material.ROTTEN_FLESH) {
+                if (!isScale(item)) {
+                    inv.setResult(new ItemStack(Material.AIR));
+                }
+            }
+        }
+    }
+
     private boolean isScale(ItemStack item) {
         if (!item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName()) {
             return false;
         }
 
         return item.getItemMeta().getDisplayName().equals(SCALE.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(SCALE.getItemMeta().getLore());
+    }
+
+    private boolean isFlesh(ItemStack item) {
+        if (!item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName()) {
+            return false;
+        }
+
+        return item.getItemMeta().getDisplayName().equals(COMPRESSEDROTTENFLESH.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(COMPRESSEDROTTENFLESH.getItemMeta().getLore());
+    }
+
+    private boolean isEnderPearl(ItemStack item) {
+        if (!item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName()) {
+            return false;
+        }
+
+        return item.getItemMeta().getDisplayName().equals(COMPRESSEDROTTENFLESH.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(COMPRESSEDROTTENFLESH.getItemMeta().getLore());
     }
 }
