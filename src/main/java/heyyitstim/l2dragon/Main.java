@@ -5,6 +5,7 @@ import heyyitstim.l2dragon.Enchantments.Undead;
 import heyyitstim.l2dragon.Events.GenerateLoot;
 import heyyitstim.l2dragon.Events.JerryHandler;
 import heyyitstim.l2dragon.Events.RecipeChecker;
+import heyyitstim.l2dragon.Events.*;
 import heyyitstim.l2dragon.Items.*;
 import heyyitstim.l2dragon.Events.DragonHandler;
 import org.bukkit.Bukkit;
@@ -42,6 +43,8 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new DragonHandler(), this);
         Bukkit.getPluginManager().registerEvents(new RecipeChecker(), this);
         Bukkit.getPluginManager().registerEvents(new GenerateLoot(), this);
+        Bukkit.getPluginManager().registerEvents(new VoidHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new EnderBedHandler(), this);
 
         // Enchantments
         Bukkit.getPluginManager().registerEvents(new Beheading(), this);

@@ -22,7 +22,7 @@ public class VoidHandler implements Listener {
             .setCustomModelNumber(1).build();
 
     private boolean isVoidCrystal(ItemStack item) {
-        if (!item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName())
+        if (item == null || !item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName())
             return false;
 
         return item.getItemMeta().getDisplayName().equals(voidCrystal.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(voidCrystal.getItemMeta().getLore());
@@ -41,7 +41,7 @@ public class VoidHandler implements Listener {
 
         for (ItemStack item : player.getInventory()) {
             if (isVoidCrystal(item)) {
-                item.setType(Material.AIR);
+                item.setAmount(item.getAmount() - 1);
             }
         }
     }
@@ -64,8 +64,9 @@ public class VoidHandler implements Listener {
         removeVoidCrystal(player);
 
         player.setVelocity(new Vector(0, 0, 0));
-        player.setInvulnerable(true);
+        player.setFallDistance(0);
         player.teleport(whereToTeleport(player));
-        player.setInvulnerable(false);
+
+        e.setDamage(0);
     }
 }

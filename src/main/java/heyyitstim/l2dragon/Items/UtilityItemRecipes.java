@@ -26,6 +26,7 @@ public class UtilityItemRecipes {
                 .addLore("")
                 .addLore("&7&oInstantly teleports the user to their spawn.")
                 .addLore("&7&oBreaks after one use.")
+                .addGlow()
                 .setCustomModelNumber(1).build();
 
         Main.enderPearlRecipes.add(enderBed);
