@@ -3,7 +3,6 @@ package heyyitstim.l2dragon.Items;
 import heyyitstim.l2dragon.Main;
 import heyyitstim.l2dragon.Util.ItemBuilder;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
@@ -51,7 +50,7 @@ public class DragonArmorRecipes {
 
         Main.nuggetRecipes.add(dragonHelmet);
 
-        ShapedRecipe dragonHelmetRecipe = new ShapedRecipe(NamespacedKey.minecraft("dragon_helm"),dragonHelmet);
+        ShapedRecipe dragonHelmetRecipe = new ShapedRecipe(dragonHelmet);
         dragonHelmetRecipe.shape(
                 "XXX",
                 "XZX",
@@ -76,7 +75,7 @@ public class DragonArmorRecipes {
 
         Main.nuggetRecipes.add(dragonPlate);
 
-        ShapedRecipe dragonPlateRecipe = new ShapedRecipe(NamespacedKey.minecraft("dragon_plate"),dragonPlate);
+        ShapedRecipe dragonPlateRecipe = new ShapedRecipe(dragonPlate);
         dragonPlateRecipe.shape(
                 "XXX",
                 "XZX",
@@ -101,7 +100,7 @@ public class DragonArmorRecipes {
 
         Main.nuggetRecipes.add(dragonLeggings);
 
-        ShapedRecipe dragonLeggingsRecipe = new ShapedRecipe(NamespacedKey.minecraft("dragon_leggings"),dragonLeggings);
+        ShapedRecipe dragonLeggingsRecipe = new ShapedRecipe(dragonLeggings);
         dragonLeggingsRecipe.shape(
                 "XXX",
                 "XZX",
@@ -126,7 +125,7 @@ public class DragonArmorRecipes {
 
         Main.nuggetRecipes.add(dragonBoots);
 
-        ShapedRecipe dragonBootsRecipe = new ShapedRecipe(NamespacedKey.minecraft("dragon_boots1"),dragonBoots);
+        ShapedRecipe dragonBootsRecipe = new ShapedRecipe(dragonBoots);
         dragonBootsRecipe.shape(
                 "XZX",
                 "X X",
@@ -151,7 +150,7 @@ public class DragonArmorRecipes {
 
         Main.nuggetRecipes.add(dragonBootsAlternate);
 
-        ShapedRecipe dragonBootsAlternateRecipe = new ShapedRecipe(NamespacedKey.minecraft("dragon_boots_2"),dragonBootsAlternate);
+        ShapedRecipe dragonBootsAlternateRecipe = new ShapedRecipe(dragonBootsAlternate);
         dragonBootsAlternateRecipe.shape(
                 "   ",
                 "XZX",

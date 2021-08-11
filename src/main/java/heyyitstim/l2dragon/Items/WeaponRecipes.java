@@ -3,7 +3,6 @@ package heyyitstim.l2dragon.Items;
 import heyyitstim.l2dragon.Main;
 import heyyitstim.l2dragon.Util.ItemBuilder;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 
@@ -31,7 +30,7 @@ public class WeaponRecipes {
                 .addLore("&7&oprovide bonus chance for wither skeleton skulls!")
                 .setCustomModelNumber(1).build();
 
-        ShapedRecipe vorpalSwordRecipe = new ShapedRecipe(NamespacedKey.minecraft("vorpal_sword"), vorpalSword);
+        ShapedRecipe vorpalSwordRecipe = new ShapedRecipe(vorpalSword);
         vorpalSwordRecipe.shape(
                 " X ",
                 " X ",
@@ -51,7 +50,7 @@ public class WeaponRecipes {
                 .addLore("&7&oEven more wither skulls!")
                 .setCustomModelNumber(1).build();
 
-        ShapedRecipe adornedVorpalSwordRecipe = new ShapedRecipe(NamespacedKey.minecraft("adorned_vorpal"), adornedVorpalSword);
+        ShapedRecipe adornedVorpalSwordRecipe = new ShapedRecipe(adornedVorpalSword);
         adornedVorpalSwordRecipe.shape(
                 " X ",
                 "XZX",
@@ -73,7 +72,7 @@ public class WeaponRecipes {
 
         Main.rottenFleshRecipes.add(undeadSword);
 
-        ShapedRecipe undeadSwordRecipe = new ShapedRecipe(NamespacedKey.minecraft("undead_sword"), undeadSword);
+        ShapedRecipe undeadSwordRecipe = new ShapedRecipe(undeadSword);
         undeadSwordRecipe.shape(
                 " X ",
                 " X ",
