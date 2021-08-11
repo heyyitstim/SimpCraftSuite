@@ -3,6 +3,7 @@ package heyyitstim.l2dragon.Items;
 import heyyitstim.l2dragon.Main;
 import heyyitstim.l2dragon.Util.ItemBuilder;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 
@@ -31,7 +32,7 @@ public class UtilityItemRecipes {
 
         Main.enderPearlRecipes.add(enderBed);
 
-        ShapedRecipe enderBedRecipe = new ShapedRecipe(enderBed);
+        ShapedRecipe enderBedRecipe = new ShapedRecipe(NamespacedKey.minecraft("ender_bed"), enderBed);
         enderBedRecipe.shape(
                 "   ",
                 "XXX",
@@ -54,7 +55,7 @@ public class UtilityItemRecipes {
 
         Main.enderPearlRecipes.add(voidCrystal);
 
-        ShapedRecipe voidCrystalRecipe = new ShapedRecipe(voidCrystal);
+        ShapedRecipe voidCrystalRecipe = new ShapedRecipe(NamespacedKey.minecraft("void_crystal"), voidCrystal);
         voidCrystalRecipe.shape(
                 "XXX",
                 "XZX",

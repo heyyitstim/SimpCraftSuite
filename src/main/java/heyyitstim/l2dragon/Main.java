@@ -45,6 +45,7 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new GenerateLoot(), this);
         Bukkit.getPluginManager().registerEvents(new VoidHandler(), this);
         Bukkit.getPluginManager().registerEvents(new EnderBedHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new JerryHandler(), this);
 
         // Enchantments
         Bukkit.getPluginManager().registerEvents(new Beheading(), this);

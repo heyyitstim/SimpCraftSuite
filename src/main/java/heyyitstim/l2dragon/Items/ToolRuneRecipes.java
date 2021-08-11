@@ -4,12 +4,12 @@ import heyyitstim.l2dragon.Main;
 import heyyitstim.l2dragon.Util.ChatUtil;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.FireworkEffectMeta;
 import org.bukkit.Color;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ToolRuneRecipes {
@@ -42,7 +42,7 @@ public class ToolRuneRecipes {
 
         Main.nuggetRecipes.add(smeltRune);
 
-        ShapedRecipe smeltRuneRecipe = new ShapedRecipe(smeltRune);
+        ShapedRecipe smeltRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("smelt_rune"), smeltRune);
         smeltRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -70,7 +70,7 @@ public class ToolRuneRecipes {
 
         Main.nuggetRecipes.add(hammerRune);
 
-        ShapedRecipe hammerRuneRecipe = new ShapedRecipe(hammerRune);
+        ShapedRecipe hammerRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("hammer_rune"), hammerRune);
         hammerRuneRecipe.shape(
                 "YXY",
                 "XZX",

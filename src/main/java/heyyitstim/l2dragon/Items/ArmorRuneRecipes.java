@@ -1,9 +1,11 @@
 package heyyitstim.l2dragon.Items;
 
+import com.sun.org.apache.xml.internal.utils.NameSpace;
 import heyyitstim.l2dragon.Main;
 import heyyitstim.l2dragon.Util.ChatUtil;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.FireworkEffectMeta;
@@ -57,7 +59,7 @@ public class ArmorRuneRecipes {
 
         Main.nuggetRecipes.add(flightRune);
 
-        ShapedRecipe flightRuneRecipe = new ShapedRecipe(flightRune);
+        ShapedRecipe flightRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("flight_rune"), flightRune);
         flightRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -85,7 +87,7 @@ public class ArmorRuneRecipes {
 
         Main.nuggetRecipes.add(strengthRune);
 
-        ShapedRecipe strengthRuneRecipe = new ShapedRecipe(strengthRune);
+        ShapedRecipe strengthRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("strength_rune"),strengthRune);
         strengthRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -113,7 +115,7 @@ public class ArmorRuneRecipes {
 
         Main.nuggetRecipes.add(nvRune);
 
-        ShapedRecipe nvRuneRecipe = new ShapedRecipe(nvRune);
+        ShapedRecipe nvRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("night_vision_rune"),nvRune);
         nvRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -141,7 +143,7 @@ public class ArmorRuneRecipes {
 
         Main.nuggetRecipes.add(speedRune);
 
-        ShapedRecipe speedRuneRecipe = new ShapedRecipe(speedRune);
+        ShapedRecipe speedRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("speed_rune"),speedRune);
         speedRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -169,7 +171,7 @@ public class ArmorRuneRecipes {
 
         Main.nuggetRecipes.add(jumpRune);
 
-        ShapedRecipe jumpRuneRecipe = new ShapedRecipe(jumpRune);
+        ShapedRecipe jumpRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("jump_rune"),jumpRune);
         jumpRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -197,7 +199,7 @@ public class ArmorRuneRecipes {
 
         Main.nuggetRecipes.add(fireRune);
 
-        ShapedRecipe fireRuneRecipe = new ShapedRecipe(fireRune);
+        ShapedRecipe fireRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("fire_rune"),fireRune);
         fireRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -225,7 +227,7 @@ public class ArmorRuneRecipes {
 
         Main.nuggetRecipes.add(waterRune);
 
-        ShapedRecipe waterRuneRecipe = new ShapedRecipe(waterRune);
+        ShapedRecipe waterRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("water_rune"),waterRune);
         waterRuneRecipe.shape(
                 "YXY",
                 "XZX",
