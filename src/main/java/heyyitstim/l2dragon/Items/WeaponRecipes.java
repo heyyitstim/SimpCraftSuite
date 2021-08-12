@@ -3,6 +3,7 @@ package heyyitstim.l2dragon.Items;
 import heyyitstim.l2dragon.Main;
 import heyyitstim.l2dragon.Util.ItemBuilder;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 
@@ -68,11 +69,11 @@ public class WeaponRecipes {
                 .addLore("")
                 .addLore("&7&oMade of zombie flesh. Gross!")
                 .addLore("&7&oSeems like it might do extra damage to undead...")
-                .setCustomModelNumber(1).build();
+                .setCustomModelNumber(1234567).build();
 
         Main.rottenFleshRecipes.add(undeadSword);
 
-        ShapedRecipe undeadSwordRecipe = new ShapedRecipe(undeadSword);
+        ShapedRecipe undeadSwordRecipe = new ShapedRecipe(new NamespacedKey(Main.instance, "undead_sword"), undeadSword);
         undeadSwordRecipe.shape(
                 " X ",
                 " X ",

@@ -1,5 +1,6 @@
 package heyyitstim.l2dragon.Util;
 
+import heyyitstim.l2dragon.Main;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.EquipmentSlot;
@@ -61,8 +62,7 @@ public class ItemBuilder {
     }
 
     public ItemBuilder addGlow() {
-        addEnchant(Enchantment.LURE, 0);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        addEnchant(Main.GlowEnchant, 0);
         return this;
     }
 
