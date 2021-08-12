@@ -6,6 +6,7 @@ import heyyitstim.l2dragon.Util.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;
 import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.ItemStack;
@@ -40,23 +41,6 @@ public class RecipeChecker implements Listener {
             .addGlow()
             .build();
 
-    private static final ItemStack ENDERBED = new ItemBuilder(Material.PURPLE_BED)
-            .setName("&5Ender Bed")
-            .addLore("")
-            .addLore("&7&oInstantly teleports the user to their spawn.")
-            .addLore("&7&oBreaks after one use.")
-            .addGlow()
-            .build();
-
-    private static final ItemStack VOIDCRYSTAL = new ItemBuilder(Material.NETHER_STAR)
-            .setName("&6Void Crystal")
-            .addLore("")
-            .addLore("&7&oA sentient object that will sacrifice itself to")
-            .addLore("&7&oprotect you from the ever-hungry void!")
-            .addLore("&7&oShatters after one use.")
-            .addGlow()
-            .build();
-
     private final ArrayList<Material> gearToTransfer = new ArrayList<>(Arrays.asList(
             Material.NETHERITE_HELMET, Material.NETHERITE_CHESTPLATE, Material.NETHERITE_LEGGINGS, Material.NETHERITE_BOOTS,
             Material.NETHERITE_SWORD, Material.NETHERITE_PICKAXE, Material.NETHERITE_SHOVEL, Material.NETHERITE_AXE
@@ -82,8 +66,19 @@ public class RecipeChecker implements Listener {
             return;
         }
 
-        if (e.getRecipe().getResult() == SHININGENDERPEARL) {
+        if (isItem(e.getRecipe().getResult(), SHININGENDERPEARL)) {
             handleItemStacks(e.getInventory(), Material.ENDER_PEARL, 16);
+        }
+    }
+
+    @EventHandler
+    public void pickedUp(CraftItemEvent e) {
+        if (e.getRecipe() == null)
+            return;
+
+        if (isItem(e.getRecipe().getResult(), SHININGENDERPEARL)) {
+            for (ItemStack item : e.getInventory().getMatrix())
+                item.setAmount(0);
         }
     }
 
