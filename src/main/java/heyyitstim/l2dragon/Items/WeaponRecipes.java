@@ -49,7 +49,7 @@ public class WeaponRecipes {
                 .addLore("")
                 .addLore("&7&oAn upgraded version of the vorpal sword.")
                 .addLore("&7&oEven more wither skulls!")
-                .setCustomModelNumber(1).build();
+                .setCustomModelNumber(2).build();
 
         ShapedRecipe adornedVorpalSwordRecipe = new ShapedRecipe(adornedVorpalSword);
         adornedVorpalSwordRecipe.shape(
@@ -69,7 +69,7 @@ public class WeaponRecipes {
                 .addLore("")
                 .addLore("&7&oMade of zombie flesh. Gross!")
                 .addLore("&7&oSeems like it might do extra damage to undead...")
-                .setCustomModelNumber(1234567).build();
+                .setCustomModelNumber(1).build();
 
         Main.rottenFleshRecipes.add(undeadSword);
 
