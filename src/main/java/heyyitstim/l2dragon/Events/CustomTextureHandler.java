@@ -8,6 +8,6 @@ public class CustomTextureHandler implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
-        e.getPlayer().setResourcePack("https://www.dropbox.com/s/nvkz3yq5swqi3at/SimpCraft%20RP%201.1.zip?dl=1"); // resource pack link
+        e.getPlayer().setResourcePack("https://www.dropbox.com/s/itug3m6qfvmlofp/SimpCraftRP.zip?dl=1"); // resource pack link
     }
 }

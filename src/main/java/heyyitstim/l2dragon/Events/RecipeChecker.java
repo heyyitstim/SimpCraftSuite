@@ -40,6 +40,23 @@ public class RecipeChecker implements Listener {
             .addGlow()
             .build();
 
+    private static final ItemStack ENDERBED = new ItemBuilder(Material.PURPLE_BED)
+            .setName("&5Ender Bed")
+            .addLore("")
+            .addLore("&7&oInstantly teleports the user to their spawn.")
+            .addLore("&7&oBreaks after one use.")
+            .addGlow()
+            .build();
+
+    private static final ItemStack VOIDCRYSTAL = new ItemBuilder(Material.NETHER_STAR)
+            .setName("&6Void Crystal")
+            .addLore("")
+            .addLore("&7&oA sentient object that will sacrifice itself to")
+            .addLore("&7&oprotect you from the ever-hungry void!")
+            .addLore("&7&oShatters after one use.")
+            .addGlow()
+            .build();
+
     private final ArrayList<Material> gearToTransfer = new ArrayList<>(Arrays.asList(
             Material.NETHERITE_HELMET, Material.NETHERITE_CHESTPLATE, Material.NETHERITE_LEGGINGS, Material.NETHERITE_BOOTS,
             Material.NETHERITE_SWORD, Material.NETHERITE_PICKAXE, Material.NETHERITE_SHOVEL, Material.NETHERITE_AXE
@@ -63,6 +80,33 @@ public class RecipeChecker implements Listener {
         if (Main.rottenFleshRecipes.contains((e.getRecipe().getResult()))) {
             handleCustomItems(e.getInventory(), Material.ROTTEN_FLESH, COMPRESSEDROTTENFLESH, false);
             return;
+        }
+
+        if (e.getRecipe().getResult() == SHININGENDERPEARL) {
+            handleItemStacks(e.getInventory(), Material.ENDER_PEARL, 16);
+        }
+    }
+
+    private void handleItemStacks(CraftingInventory inv, Material compareTo, int amount) {
+        for (ItemStack item : inv.getMatrix()) {
+            if (item == null || item.getType() == Material.AIR) continue;
+            if (item.getType() == compareTo) {
+                if (item.getAmount() != amount) {
+                    inv.setResult(new ItemStack(Material.AIR));
+                }
+            }
+        }
+    }
+
+    private void handleItemStacks(CraftingInventory inv, ItemStack compareTo, int amount) {
+        Material toCheck = compareTo.getType();
+        for (ItemStack item : inv.getMatrix()) {
+            if (item == null || item.getType() == Material.AIR) continue;
+            if (item.getType() == toCheck) {
+                if (item.getAmount() != amount || !isItem(item, compareTo)) {
+                    inv.setResult(new ItemStack(Material.AIR));
+                }
+            }
         }
     }
 
