@@ -14,6 +14,7 @@ import heyyitstim.l2dragon.Util.ItemBuilder;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -63,6 +64,7 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new Undead(), this);
         CustomEnchantment.registerEnchantment(GlowEnchant);
 
+
         getCommand("test").setExecutor(this);
 
         System.out.println("L2Dragon has been enabled!");
@@ -87,10 +89,11 @@ public final class Main extends JavaPlugin {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
+        player.sendMessage(ChatColor.RED + "NO.");
         //JerryHandler.spawnJerry(player.getLocation());
 
-        player.getInventory().addItem(shiningEnderPearl);
-        player.getInventory().addItem(SCALE);
+        // player.getInventory().addItem(shiningEnderPearl);
+        // player.getInventory().addItem(SCALE);
 
         return false;
     }
