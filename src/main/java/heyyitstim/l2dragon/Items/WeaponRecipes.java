@@ -31,7 +31,7 @@ public class WeaponRecipes {
                 .addLore("&7&oprovide bonus chance for wither skeleton skulls!")
                 .setCustomModelNumber(1).build();
 
-        ShapedRecipe vorpalSwordRecipe = new ShapedRecipe(vorpalSword);
+        ShapedRecipe vorpalSwordRecipe = new ShapedRecipe(NamespacedKey.minecraft("vorpal_sword"), vorpalSword);
         vorpalSwordRecipe.shape(
                 " X ",
                 " X ",
@@ -51,7 +51,9 @@ public class WeaponRecipes {
                 .addLore("&7&oEven more wither skulls!")
                 .setCustomModelNumber(2).build();
 
-        ShapedRecipe adornedVorpalSwordRecipe = new ShapedRecipe(adornedVorpalSword);
+        Main.nuggetRecipes.add(adornedVorpalSword);
+
+        ShapedRecipe adornedVorpalSwordRecipe = new ShapedRecipe(NamespacedKey.minecraft("adorned_vorpal_sword"), adornedVorpalSword);
         adornedVorpalSwordRecipe.shape(
                 " X ",
                 "XZX",

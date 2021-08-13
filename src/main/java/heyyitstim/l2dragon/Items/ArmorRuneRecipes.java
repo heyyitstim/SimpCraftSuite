@@ -4,6 +4,7 @@ import heyyitstim.l2dragon.Main;
 import heyyitstim.l2dragon.Util.ChatUtil;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.FireworkEffectMeta;
@@ -225,7 +226,7 @@ public class ArmorRuneRecipes {
 
         Main.nuggetRecipes.add(waterRune);
 
-        ShapedRecipe waterRuneRecipe = new ShapedRecipe(waterRune);
+        ShapedRecipe waterRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("water_rune"), waterRune);
         waterRuneRecipe.shape(
                 "YXY",
                 "XZX",

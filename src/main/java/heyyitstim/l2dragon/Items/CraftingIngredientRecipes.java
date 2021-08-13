@@ -4,6 +4,7 @@ import heyyitstim.l2dragon.Main;
 import heyyitstim.l2dragon.Util.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -33,7 +34,7 @@ public class CraftingIngredientRecipes {
                 .addGlow()
                 .setCustomModelNumber(1).build();
 
-        ShapedRecipe compressedRottenFleshRecipe = new ShapedRecipe(compressedRottenFlesh);
+        ShapedRecipe compressedRottenFleshRecipe = new ShapedRecipe(NamespacedKey.minecraft("compressed_flesh"), compressedRottenFlesh);
         compressedRottenFleshRecipe.shape(
                 "XXX",
                 "XXX",
@@ -53,7 +54,7 @@ public class CraftingIngredientRecipes {
                 .addGlow()
                 .setCustomModelNumber(1).build();
 
-        ShapedRecipe shiningEnderPearlRecipe = new ShapedRecipe(shiningEnderPearl);
+        ShapedRecipe shiningEnderPearlRecipe = new ShapedRecipe(NamespacedKey.minecraft("shining_pearl"), shiningEnderPearl);
         shiningEnderPearlRecipe.shape(
                 "XXX",
                 "XXX",

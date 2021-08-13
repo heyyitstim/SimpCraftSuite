@@ -3,6 +3,7 @@ package heyyitstim.l2dragon.Items;
 import heyyitstim.l2dragon.Main;
 import heyyitstim.l2dragon.Util.ItemBuilder;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 
@@ -38,7 +39,7 @@ public class DragonToolRecipes {
 
         Main.nuggetRecipes.add(dragonPickaxe);
 
-        ShapedRecipe dragonPickaxeRecipe = new ShapedRecipe(dragonPickaxe);
+        ShapedRecipe dragonPickaxeRecipe = new ShapedRecipe(NamespacedKey.minecraft("dragon_pickaxe"), dragonPickaxe);
         dragonPickaxeRecipe.shape(
                 " X ",
                 "XZX",
@@ -60,7 +61,7 @@ public class DragonToolRecipes {
 
         Main.nuggetRecipes.add(dragonSword);
 
-        ShapedRecipe dragonSwordRecipe = new ShapedRecipe(dragonSword);
+        ShapedRecipe dragonSwordRecipe = new ShapedRecipe(NamespacedKey.minecraft("dragon_sword"), dragonSword);
         dragonSwordRecipe.shape(
                 " X ",
                 "XZX",
@@ -82,7 +83,7 @@ public class DragonToolRecipes {
 
         Main.nuggetRecipes.add(dragonShovel);
 
-        ShapedRecipe dragonShovelRecipe = new ShapedRecipe(dragonShovel);
+        ShapedRecipe dragonShovelRecipe = new ShapedRecipe(NamespacedKey.minecraft("dragon_shovel"), dragonShovel);
         dragonShovelRecipe.shape(
                 " X ",
                 "XZX",
@@ -104,7 +105,7 @@ public class DragonToolRecipes {
 
         Main.nuggetRecipes.add(dragonAxe);
 
-        ShapedRecipe dragonAxeRecipe = new ShapedRecipe(dragonAxe);
+        ShapedRecipe dragonAxeRecipe = new ShapedRecipe(NamespacedKey.minecraft("dragon_axe"), dragonAxe);
         dragonAxeRecipe.shape(
                 " X ",
                 "XZX",
@@ -126,7 +127,7 @@ public class DragonToolRecipes {
 
         Main.nuggetRecipes.add(dragonBow);
 
-        ShapedRecipe dragonBowRecipe = new ShapedRecipe(dragonBow);
+        ShapedRecipe dragonBowRecipe = new ShapedRecipe(NamespacedKey.minecraft("dragon_bow"), dragonBow);
         dragonBowRecipe.shape(
                 " X ",
                 "XZX",
