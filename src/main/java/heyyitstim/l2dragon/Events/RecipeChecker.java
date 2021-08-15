@@ -73,8 +73,10 @@ public class RecipeChecker implements Listener {
 
     @EventHandler
     public void pickedUp(CraftItemEvent e) {
-        if (e.getRecipe() == null)
+        if (e.getRecipe().getResult() == null) {
+            e.setCancelled(true);
             return;
+        }
 
         if (isItem(e.getRecipe().getResult(), SHININGENDERPEARL)) {
             for (ItemStack item : e.getInventory().getMatrix())
