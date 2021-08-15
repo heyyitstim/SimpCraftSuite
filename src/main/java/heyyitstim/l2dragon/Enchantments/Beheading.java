@@ -1,6 +1,6 @@
 package heyyitstim.l2dragon.Enchantments;
 
-import heyyitstim.l2dragon.Util.ChatUtil;
+import heyyitstim.l2dragon.Util.NBTUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.WitherSkeleton;
@@ -8,33 +8,30 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Beheading implements Listener {
 
-    private final ArrayList<String> STARTER_VORPAL = new ArrayList<>(Arrays.asList("", ChatUtil.color("&7&oThrough unknown methods, this sword seems to"),
-            ChatUtil.color("&7&oprovide bonus chance for wither skeleton skulls!")));
-
-    private final ArrayList<String> ADORNED_VORPAL = new ArrayList<>(Arrays.asList("", ChatUtil.color("&7&oAn upgraded version of the vorpal sword."),
-            ChatUtil.color("&7&oEven more wither skulls!")));
-
     private int getChance(ItemStack item) {
         if (!item.hasItemMeta() || !item.getItemMeta().hasLore())
             return 0;
 
-        if (item.getItemMeta().getLore().equals(STARTER_VORPAL)) {
+        ItemMeta meta = item.getItemMeta();
+        String tag = NBTUtil.getStringTag(meta, "scname");
+
+        if (tag == null)
+            return 0;
+
+        if (tag.equalsIgnoreCase("vorpal_sword")) {
             return 5;
         }
 
-        if (item.getItemMeta().getLore().equals(ADORNED_VORPAL)) {
+        if (tag.equalsIgnoreCase("adorned_vorpal")) {
             return 10;
         }
-
-        System.out.println(STARTER_VORPAL + " " + item.getItemMeta().getLore());
 
         return 0;
     }

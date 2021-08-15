@@ -46,6 +46,12 @@ public class ItemBuilder {
         return this;
     }
 
+    public ItemBuilder addStringNBT(String name, String value) {
+        meta = NBTUtil.addTag(meta, name, value);
+        item.setItemMeta(meta);
+        return this;
+    }
+
     public ItemBuilder addEnchant(Enchantment enchantment, int level) {
         meta.addEnchant(enchantment, level, true);
         return this;

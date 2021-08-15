@@ -25,6 +25,7 @@ public class ToolRuneRecipes {
         ShapedRecipe hammerRuneRecipe = createHammerRune();
 
         Main.instance.getServer().addRecipe(smeltRuneRecipe);
+        Main.instance.getServer().addRecipe(hammerRuneRecipe);
     }
 
     private ShapedRecipe createSmeltRune() {

@@ -29,6 +29,7 @@ public class WeaponRecipes {
                 .addLore("")
                 .addLore("&7&oThrough unknown methods, this sword seems to")
                 .addLore("&7&oprovide bonus chance for wither skeleton skulls!")
+                .addStringNBT("scname", "vorpal_sword")
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe vorpalSwordRecipe = new ShapedRecipe(NamespacedKey.minecraft("vorpal_sword"), vorpalSword);
@@ -49,6 +50,7 @@ public class WeaponRecipes {
                 .addLore("")
                 .addLore("&7&oAn upgraded version of the vorpal sword.")
                 .addLore("&7&oEven more wither skulls!")
+                .addStringNBT("scname", "adorned_vorpal")
                 .setCustomModelNumber(2).build();
 
         Main.nuggetRecipes.add(adornedVorpalSword);
@@ -71,6 +73,7 @@ public class WeaponRecipes {
                 .addLore("")
                 .addLore("&7&oMade of zombie flesh. Gross!")
                 .addLore("&7&oSeems like it might do extra damage to undead...")
+                .addStringNBT("scname", "undead_sword")
                 .setCustomModelNumber(1).build();
 
         Main.rottenFleshRecipes.add(undeadSword);

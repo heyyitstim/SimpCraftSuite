@@ -1,19 +1,14 @@
 package heyyitstim.l2dragon.Enchantments;
 
-import heyyitstim.l2dragon.Util.ChatUtil;
+import heyyitstim.l2dragon.Util.NBTUtil;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class Undead implements Listener {
-
-    private final ArrayList<String> UNDEAD_LORE = new ArrayList<>(Arrays.asList("", ChatUtil.color("&7&oMade of zombie flesh. Gross!"),
-            ChatUtil.color("&7&oSeems like it might do extra damage to undead...")));
 
     private boolean isUndead(Entity entity) {
         return  entity instanceof Zombie ||
@@ -28,10 +23,16 @@ public class Undead implements Listener {
     }
 
     private boolean isUndeadSword(ItemStack item) {
-        if (!item.hasItemMeta() || !item.getItemMeta().hasLore())
+        if (!item.hasItemMeta())
             return false;
 
-        return item.getItemMeta().getLore().equals(UNDEAD_LORE);
+        ItemMeta meta = item.getItemMeta();
+        String tag = NBTUtil.getStringTag(meta, "scname");
+
+        if (tag == null)
+            return false;
+
+        return tag.equalsIgnoreCase("undead_sword");
     }
 
     @EventHandler

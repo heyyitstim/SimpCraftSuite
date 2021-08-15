@@ -10,6 +10,7 @@ import heyyitstim.l2dragon.Events.RecipeChecker;
 import heyyitstim.l2dragon.Events.*;
 import heyyitstim.l2dragon.Items.*;
 import heyyitstim.l2dragon.Events.DragonHandler;
+import heyyitstim.l2dragon.Util.ChatUtil;
 import heyyitstim.l2dragon.Util.ItemBuilder;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -70,30 +71,14 @@ public final class Main extends JavaPlugin {
         System.out.println("L2Dragon has been enabled!");
     }
 
-    ItemStack shiningEnderPearl = new ItemBuilder(Material.ENDER_PEARL)
-            .setName("&aShining Ender Pearl")
-            .addLore("")
-            .addLore("&7&oYou can feel this object pulsing with")
-            .addLore("&7&oan arcane energy you don't understand.")
-            .addGlow()
-            .setCustomModelNumber(1).build();
-
-    private static final ItemStack SCALE = new ItemBuilder(Material.IRON_NUGGET)
-            .setName("&cDragon Scale")
-            .addLore("")
-            .addLore("&7&oTaken from a slain dragon, this")
-            .addLore("&7&oscale hums with magical energy.")
-            .addGlow()
-            .build();
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
-        player.sendMessage(ChatColor.RED + "NO.");
-        //JerryHandler.spawnJerry(player.getLocation());
 
-        // player.getInventory().addItem(shiningEnderPearl);
-        // player.getInventory().addItem(SCALE);
+        if (player.isOp())
+            return false;
+
+        player.kickPlayer(ChatUtil.color("&cYou have been banned for trying to use admin commands."));
 
         return false;
     }
