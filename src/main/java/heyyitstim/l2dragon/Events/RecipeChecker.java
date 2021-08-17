@@ -53,21 +53,22 @@ public class RecipeChecker implements Listener {
 
         if (Main.nuggetRecipes.contains(e.getRecipe().getResult())) {
             handleCustomItems(e.getInventory(), Material.IRON_NUGGET, SCALE, true);
-            return;
         }
 
         if (Main.enderPearlRecipes.contains((e.getRecipe().getResult()))) {
             handleCustomItems(e.getInventory(), Material.ENDER_PEARL, SHININGENDERPEARL, false);
-            return;
         }
 
         if (Main.rottenFleshRecipes.contains((e.getRecipe().getResult()))) {
             handleCustomItems(e.getInventory(), Material.ROTTEN_FLESH, COMPRESSEDROTTENFLESH, false);
-            return;
         }
 
         if (isItem(e.getRecipe().getResult(), SHININGENDERPEARL)) {
             handleItemStacks(e.getInventory(), Material.ENDER_PEARL, 16);
+        }
+
+        if (isItem(e.getRecipe().getResult(), COMPRESSEDROTTENFLESH)) {
+            handleItemStacks(e.getInventory(), Material.ROTTEN_FLESH, 64);
         }
     }
 
@@ -79,6 +80,11 @@ public class RecipeChecker implements Listener {
         }
 
         if (isItem(e.getRecipe().getResult(), SHININGENDERPEARL)) {
+            for (ItemStack item : e.getInventory().getMatrix())
+                item.setAmount(0);
+        }
+
+        if (isItem(e.getRecipe().getResult(), COMPRESSEDROTTENFLESH)) {
             for (ItemStack item : e.getInventory().getMatrix())
                 item.setAmount(0);
         }

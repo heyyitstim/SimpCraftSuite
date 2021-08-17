@@ -32,6 +32,7 @@ public class CraftingIngredientRecipes {
                 .addLore("")
                 .addLore("&7&oVery tightly packed meat.")
                 .addGlow()
+                .addStringNBT("scname", "compressed_rotten_flesh")
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe compressedRottenFleshRecipe = new ShapedRecipe(NamespacedKey.minecraft("compressed_flesh"), compressedRottenFlesh);
@@ -52,6 +53,7 @@ public class CraftingIngredientRecipes {
                 .addLore("&7&oYou can feel this object pulsing with")
                 .addLore("&7&oan arcane energy you don't understand.")
                 .addGlow()
+                .addStringNBT("scname", "shining_ender_pearl")
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe shiningEnderPearlRecipe = new ShapedRecipe(NamespacedKey.minecraft("shining_pearl"), shiningEnderPearl);

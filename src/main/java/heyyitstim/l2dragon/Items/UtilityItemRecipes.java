@@ -28,6 +28,7 @@ public class UtilityItemRecipes {
                 .addLore("&7&oInstantly teleports the user to their spawn.")
                 .addLore("&7&oBreaks after one use.")
                 .addGlow()
+                .addStringNBT("scname", "ender_bed")
                 .setCustomModelNumber(1).build();
 
         Main.enderPearlRecipes.add(enderBed);
@@ -51,6 +52,7 @@ public class UtilityItemRecipes {
                 .addLore("&7&oA sentient object that will sacrifice itself to")
                 .addLore("&7&oprotect you from the ever-hungry void!")
                 .addLore("&7&oShatters after one use.")
+                .addStringNBT("scname", "void_crystal")
                 .setCustomModelNumber(1).build();
 
         Main.enderPearlRecipes.add(voidCrystal);
