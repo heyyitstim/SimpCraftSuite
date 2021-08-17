@@ -16,20 +16,11 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Beheading implements Listener {
 
     private int getChance(ItemStack item) {
-        if (!item.hasItemMeta() || !item.getItemMeta().hasLore())
-            return 0;
-
-        ItemMeta meta = item.getItemMeta();
-        String tag = NBTUtil.getStringTag(meta, "scname");
-
-        if (tag == null)
-            return 0;
-
-        if (tag.equalsIgnoreCase("vorpal_sword")) {
+        if (NBTUtil.isItem("scname", "vorpal_sword", item)) {
             return 5;
         }
 
-        if (tag.equalsIgnoreCase("adorned_vorpal")) {
+        if (NBTUtil.isItem("scname", "adorned_vorpal", item)) {
             return 10;
         }
 
