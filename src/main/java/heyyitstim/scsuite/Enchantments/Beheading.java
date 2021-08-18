@@ -19,7 +19,7 @@ public class Beheading implements Listener {
             return 5;
         }
 
-        if (NBTUtil.isItem("scname", "adorned_vorpal", item)) {
+        if (NBTUtil.isItem("scname", "adorned_vorpal_sword", item)) {
             return 10;
         }
 
