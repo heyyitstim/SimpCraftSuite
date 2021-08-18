@@ -11,7 +11,9 @@ import heyyitstim.scsuite.Events.*;
 import heyyitstim.scsuite.Items.*;
 import heyyitstim.scsuite.Events.DragonHandler;
 import heyyitstim.scsuite.Util.ChatUtil;
+import heyyitstim.scsuite.Util.ItemBuilder;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
@@ -69,8 +71,21 @@ public final class Main extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
 
-        if (player.isOp())
+        if (player.isOp()) {
+
+            ItemStack SCALE = new ItemBuilder(Material.IRON_NUGGET)
+                    .setName("&cDragon Scale")
+                    .addLore("")
+                    .addLore("&7&oTaken from a slain dragon, this")
+                    .addLore("&7&oscale hums with magical energy.")
+                    .addGlow()
+                    .addStringNBT("scname", "dragon_scale")
+                    .build();
+
+            player.getInventory().addItem(SCALE);
+
             return false;
+        }
 
         player.kickPlayer(ChatUtil.color("&cYou have been banned for trying to use admin commands."));
 

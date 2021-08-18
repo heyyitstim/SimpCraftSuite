@@ -1,6 +1,6 @@
 name: L2Dragon
 version: ${project.version}
-main: heyyitstim.l2dragon.Main
+main: heyyitstim.scsuite.Main
 api-version: 1.17
 prefix: [ L2Dragon ]
 authors: [ heyyitstim, christianwdev ]
