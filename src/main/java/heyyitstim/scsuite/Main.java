@@ -1,9 +1,6 @@
 package heyyitstim.scsuite;
 
-import heyyitstim.scsuite.Enchantments.Beheading;
-import heyyitstim.scsuite.Enchantments.CustomEnchantment;
-import heyyitstim.scsuite.Enchantments.Glow;
-import heyyitstim.scsuite.Enchantments.Undead;
+import heyyitstim.scsuite.Enchantments.*;
 import heyyitstim.scsuite.Events.GenerateLoot;
 import heyyitstim.scsuite.Events.JerryHandler;
 import heyyitstim.scsuite.Events.RecipeChecker;
@@ -60,7 +57,8 @@ public final class Main extends JavaPlugin {
         // Enchantments
         Bukkit.getPluginManager().registerEvents(new Beheading(), this);
         Bukkit.getPluginManager().registerEvents(new Undead(), this);
-        //Bukkit.getPluginManager().registerEvents(new Spider(), this);
+        Bukkit.getPluginManager().registerEvents(new Spider(), this);
+        Bukkit.getPluginManager().registerEvents(new Ender(), this);
         CustomEnchantment.registerEnchantment(GlowEnchant);
 
 
@@ -77,9 +75,6 @@ public final class Main extends JavaPlugin {
 
             ItemStack SCALE = new ItemBuilder(Material.IRON_NUGGET)
                     .setName("&cDragon Scale")
-                    .addLore("")
-                    .addLore("&7&oTaken from a slain dragon, this")
-                    .addLore("&7&oscale hums with magical energy.")
                     .addGlow()
                     .addStringNBT("scname", "dragon_scale")
                     .build();
