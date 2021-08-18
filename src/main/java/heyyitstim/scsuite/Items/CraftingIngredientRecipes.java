@@ -25,8 +25,6 @@ public class CraftingIngredientRecipes {
     private ShapedRecipe createCompressedRottenFlesh() {
         ItemStack compressedRottenFlesh = new ItemBuilder(Material.ROTTEN_FLESH)
                 .setName("&aCompressed Rotten Flesh")
-                .addLore("")
-                .addLore("&7&oVery tightly packed meat.")
                 .addGlow()
                 .addStringNBT("scname", "compressed_rotten_flesh")
                 .setCustomModelNumber(1).build();
@@ -45,9 +43,6 @@ public class CraftingIngredientRecipes {
     private ShapedRecipe createShiningEnderPearl() {
         ItemStack shiningEnderPearl = new ItemBuilder(Material.ENDER_PEARL)
                 .setName("&aShining Ender Pearl")
-                .addLore("")
-                .addLore("&7&oYou can feel this object pulsing with")
-                .addLore("&7&oan arcane energy you don't understand.")
                 .addGlow()
                 .addStringNBT("scname", "shining_ender_pearl")
                 .setCustomModelNumber(1).build();
@@ -66,10 +61,8 @@ public class CraftingIngredientRecipes {
     /* private ShapedRecipe createCompactedShiningEnderPearl() {
         ItemStack compactedShiningEnderPearl = new ItemBuilder(Material.PLAYER_HEAD)
                 .setName("&aCompacted Shining Ender Pearl")
-                .addLore("")
-                .addLore("&7&oYou can feel this object pulsing with")
-                .addLore("&7&oan arcane energy you don't understand.")
                 .addGlow()
+                .addStringNBT("scname", "compacted_shining_ender_pearl")
                 .setCustomModelNumber(1).build();
 
         SkullMeta meta = (SkullMeta)compactedShiningEnderPearl.getItemMeta();

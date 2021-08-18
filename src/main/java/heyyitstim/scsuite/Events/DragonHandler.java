@@ -2,6 +2,7 @@ package heyyitstim.scsuite.Events;
 
 import heyyitstim.scsuite.Items.DragonDrops;
 import heyyitstim.scsuite.Util.ChatUtil;
+import heyyitstim.scsuite.Util.NBTUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.EnderDragon;
 import org.bukkit.entity.Player;
@@ -13,6 +14,7 @@ import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.entity.Arrow;
 import heyyitstim.scsuite.Util.ScoreboardHandler;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.*;
 
@@ -30,13 +32,24 @@ public class DragonHandler implements Listener {
             Player damager = e.getDamager() instanceof Player ? (Player) e.getDamager() : null;
 
             if (e.getDamager() instanceof Arrow) { // Checks if it's an arrow
-                Arrow arrow = (Arrow) e.getDamager(); // Casts it to an arrow
-                arrow.setDamage(e.getDamage() * 0.75); // Nerfs dragon arrow damage.
+                ItemStack item = damager.getInventory().getItemInMainHand();
+                if (!NBTUtil.isItem("scname", "dragon_bow", item)) {
+                    Arrow arrow = (Arrow) e.getDamager(); // Casts it to an arrow
+                    arrow.setDamage(e.getDamage() * 0.75); // Nerfs dragon arrow damage.
 
-                if (arrow.getShooter() instanceof Player) // Checks if it was from a player
-                    damager = (Player) arrow.getShooter(); // Sets the damager to a player
-                else
-                    return; // If it wasn't a player that shot it then we return and dont do anything.
+                    if (arrow.getShooter() instanceof Player) // Checks if it was from a player
+                        damager = (Player) arrow.getShooter(); // Sets the damager to a player
+                    else
+                        return; // If it wasn't a player that shot it then we return and dont do anything.
+                }
+                else {
+                    Arrow arrow = (Arrow) e.getDamager(); // Casts it to an arrow
+
+                    if (arrow.getShooter() instanceof Player) // Checks if it was from a player
+                        damager = (Player) arrow.getShooter(); // Sets the damager to a player
+                    else
+                        return; // If it wasn't a player that shot it then we return and dont do anything.
+                }
             }
 
             Double currentDamage = damagers.get(damager.getUniqueId()); // Grabs how much damage the player has done already.

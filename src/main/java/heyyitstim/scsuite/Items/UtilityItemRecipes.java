@@ -25,8 +25,9 @@ public class UtilityItemRecipes {
         ItemStack enderBed = new ItemBuilder(Material.PURPLE_BED)
                 .setName("&5Ender Bed")
                 .addLore("")
-                .addLore("&7&oInstantly teleports the user to their spawn.")
-                .addLore("&7&oBreaks after one use.")
+                .addLore("&bAbility: Saving Grace")
+                .addLore("&7&oInstantly teleports you to your spawn point.")
+                .addLore("&c&oShatters after one use.")
                 .addGlow()
                 .addStringNBT("scname", "ender_bed")
                 .setCustomModelNumber(1).build();
@@ -49,9 +50,10 @@ public class UtilityItemRecipes {
         ItemStack voidCrystal = new ItemBuilder(Material.NETHER_STAR)
                 .setName("&6Void Crystal")
                 .addLore("")
-                .addLore("&7&oA sentient object that will sacrifice itself to")
-                .addLore("&7&oprotect you from the ever-hungry void!")
-                .addLore("&7&oShatters after one use.")
+                .addLore("&bAbility: Saving Grace")
+                .addLore("&7On death, this item will sacrifice itself")
+                .addLore("&7to save you from death by void.")
+                .addLore("&c&oShatters after one use.")
                 .addStringNBT("scname", "void_crystal")
                 .setCustomModelNumber(1).build();
 

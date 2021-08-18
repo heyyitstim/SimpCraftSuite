@@ -28,6 +28,7 @@ public final class Main extends JavaPlugin {
     public static ArrayList<ItemStack> nuggetRecipes = new ArrayList<>();
     public static ArrayList<ItemStack> rottenFleshRecipes = new ArrayList<>();
     public static ArrayList<ItemStack> enderPearlRecipes = new ArrayList<>();
+    public static ArrayList<ItemStack> stringRecipes = new ArrayList<>();
     public static ArrayList<ShapedRecipe> potionRecipes = new ArrayList<>();
 
     public static Enchantment GlowEnchant = new Glow();
@@ -57,12 +58,13 @@ public final class Main extends JavaPlugin {
         // Enchantments
         Bukkit.getPluginManager().registerEvents(new Beheading(), this);
         Bukkit.getPluginManager().registerEvents(new Undead(), this);
+        //Bukkit.getPluginManager().registerEvents(new Spider(), this);
         CustomEnchantment.registerEnchantment(GlowEnchant);
 
 
         getCommand("test").setExecutor(this);
 
-        System.out.println("L2Dragon has been enabled!");
+        System.out.println("SCSuite has been enabled!");
     }
 
     @Override
@@ -79,6 +81,6 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        System.out.println("L2Dragon has been disabled!");
+        System.out.println("SCSuite has been disabled!");
     }
 }

@@ -11,9 +11,6 @@ public class DragonDrops {
 
     private static final ItemStack SCALE = new ItemBuilder(Material.IRON_NUGGET)
             .setName("&cDragon Scale")
-            .addLore("")
-            .addLore("&7&oTaken from a slain dragon, this")
-            .addLore("&7&oscale hums with magical energy.")
             .addGlow()
             .addStringNBT("scname", "dragon_scale")
             .build();

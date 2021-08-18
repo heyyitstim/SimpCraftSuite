@@ -17,18 +17,20 @@ public class WeaponRecipes {
         ShapedRecipe vorpalSword = createVorpalSword();
         ShapedRecipe adornedVorpalSword = createAdornedVorpalSword();
         ShapedRecipe undeadSword = createUndeadSword();
+        ShapedRecipe spiderSword = createSpiderSword();
+        ShapedRecipe enderSword = createEnderSword();
 
         Main.instance.getServer().addRecipe(vorpalSword);
         Main.instance.getServer().addRecipe(adornedVorpalSword);
         Main.instance.getServer().addRecipe(undeadSword);
+        Main.instance.getServer().addRecipe(spiderSword);
+        Main.instance.getServer().addRecipe(enderSword);
     }
 
     private ShapedRecipe createVorpalSword() {
         ItemStack vorpalSword = new ItemBuilder(Material.NETHERITE_SWORD)
                 .setName("&eVorpal Sword")
-                .addLore("")
-                .addLore("&7&oThrough unknown methods, this sword seems to")
-                .addLore("&7&oprovide bonus chance for wither skeleton skulls!")
+                .addLore("&7+5% Wither Skull Chance")
                 .addStringNBT("scname", "vorpal_sword")
                 .setCustomModelNumber(1).build();
 
@@ -47,9 +49,7 @@ public class WeaponRecipes {
     private ShapedRecipe createAdornedVorpalSword() {
         ItemStack adornedVorpalSword = new ItemBuilder(Material.NETHERITE_SWORD)
                 .setName("&9Adorned Vorpal Sword")
-                .addLore("")
-                .addLore("&7&oAn upgraded version of the vorpal sword.")
-                .addLore("&7&oEven more wither skulls!")
+                .addLore("&7+10% Wither Skull Chance")
                 .addStringNBT("scname", "adorned_vorpal_sword")
                 .setCustomModelNumber(2).build();
 
@@ -70,9 +70,7 @@ public class WeaponRecipes {
     private ShapedRecipe createUndeadSword() {
         ItemStack undeadSword = new ItemBuilder(Material.IRON_SWORD)
                 .setName("&eUndead Sword")
-                .addLore("")
-                .addLore("&7&oMade of zombie flesh. Gross!")
-                .addLore("&7&oSeems like it might do extra damage to undead...")
+                .addLore("&7+50% Damage to Undead")
                 .addStringNBT("scname", "undead_sword")
                 .setCustomModelNumber(1).build();
 
@@ -88,5 +86,47 @@ public class WeaponRecipes {
         undeadSwordRecipe.setIngredient('Z', Material.IRON_SWORD); // vorpal sword
 
         return undeadSwordRecipe;
+    }
+
+    private ShapedRecipe createSpiderSword() {
+        ItemStack spiderSword = new ItemBuilder(Material.IRON_SWORD)
+                .setName("&eSpider Sword")
+                .addLore("&7+50% Damage to Spiders")
+                .addStringNBT("scname", "spider_sword")
+                .setCustomModelNumber(1).build();
+
+        Main.stringRecipes.add(spiderSword);
+
+        ShapedRecipe spiderSwordRecipe = new ShapedRecipe(new NamespacedKey(Main.instance, "spider_sword"), spiderSword);
+        spiderSwordRecipe.shape(
+                " X ",
+                " X ",
+                " Z ");
+
+        spiderSwordRecipe.setIngredient('X', Material.STRING); // woven string
+        spiderSwordRecipe.setIngredient('Z', Material.IRON_SWORD); // iron sword
+
+        return spiderSwordRecipe;
+    }
+
+    private ShapedRecipe createEnderSword() {
+        ItemStack enderSword = new ItemBuilder(Material.IRON_SWORD)
+                .setName("&eEnder Sword")
+                .addLore("&7+50% Damage to End Creatures")
+                .addStringNBT("scname", "ender_sword")
+                .setCustomModelNumber(1).build();
+
+        Main.enderPearlRecipes.add(enderSword);
+
+        ShapedRecipe enderSwordRecipe = new ShapedRecipe(new NamespacedKey(Main.instance, "ender_sword"), enderSword);
+        enderSwordRecipe.shape(
+                " X ",
+                " X ",
+                " Z ");
+
+        enderSwordRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted ender pearl
+        enderSwordRecipe.setIngredient('Z', Material.IRON_SWORD); // iron sword
+
+        return enderSwordRecipe;
     }
 }

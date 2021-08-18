@@ -33,8 +33,7 @@ public class DragonToolRecipes {
         ItemStack dragonPickaxe = new ItemBuilder(Material.NETHERITE_PICKAXE)
                 .setName("&cDragon Scale Pickaxe")
                 .addLore("")
-                .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("&7&oyou can now apply runes to this pickaxe!")
+                .addLore("&8This item can hold runes!")
                 .addStringNBT("scname", "dragon_pickaxe")
                 .setCustomModelNumber(1).build();
 
@@ -56,8 +55,7 @@ public class DragonToolRecipes {
         ItemStack dragonSword = new ItemBuilder(Material.NETHERITE_SWORD)
                 .setName("&cDragon Scale Sword")
                 .addLore("")
-                .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("&7&oyou can now apply runes to this sword!")
+                .addLore("&8This item can hold runes!")
                 .addStringNBT("scname", "dragon_sword")
                 .setCustomModelNumber(1).build();
 
@@ -79,8 +77,7 @@ public class DragonToolRecipes {
         ItemStack dragonShovel = new ItemBuilder(Material.NETHERITE_SHOVEL)
                 .setName("&cDragon Scale Shovel")
                 .addLore("")
-                .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("&7&oyou can now apply runes to this shovel!")
+                .addLore("&8This item can hold runes!")
                 .addStringNBT("scname", "dragon_shovel")
                 .setCustomModelNumber(1).build();
 
@@ -102,8 +99,7 @@ public class DragonToolRecipes {
         ItemStack dragonAxe = new ItemBuilder(Material.NETHERITE_AXE)
                 .setName("&cDragon Scale Axe")
                 .addLore("")
-                .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("&7&oyou can now apply runes to this axe!")
+                .addLore("&8This item can hold runes!")
                 .addStringNBT("scname", "dragon_axe")
                 .setCustomModelNumber(1).build();
 
@@ -125,8 +121,7 @@ public class DragonToolRecipes {
         ItemStack dragonBow = new ItemBuilder(Material.BOW)
                 .setName("&cDragon Scale Axe")
                 .addLore("")
-                .addLore("&7&oImbued with the power of the Ender Dragon,")
-                .addLore("&7&oyou can now apply runes to this axe!")
+                .addLore("&8This item can hold runes!")
                 .addStringNBT("scname", "dragon_bow")
                 .setCustomModelNumber(1).build();
 
