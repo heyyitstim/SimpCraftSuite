@@ -27,7 +27,7 @@ public class NBTUtil {
     }
 
     public static boolean isItem(String name, String equal, ItemStack item) {
-        if (!item.hasItemMeta() || !item.getItemMeta().hasLore())
+        if (!item.hasItemMeta())
             return false;
 
         ItemMeta meta = item.getItemMeta();
