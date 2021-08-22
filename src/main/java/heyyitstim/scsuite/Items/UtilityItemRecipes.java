@@ -25,7 +25,7 @@ public class UtilityItemRecipes {
         ItemStack enderBed = new ItemBuilder(Material.PURPLE_BED)
                 .setName("&5Ender Bed")
                 .addLore("")
-                .addLore("&bAbility: Saving Grace")
+                .addLore("&bAbility: Instant Transmission")
                 .addLore("&7&oInstantly teleports you to your spawn point.")
                 .addLore("&c&oShatters after one use.")
                 .addGlow()

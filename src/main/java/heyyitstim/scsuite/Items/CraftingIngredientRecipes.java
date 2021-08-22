@@ -2,10 +2,12 @@ package heyyitstim.scsuite.Items;
 
 import heyyitstim.scsuite.Main;
 import heyyitstim.scsuite.Util.ItemBuilder;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.meta.SkullMeta;
 
 public class CraftingIngredientRecipes {
 
@@ -16,10 +18,11 @@ public class CraftingIngredientRecipes {
     private void registerRecipes() {
         ShapedRecipe compressedRottenFlesh = createCompressedRottenFlesh();
         ShapedRecipe shiningEnderPearl = createShiningEnderPearl();
-        // ShapedRecipe compactedShiningEnderPearl = createCompactedShiningEnderPearl();
+        ShapedRecipe compactedShiningEnderPearl = createCompactedShiningEnderPearl();
 
         Main.instance.getServer().addRecipe(compressedRottenFlesh);
         Main.instance.getServer().addRecipe(shiningEnderPearl);
+        Main.instance.getServer().addRecipe(compactedShiningEnderPearl);
     }
 
     private ShapedRecipe createCompressedRottenFlesh() {
@@ -58,7 +61,7 @@ public class CraftingIngredientRecipes {
         return shiningEnderPearlRecipe;
     }
 
-    /* private ShapedRecipe createCompactedShiningEnderPearl() {
+    private ShapedRecipe createCompactedShiningEnderPearl() {
         ItemStack compactedShiningEnderPearl = new ItemBuilder(Material.PLAYER_HEAD)
                 .setName("&aCompacted Shining Ender Pearl")
                 .addGlow()
@@ -78,5 +81,5 @@ public class CraftingIngredientRecipes {
         compactedShiningEnderPearlRecipe.setIngredient('X', Material.ENDER_PEARL);
 
         return compactedShiningEnderPearlRecipe;
-    } */
+    }
 }
