@@ -12,7 +12,6 @@ public class Ender implements Listener {
 
     private boolean isEnder(Entity entity) {
         return  entity instanceof Enderman ||
-                entity instanceof EnderDragon ||
                 entity instanceof Endermite ||
                 entity instanceof Shulker;
     }
