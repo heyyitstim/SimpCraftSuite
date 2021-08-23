@@ -33,9 +33,9 @@ public class ScoreboardHandler {
     // Updates the players stats
     private void updateBoard() {
         lines.get(4).update(" ");
-        lines.get(3).update("  &cDragon Health » &f" + DragonHandler.DragonHealth + " &c♥");
+        lines.get(3).update("  &f&lDragon Health » &c" + DragonHandler.DragonHealth + " &c♥");
         lines.get(2).update("  ");
-        lines.get(1).update("  &eYour Damage » &f" + DragonHandler.damagers.get(player.getUniqueId()) + " &c♥");
+        lines.get(1).update("  &f&lYour Damage » &c" + DragonHandler.damagers.get(player.getUniqueId()) + " &c♥");
         lines.get(0).update("   ");
     }
 

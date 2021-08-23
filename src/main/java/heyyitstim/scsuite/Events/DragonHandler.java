@@ -87,25 +87,28 @@ public class DragonHandler implements Listener {
         if (e.getEntity() instanceof EnderDragon) {
             List<Map.Entry<UUID, Double>> topDamagers = getTop3Damagers();
 
+            ChatUtil.broadcast("&e&m-----------------------------------------------------");
             ChatUtil.broadcast("&5The Ender Dragon has been slain!");
 
             if (topDamagers.size() >= 1) {
                 Player player = Bukkit.getPlayer(topDamagers.get(0).getKey());
-                ChatUtil.broadcastToWorld("&d 1st » " + player.getDisplayName() + " " + topDamagers.get(0).getValue(), e.getEntity().getWorld());
+                ChatUtil.broadcastToWorld("&d 1st » &f" + player.getDisplayName() + " " + topDamagers.get(0).getValue(), e.getEntity().getWorld());
                 DragonDrops.rewardPlayer(player, 1);
             }
 
             if (topDamagers.size() >= 2) {
                 Player player = Bukkit.getPlayer(topDamagers.get(1).getKey());
-                ChatUtil.broadcastToWorld("&d 2nd » " + player.getDisplayName() + " " + topDamagers.get(1).getValue(), e.getEntity().getWorld());
+                ChatUtil.broadcastToWorld("&d 2nd » &f" + player.getDisplayName() + " " + topDamagers.get(1).getValue(), e.getEntity().getWorld());
                 DragonDrops.rewardPlayer(player, 0.75);
             }
 
             if (topDamagers.size() >= 3) {
                 Player player = Bukkit.getPlayer(topDamagers.get(2).getKey());
-                ChatUtil.broadcastToWorld("&d 3rd » " + player.getDisplayName() + " " + topDamagers.get(2).getValue(), e.getEntity().getWorld());
+                ChatUtil.broadcastToWorld("&d 3rd » &f" + player.getDisplayName() + " " + topDamagers.get(2).getValue(), e.getEntity().getWorld());
                 DragonDrops.rewardPlayer(player, 0.5);
             }
+
+            ChatUtil.broadcast("&e&m-----------------------------------------------------");
 
             damagers.clear(); // Resets the damages done by players until the next fight. We don't clear it until after we get the top damagers.
             removeAllBoards();
