@@ -1,6 +1,7 @@
 package heyyitstim.scsuite.Events;
 
 import heyyitstim.scsuite.Util.ItemBuilder;
+import heyyitstim.scsuite.Util.NBTUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -14,18 +15,8 @@ import org.bukkit.util.Vector;
 
 public class EnderBedHandler implements Listener {
 
-    private final ItemStack enderBed = new ItemBuilder(Material.PURPLE_BED)
-            .setName("&5Ender Bed")
-            .addLore("")
-            .addLore("&7&oInstantly teleports the user to their spawn.")
-            .addLore("&7&oBreaks after one use.")
-            .setCustomModelNumber(1).build();
-
     private boolean isBed(ItemStack item) {
-        if (item == null || !item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName())
-            return false;
-
-        return item.getItemMeta().getDisplayName().equals(enderBed.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(enderBed.getItemMeta().getLore());
+        return NBTUtil.isItem("sc_name", "ender_bed", item);
     }
 
     private Location whereToTeleport(Player player) {
