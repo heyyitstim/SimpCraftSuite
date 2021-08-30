@@ -51,6 +51,14 @@ public class RecipeChecker implements Listener {
         if (isItem(e.getRecipe().getResult(), "compressed_rotten_flesh")) {
             handleItemStacks(e.getInventory(), Material.ROTTEN_FLESH, 64);
         }
+
+        if (isItem(e.getRecipe().getResult(), "compressed_string")) {
+            handleItemStacks(e.getInventory(), Material.STRING, 64);
+        }
+
+        if (isItem(e.getRecipe().getResult(), "compressed_rotten_flesh")) {
+            handleItemStacks(e.getInventory(), Material.ROTTEN_FLESH, 64);
+        }
     }
 
     @EventHandler
@@ -71,6 +79,11 @@ public class RecipeChecker implements Listener {
         }
 
         if (isItem(e.getRecipe().getResult(), "compressed_rotten_flesh")) {
+            for (ItemStack item : e.getInventory().getMatrix())
+                item.setAmount(0);
+        }
+
+        if (isItem(e.getRecipe().getResult(), "compressed_string")) {
             for (ItemStack item : e.getInventory().getMatrix())
                 item.setAmount(0);
         }

@@ -19,10 +19,12 @@ public class CraftingIngredientRecipes {
         ShapedRecipe compressedRottenFlesh = createCompressedRottenFlesh();
         ShapedRecipe shiningEnderPearl = createShiningEnderPearl();
         ShapedRecipe compactedShiningEnderPearl = createCompactedShiningEnderPearl();
+        ShapedRecipe compressedString = createCompressedString();
 
         Main.instance.getServer().addRecipe(compressedRottenFlesh);
         Main.instance.getServer().addRecipe(shiningEnderPearl);
         Main.instance.getServer().addRecipe(compactedShiningEnderPearl);
+        Main.instance.getServer().addRecipe(compressedString);
     }
 
     private ShapedRecipe createCompressedRottenFlesh() {
@@ -81,5 +83,24 @@ public class CraftingIngredientRecipes {
         compactedShiningEnderPearlRecipe.setIngredient('X', Material.ENDER_PEARL);
 
         return compactedShiningEnderPearlRecipe;
+    }
+
+    private ShapedRecipe createCompressedString() {
+        ItemStack compressedString = new ItemBuilder(Material.WHITE_WOOL)
+                .setName("&aCompressed String")
+                .addGlow()
+                .addStringNBT("scname", "compressed_string")
+                .setCustomModelNumber(1).build();
+
+
+        ShapedRecipe compressedStringRecipe = new ShapedRecipe(compressedString);
+        compressedStringRecipe.shape(
+                "XXX",
+                "XXX",
+                "XXX");
+
+        compressedStringRecipe.setIngredient('X', Material.STRING);
+
+        return compressedStringRecipe;
     }
 }

@@ -4,6 +4,8 @@ import heyyitstim.scsuite.Main;
 import heyyitstim.scsuite.Util.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 
@@ -18,13 +20,13 @@ public class WeaponRecipes {
         ShapedRecipe adornedVorpalSword = createAdornedVorpalSword();
         ShapedRecipe undeadSword = createUndeadSword();
         ShapedRecipe spiderSword = createSpiderSword();
-        ShapedRecipe enderSword = createEnderSword();
+        ShapedRecipe enderSpoon = createEnderSpoon();
 
         Main.instance.getServer().addRecipe(vorpalSword);
         Main.instance.getServer().addRecipe(adornedVorpalSword);
         Main.instance.getServer().addRecipe(undeadSword);
         Main.instance.getServer().addRecipe(spiderSword);
-        Main.instance.getServer().addRecipe(enderSword);
+        Main.instance.getServer().addRecipe(enderSpoon);
     }
 
     private ShapedRecipe createVorpalSword() {
@@ -93,7 +95,7 @@ public class WeaponRecipes {
                 .setName("&eSpider Sword")
                 .addLore("&7+50% Damage to Spiders")
                 .addStringNBT("scname", "spider_sword")
-                .setCustomModelNumber(1).build();
+                .setCustomModelNumber(2).build();
 
         Main.stringRecipes.add(spiderSword);
 
@@ -103,30 +105,32 @@ public class WeaponRecipes {
                 " X ",
                 " Z ");
 
-        spiderSwordRecipe.setIngredient('X', Material.STRING); // woven string
+        spiderSwordRecipe.setIngredient('X', Material.WHITE_WOOL); // woven string
         spiderSwordRecipe.setIngredient('Z', Material.IRON_SWORD); // iron sword
 
         return spiderSwordRecipe;
     }
 
-    private ShapedRecipe createEnderSword() {
-        ItemStack enderSword = new ItemBuilder(Material.IRON_SWORD)
-                .setName("&eEnder Sword")
+    private ShapedRecipe createEnderSpoon() {
+        ItemStack enderSpoon = new ItemBuilder(Material.DIAMOND_SHOVEL)
+                .setName("&eEnder Spoon")
+                .addLore("&7+25% Base Damage")
                 .addLore("&7+50% Damage to End Creatures")
-                .addStringNBT("scname", "ender_sword")
+                .addAttribute(Attribute.GENERIC_ATTACK_DAMAGE, "generic.attack.damage", 7, EquipmentSlot.HAND)
+                .addStringNBT("scname", "ender_spoon")
                 .setCustomModelNumber(1).build();
 
-        Main.enderPearlRecipes.add(enderSword);
+        Main.enderPearlRecipes.add(enderSpoon);
 
-        ShapedRecipe enderSwordRecipe = new ShapedRecipe(new NamespacedKey(Main.instance, "ender_sword"), enderSword);
-        enderSwordRecipe.shape(
+        ShapedRecipe enderSpoonRecipe = new ShapedRecipe(new NamespacedKey(Main.instance, "ender_spoon"), enderSpoon);
+        enderSpoonRecipe.shape(
                 " X ",
                 " X ",
                 " Z ");
 
-        enderSwordRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted ender pearl
-        enderSwordRecipe.setIngredient('Z', Material.IRON_SWORD); // iron sword
+        enderSpoonRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted shining ender pearl
+        enderSpoonRecipe.setIngredient('Z', Material.DIAMOND_SHOVEL); // diamond shovel
 
-        return enderSwordRecipe;
+        return enderSpoonRecipe;
     }
 }

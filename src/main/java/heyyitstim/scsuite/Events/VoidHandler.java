@@ -1,6 +1,7 @@
 package heyyitstim.scsuite.Events;
 
 import heyyitstim.scsuite.Util.ItemBuilder;
+import heyyitstim.scsuite.Util.NBTUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -13,19 +14,8 @@ import org.bukkit.util.Vector;
 
 public class VoidHandler implements Listener {
 
-    private final ItemStack voidCrystal = new ItemBuilder(Material.NETHER_STAR)
-            .setName("&6Void Crystal")
-            .addLore("")
-            .addLore("&7&oA sentient object that will sacrifice itself to")
-            .addLore("&7&oprotect you from the ever-hungry void!")
-            .addLore("&7&oShatters after one use.")
-            .setCustomModelNumber(1).build();
-
     private boolean isVoidCrystal(ItemStack item) {
-        if (item == null || !item.hasItemMeta() || !item.getItemMeta().hasLore() || !item.getItemMeta().hasDisplayName())
-            return false;
-
-        return item.getItemMeta().getDisplayName().equals(voidCrystal.getItemMeta().getDisplayName()) && item.getItemMeta().getLore().equals(voidCrystal.getItemMeta().getLore());
+        return NBTUtil.isItem("scname", "void_crystal", item);
     }
 
     private boolean hasVoidCrystal(Player player) {

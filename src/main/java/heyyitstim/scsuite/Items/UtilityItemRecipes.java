@@ -51,8 +51,9 @@ public class UtilityItemRecipes {
                 .setName("&6Void Crystal")
                 .addLore("")
                 .addLore("&bAbility: Saving Grace")
-                .addLore("&7On death, this item will sacrifice itself")
-                .addLore("&7to save you from death by void.")
+                .addLore("&7Upon falling into the void, this item")
+                .addLore("&7will sacrifice itself to save")
+                .addLore("&7you from death.")
                 .addLore("&c&oShatters after one use.")
                 .addStringNBT("scname", "void_crystal")
                 .setCustomModelNumber(1).build();
