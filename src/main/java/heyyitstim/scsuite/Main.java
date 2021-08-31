@@ -62,7 +62,8 @@ public final class Main extends JavaPlugin {
         CustomEnchantment.registerEnchantment(GlowEnchant);
 
 
-        getCommand("test").setExecutor(this);
+        getCommand("scale").setExecutor(this);
+        getCommand("coin").setExecutor(this);
 
         System.out.println("SCSuite has been enabled!");
     }
@@ -72,16 +73,28 @@ public final class Main extends JavaPlugin {
         Player player = (Player) sender;
 
         if (player.isOp()) {
+            if (command.getName().equalsIgnoreCase("scale")){
+                ItemStack SCALE = new ItemBuilder(Material.IRON_NUGGET)
+                        .setName("&cDragon Scale")
+                        .addGlow()
+                        .addStringNBT("scname", "dragon_scale")
+                        .build();
 
-            ItemStack SCALE = new ItemBuilder(Material.IRON_NUGGET)
-                    .setName("&cDragon Scale")
-                    .addGlow()
-                    .addStringNBT("scname", "dragon_scale")
-                    .build();
+                player.getInventory().addItem(SCALE);
 
-            player.getInventory().addItem(SCALE);
+                return false;
+            }
 
-            return false;
+            if (command.getName().equalsIgnoreCase("coin")){
+                ItemStack GoldCoin = new ItemBuilder(Material.GOLD_NUGGET)
+                        .setName("&6Gold Coin")
+                        .addStringNBT("scname", "gold_coin")
+                        .setCustomModelNumber(1).build();
+
+                player.getInventory().addItem(GoldCoin);
+
+                return false;
+            }
         }
 
         player.kickPlayer(ChatUtil.color("&cYou have been banned for trying to use admin commands."));

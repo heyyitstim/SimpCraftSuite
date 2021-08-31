@@ -26,7 +26,7 @@ public class UtilityItemRecipes {
                 .setName("&5Ender Bed")
                 .addLore("")
                 .addLore("&bAbility: Instant Transmission")
-                .addLore("&7&oInstantly teleports you to your spawn point.")
+                .addLore("&7Instantly teleports you to your spawn point.")
                 .addLore("&c&oShatters after one use.")
                 .addGlow()
                 .addStringNBT("scname", "ender_bed")
@@ -40,7 +40,7 @@ public class UtilityItemRecipes {
                 "XXX",
                 "YYY");
 
-        enderBedRecipe.setIngredient('X', Material.ENDER_PEARL); // shining ender pearl
+        enderBedRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted shining ender pearl
         enderBedRecipe.setIngredient('Y', Material.END_STONE); // end stone
 
         return enderBedRecipe;

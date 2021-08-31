@@ -7,4 +7,7 @@ authors: [ heyyitstim, christianwdev ]
 description: A collection of new items and the addition of our own take on what end game Minecraft is
 
 commands:
-  test:
+  scale:
+    description: Creates a Dragon Scale
+  coin:
+    desciption: Creates a Gold Coin

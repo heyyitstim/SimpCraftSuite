@@ -19,19 +19,12 @@ public class ArmorRuneRecipes {
     }
 
     public void registerRecipes() {
-        // Flight Rune
         ShapedRecipe flightRuneRecipe = createFlightRune();
-        // Strength Rune
         ShapedRecipe strengthRuneRecipe = createStrengthRune();
-        // Night Vision Rune
         ShapedRecipe nvRuneRecipe = createNvRune();
-        // Speed Rune
         ShapedRecipe speedRuneRecipe = createSpeedRune();
-        // Jump Rune
         ShapedRecipe jumpRuneRecipe = createJumpRune();
-        // Fire Resistance Rune
         ShapedRecipe fireRuneRecipe = createFireRune();
-        // Water Breathing Rune
         ShapedRecipe waterRuneRecipe = createWaterRune();
 
         Main.instance.getServer().addRecipe(flightRuneRecipe);
@@ -50,15 +43,15 @@ public class ArmorRuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&bFlight Rune"));
         metaFw.setLore(Arrays.asList(
-                ChatUtil.color("&7&oDragon Chestplate Upgrade"),
+                ChatUtil.color("&7Dragon Chestplate Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oAllows you to &b&ofly &7&oas if"),
-                ChatUtil.color("&7&oyou were wearing an elytra!")));
+                ChatUtil.color("&7Allows you to &bfly &7as if"),
+                ChatUtil.color("&7you were wearing an elytra!")));
         flightRune.setItemMeta(metaFw);
 
         Main.nuggetRecipes.add(flightRune);
 
-        ShapedRecipe flightRuneRecipe = new ShapedRecipe(flightRune);
+        ShapedRecipe flightRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("flight_rune"),flightRune);
         flightRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -78,15 +71,15 @@ public class ArmorRuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&cStrength Rune"));
         metaFw.setLore(Arrays.asList(
-                ChatUtil.color("&7&oDragon Armor Upgrade"),
+                ChatUtil.color("&7Dragon Armor Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oWith this rune applied, you will"),
-                ChatUtil.color("&7&ogain permanent &c&oStrength 1&7&o!")));
+                ChatUtil.color("&7With this rune applied, you will"),
+                ChatUtil.color("&7gain permanent &cStrength 1&7!")));
         strengthRune.setItemMeta(metaFw);
 
         Main.nuggetRecipes.add(strengthRune);
 
-        ShapedRecipe strengthRuneRecipe = new ShapedRecipe(strengthRune);
+        ShapedRecipe strengthRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("strength_rune"), strengthRune);
         strengthRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -106,15 +99,15 @@ public class ArmorRuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&eNight Vision Rune"));
         metaFw.setLore(Arrays.asList(
-                ChatUtil.color("&7&oDragon Helmet Upgrade"),
+                ChatUtil.color("&7Dragon Helmet Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oApply this to a &c&oDragon Helmet"),
-                ChatUtil.color("&7&oto gain permanent &e&onight vision&7&o!")));
+                ChatUtil.color("&7Apply this to a &cDragon Helmet"),
+                ChatUtil.color("&7to gain permanent &enight vision&7!")));
         nvRune.setItemMeta(metaFw);
 
         Main.nuggetRecipes.add(nvRune);
 
-        ShapedRecipe nvRuneRecipe = new ShapedRecipe(nvRune);
+        ShapedRecipe nvRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("nv_rune"), nvRune);
         nvRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -134,15 +127,15 @@ public class ArmorRuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&3Speed Rune"));
         metaFw.setLore(Arrays.asList(
-                ChatUtil.color("&7&oDragon Boots Upgrade"),
+                ChatUtil.color("&7Dragon Boots Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oApply this to &c&oDragon Boots"),
-                ChatUtil.color("&7&oto gain permanent &3&oSpeed 1&7&o!")));
+                ChatUtil.color("&7Apply this to &cDragon Boots"),
+                ChatUtil.color("&7to gain permanent &3Speed 1&7!")));
         speedRune.setItemMeta(metaFw);
 
         Main.nuggetRecipes.add(speedRune);
 
-        ShapedRecipe speedRuneRecipe = new ShapedRecipe(speedRune);
+        ShapedRecipe speedRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("speed_rune"), speedRune);
         speedRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -162,15 +155,15 @@ public class ArmorRuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&aJumping Rune"));
         metaFw.setLore(Arrays.asList(
-                ChatUtil.color("&7&oDragon Greaves Upgrade"),
+                ChatUtil.color("&7Dragon Greaves Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oAllows the wearer to gain"),
-                ChatUtil.color("&7&opermanent &a&oJump Boost 1&7&o!")));
+                ChatUtil.color("&7Allows the wearer to gain"),
+                ChatUtil.color("&7permanent &aJump Boost 1&7!")));
         jumpRune.setItemMeta(metaFw);
 
         Main.nuggetRecipes.add(jumpRune);
 
-        ShapedRecipe jumpRuneRecipe = new ShapedRecipe(jumpRune);
+        ShapedRecipe jumpRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("jump_rune"), jumpRune);
         jumpRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -190,15 +183,15 @@ public class ArmorRuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&6Fire Resistance Rune"));
         metaFw.setLore(Arrays.asList(
-                ChatUtil.color("&7&oDragon Armor Upgrade"),
+                ChatUtil.color("&7Dragon Armor Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oThe magical properties of this rune"),
-                ChatUtil.color("&7&ogrant permanent &6&oFire Resistance 1&7&o!")));
+                ChatUtil.color("&7The magical properties of this rune"),
+                ChatUtil.color("&7grant permanent &6Fire Resistance 1&7!")));
         fireRune.setItemMeta(metaFw);
 
         Main.nuggetRecipes.add(fireRune);
 
-        ShapedRecipe fireRuneRecipe = new ShapedRecipe(fireRune);
+        ShapedRecipe fireRuneRecipe = new ShapedRecipe(NamespacedKey.minecraft("fire_rune"), fireRune);
         fireRuneRecipe.shape(
                 "YXY",
                 "XZX",
@@ -218,10 +211,10 @@ public class ArmorRuneRecipes {
         metaFw.setEffect(aa);
         metaFw.setDisplayName(ChatUtil.color("&1Water Breathing Rune"));
         metaFw.setLore(Arrays.asList(
-                ChatUtil.color("&7&oDragon Helmet Upgrade"),
+                ChatUtil.color("&7Dragon Helmet Upgrade"),
                 ChatUtil.color(""),
-                ChatUtil.color("&7&oThe magical properties of this rune"),
-                ChatUtil.color("&7&ogrant permanent &1&oWater Breathing&7&o!")));
+                ChatUtil.color("&7The magical properties of this rune"),
+                ChatUtil.color("&7grant permanent &1Water Breathing&7!")));
         waterRune.setItemMeta(metaFw);
 
         Main.nuggetRecipes.add(waterRune);

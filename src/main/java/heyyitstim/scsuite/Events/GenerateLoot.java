@@ -23,12 +23,14 @@ public class GenerateLoot implements Listener {
 
         ItemStack GoldCoin = new ItemBuilder(Material.GOLD_NUGGET, 1)
                 .setName("&6Gold Coin")
-                .build();
+                .addStringNBT("scname", "gold_coin")
+                .setCustomModelNumber(1).build();
         lootTable.addItem(GoldCoin, 500);
 
         GoldCoin = new ItemBuilder(Material.GOLD_NUGGET, 3)
                 .setName("&6Gold Coin")
-                .build();
+                .addStringNBT("scname", "gold_coin")
+                .setCustomModelNumber(1).build();
         lootTable.addItem(GoldCoin, 100);
     }
 

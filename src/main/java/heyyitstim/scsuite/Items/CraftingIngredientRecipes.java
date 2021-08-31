@@ -9,6 +9,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.SkullMeta;
 
+import javax.naming.Name;
+
 public class CraftingIngredientRecipes {
 
     public CraftingIngredientRecipes() {
@@ -74,7 +76,7 @@ public class CraftingIngredientRecipes {
         meta.setOwningPlayer(Bukkit.getOfflinePlayer("Cypiea"));
         compactedShiningEnderPearl.setItemMeta(meta);
 
-        ShapedRecipe compactedShiningEnderPearlRecipe = new ShapedRecipe(compactedShiningEnderPearl);
+        ShapedRecipe compactedShiningEnderPearlRecipe = new ShapedRecipe((NamespacedKey.minecraft("compacted_shining_ender_pearl")), compactedShiningEnderPearl);
         compactedShiningEnderPearlRecipe.shape(
                 "XXX",
                 "XXX",
@@ -93,7 +95,7 @@ public class CraftingIngredientRecipes {
                 .setCustomModelNumber(1).build();
 
 
-        ShapedRecipe compressedStringRecipe = new ShapedRecipe(compressedString);
+        ShapedRecipe compressedStringRecipe = new ShapedRecipe((NamespacedKey.minecraft("compressed_string")),compressedString);
         compressedStringRecipe.shape(
                 "XXX",
                 "XXX",
