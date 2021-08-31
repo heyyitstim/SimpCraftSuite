@@ -78,7 +78,7 @@ public final class Main extends JavaPlugin {
                         .setName("&cDragon Scale")
                         .addGlow()
                         .addStringNBT("scname", "dragon_scale")
-                        .build();
+                        .setCustomModelNumber(1).build();
 
                 player.getInventory().addItem(SCALE);
 

@@ -48,7 +48,7 @@ public class CraftingIngredientRecipes {
     }
 
     private ShapedRecipe createShiningEnderPearl() {
-        ItemStack shiningEnderPearl = new ItemBuilder(Material.ENDER_PEARL)
+        ItemStack shiningEnderPearl = new ItemBuilder(Material.ENDER_EYE)
                 .setName("&aShining Ender Pearl")
                 .addGlow()
                 .addStringNBT("scname", "shining_ender_pearl")
@@ -82,7 +82,7 @@ public class CraftingIngredientRecipes {
                 "XXX",
                 "XXX");
 
-        compactedShiningEnderPearlRecipe.setIngredient('X', Material.ENDER_PEARL);
+        compactedShiningEnderPearlRecipe.setIngredient('X', Material.ENDER_EYE);
 
         return compactedShiningEnderPearlRecipe;
     }
