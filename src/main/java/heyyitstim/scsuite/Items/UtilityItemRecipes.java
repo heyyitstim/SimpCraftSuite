@@ -66,7 +66,7 @@ public class UtilityItemRecipes {
                 "XZX",
                 "XXX");
 
-        voidCrystalRecipe.setIngredient('X', Material.ENDER_PEARL); // shining ender pearl
+        voidCrystalRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted shining ender pearl
         voidCrystalRecipe.setIngredient('Z', Material.NETHER_STAR);
 
         return voidCrystalRecipe;

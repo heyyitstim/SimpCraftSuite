@@ -45,7 +45,7 @@ public class RecipeChecker implements Listener {
         }
 
         if (isItem(e.getRecipe().getResult(), "compacted_shining_ender_pearl")) {
-            handleItemStacks(e.getInventory(), Material.ENDER_PEARL, 16, "shining_ender_pearl");
+            handleItemStacks(e.getInventory(), Material.ENDER_EYE, 16, "shining_ender_pearl");
         }
 
         if (isItem(e.getRecipe().getResult(), "compressed_rotten_flesh")) {
