@@ -128,7 +128,7 @@ public class WeaponRecipes {
                 " X ",
                 " Z ");
 
-        enderSpoonRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted shining ender pearl
+        enderSpoonRecipe.setIngredient('X', Material.PLAYER_HEAD); // compressed shiny ender pearl
         enderSpoonRecipe.setIngredient('Z', Material.DIAMOND_SHOVEL); // diamond shovel
 
         return enderSpoonRecipe;

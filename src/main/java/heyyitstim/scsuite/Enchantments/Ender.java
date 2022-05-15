@@ -26,7 +26,7 @@ public class Ender implements Listener {
         if (tag == null)
             return false;
 
-        return tag.equalsIgnoreCase("undead_sword");
+        return tag.equalsIgnoreCase("ender_sword");
     }
 
     @EventHandler

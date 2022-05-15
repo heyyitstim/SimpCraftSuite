@@ -19,14 +19,22 @@ public class CraftingIngredientRecipes {
 
     private void registerRecipes() {
         ShapedRecipe compressedRottenFlesh = createCompressedRottenFlesh();
-        ShapedRecipe shiningEnderPearl = createShiningEnderPearl();
-        ShapedRecipe compactedShiningEnderPearl = createCompactedShiningEnderPearl();
+        ShapedRecipe shinyEnderPearl = createShinyEnderPearl();
+        ShapedRecipe compressedShinyEnderPearl = createCompressedShinyEnderPearl();
         ShapedRecipe compressedString = createCompressedString();
+        ShapedRecipe packedHay = createPackedHay();
+        ShapedRecipe tightlyPackedHay = createTightlyPackedHay();
+        ShapedRecipe hardenedDiamond = createHardenedDiamond();
+        ShapedRecipe shinySugarCane = createShinySugarCane();
+        ShapedRecipe compressedShinySugarCane = createCompressedShinySugarCane();
 
         Main.instance.getServer().addRecipe(compressedRottenFlesh);
-        Main.instance.getServer().addRecipe(shiningEnderPearl);
-        Main.instance.getServer().addRecipe(compactedShiningEnderPearl);
+        Main.instance.getServer().addRecipe(shinyEnderPearl);
+        Main.instance.getServer().addRecipe(compressedShinyEnderPearl);
         Main.instance.getServer().addRecipe(compressedString);
+        Main.instance.getServer().addRecipe(packedHay);
+        Main.instance.getServer().addRecipe(tightlyPackedHay);
+        Main.instance.getServer().addRecipe(hardenedDiamond);
     }
 
     private ShapedRecipe createCompressedRottenFlesh() {
@@ -47,44 +55,44 @@ public class CraftingIngredientRecipes {
         return compressedRottenFleshRecipe;
     }
 
-    private ShapedRecipe createShiningEnderPearl() {
-        ItemStack shiningEnderPearl = new ItemBuilder(Material.ENDER_EYE)
-                .setName("&aShining Ender Pearl")
+    private ShapedRecipe createShinyEnderPearl() {
+        ItemStack shinyEnderPearl = new ItemBuilder(Material.ENDER_EYE)
+                .setName("&aShiny Ender Pearl")
                 .addGlow()
-                .addStringNBT("scname", "shining_ender_pearl")
+                .addStringNBT("scname", "shiny_ender_pearl")
                 .setCustomModelNumber(1).build();
 
-        ShapedRecipe shiningEnderPearlRecipe = new ShapedRecipe(NamespacedKey.minecraft("shining_ender_pearl"), shiningEnderPearl);
-        shiningEnderPearlRecipe.shape(
+        ShapedRecipe shinyEnderPearlRecipe = new ShapedRecipe(NamespacedKey.minecraft("shiny_ender_pearl"), shinyEnderPearl);
+        shinyEnderPearlRecipe.shape(
                 "XXX",
                 "XXX",
                 "XXX");
 
-        shiningEnderPearlRecipe.setIngredient('X', Material.ENDER_PEARL);
+        shinyEnderPearlRecipe.setIngredient('X', Material.ENDER_PEARL);
 
-        return shiningEnderPearlRecipe;
+        return shinyEnderPearlRecipe;
     }
 
-    private ShapedRecipe createCompactedShiningEnderPearl() {
-        ItemStack compactedShiningEnderPearl = new ItemBuilder(Material.PLAYER_HEAD)
-                .setName("&aCompacted Shining Ender Pearl")
+    private ShapedRecipe createCompressedShinyEnderPearl() {
+        ItemStack compressedShinyEnderPearl = new ItemBuilder(Material.PLAYER_HEAD)
+                .setName("&9Compacted Shiny Ender Pearl")
                 .addGlow()
-                .addStringNBT("scname", "compacted_shining_ender_pearl")
+                .addStringNBT("scname", "compacted_shiny_ender_pearl")
                 .setCustomModelNumber(1).build();
 
-        SkullMeta meta = (SkullMeta)compactedShiningEnderPearl.getItemMeta();
+        SkullMeta meta = (SkullMeta)compressedShinyEnderPearl.getItemMeta();
         meta.setOwningPlayer(Bukkit.getOfflinePlayer("Cypiea"));
-        compactedShiningEnderPearl.setItemMeta(meta);
+        compressedShinyEnderPearl.setItemMeta(meta);
 
-        ShapedRecipe compactedShiningEnderPearlRecipe = new ShapedRecipe((NamespacedKey.minecraft("compacted_shining_ender_pearl")), compactedShiningEnderPearl);
-        compactedShiningEnderPearlRecipe.shape(
+        ShapedRecipe compressedShinyEnderPearlRecipe = new ShapedRecipe((NamespacedKey.minecraft("compressed_shiny_ender_pearl")), compressedShinyEnderPearl);
+        compressedShinyEnderPearlRecipe.shape(
                 "XXX",
                 "XXX",
                 "XXX");
 
-        compactedShiningEnderPearlRecipe.setIngredient('X', Material.ENDER_EYE);
+        compressedShinyEnderPearlRecipe.setIngredient('X', Material.ENDER_EYE);
 
-        return compactedShiningEnderPearlRecipe;
+        return compressedShinyEnderPearlRecipe;
     }
 
     private ShapedRecipe createCompressedString() {
@@ -104,5 +112,102 @@ public class CraftingIngredientRecipes {
         compressedStringRecipe.setIngredient('X', Material.STRING);
 
         return compressedStringRecipe;
+    }
+
+    private ShapedRecipe createPackedHay() {
+        ItemStack packedHay = new ItemBuilder(Material.HAY_BLOCK)
+                .setName("&aPacked Hay")
+                .addGlow()
+                .addStringNBT("scname", "packed_hay")
+                .setCustomModelNumber(1).build();
+
+        SkullMeta meta = (SkullMeta)packedHay.getItemMeta();
+        meta.setOwningPlayer(Bukkit.getOfflinePlayer("Cypiea"));
+        packedHay.setItemMeta(meta);
+
+        ShapedRecipe packedHayRecipe = new ShapedRecipe((NamespacedKey.minecraft("packed_hay")), packedHay);
+        packedHayRecipe.shape(
+                "XXX",
+                "XXX",
+                "XXX");
+
+        packedHayRecipe.setIngredient('X', Material.HAY_BLOCK);
+
+        return packedHayRecipe;
+    }
+    private ShapedRecipe createTightlyPackedHay() {
+        ItemStack tightlyPackedHay = new ItemBuilder(Material.PLAYER_HEAD)
+                .setName("&9Tightly Packed Hay")
+                .addGlow()
+                .addStringNBT("scname", "tightly_packed_hay")
+                .setCustomModelNumber(1).build();
+
+        SkullMeta meta = (SkullMeta)tightlyPackedHay.getItemMeta();
+        meta.setOwningPlayer(Bukkit.getOfflinePlayer("Cypiea"));
+        tightlyPackedHay.setItemMeta(meta);
+
+        ShapedRecipe tightlyPackedHayRecipe = new ShapedRecipe((NamespacedKey.minecraft("tightly_packed_hay")), tightlyPackedHay);
+        tightlyPackedHayRecipe.shape(
+                "XXX",
+                "XXX",
+                "XXX");
+
+        tightlyPackedHayRecipe.setIngredient('X', Material.HAY_BLOCK);
+
+        return tightlyPackedHayRecipe;
+    }
+
+    private ShapedRecipe createHardenedDiamond() {
+        ItemStack hardenedDiamond = new ItemBuilder(Material.DIAMOND)
+                .setName("&9Hardened Diamond")
+                .addGlow()
+                .addStringNBT("scname", "hardened_diamond")
+                .setCustomModelNumber(1).build();
+
+        ShapedRecipe hardenedDiamondRecipe = new ShapedRecipe((NamespacedKey.minecraft("hardened_diamond")), hardenedDiamond);
+        hardenedDiamondRecipe.shape(
+                "XXX",
+                "XYX",
+                "XXX");
+
+        hardenedDiamondRecipe.setIngredient('X', Material.DIAMOND);
+
+        return hardenedDiamondRecipe;
+    }
+
+    private ShapedRecipe createShinySugarCane() {
+        ItemStack shinySugarCane = new ItemBuilder(Material.SUGAR_CANE)
+                .setName("&aShiny Sugar Cane")
+                .addGlow()
+                .addStringNBT("scname", "shiny_sugar_cane")
+                .setCustomModelNumber(1).build();
+
+        ShapedRecipe shinySugarCaneRecipe = new ShapedRecipe((NamespacedKey.minecraft("shiny_sugar_cane")), shinySugarCane);
+        shinySugarCaneRecipe.shape(
+                "XXX",
+                "XXX",
+                "XXX");
+
+        shinySugarCaneRecipe.setIngredient('X', Material.SUGAR_CANE);
+
+        return shinySugarCaneRecipe;
+    }
+
+    private ShapedRecipe createCompressedShinySugarCane() {
+        ItemStack compressedShinySugarCane = new ItemBuilder(Material.SUGAR_CANE)
+                .setName("&9Compressed Shiny Sugar Cane")
+                .addGlow()
+                .addStringNBT("scname", "compressed_shiny_sugar_cane")
+                .setCustomModelNumber(1).build();
+
+        ShapedRecipe compressedShinySugarCaneRecipe = new ShapedRecipe((NamespacedKey.minecraft("compressed_shiny_sugar_cane")), compressedShinySugarCane);
+        compressedShinySugarCaneRecipe.shape(
+                "XXX",
+                "XXX",
+                "XXX");
+
+        compressedShinySugarCaneRecipe.setIngredient('X', Material.SUGAR_CANE);
+
+        return compressedShinySugarCaneRecipe;
     }
 }
