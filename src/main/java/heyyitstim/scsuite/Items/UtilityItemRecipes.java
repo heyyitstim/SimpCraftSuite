@@ -16,9 +16,11 @@ public class UtilityItemRecipes {
     private void registerRecipes() {
         ShapedRecipe enderBed = createEnderBed();
         ShapedRecipe voidCrystal = createVoidCrystal();
+        ShapedRecipe pocketChest = createPocketChest();
 
         Main.instance.getServer().addRecipe(enderBed);
         Main.instance.getServer().addRecipe(voidCrystal);
+        Main.instance.getServer().addRecipe(pocketChest);
     }
 
     private ShapedRecipe createEnderBed() {
@@ -70,5 +72,29 @@ public class UtilityItemRecipes {
         voidCrystalRecipe.setIngredient('Z', Material.NETHER_STAR);
 
         return voidCrystalRecipe;
+    }
+
+    private ShapedRecipe createPocketChest() {
+        ItemStack pocketChest = new ItemBuilder(Material.PLAYER_HEAD)
+                .setName("&5Pocket Chest")
+                .addLore("")
+                .addLore("&bAbility: Saving Grace")
+                .addLore("&7Virtual storage!")
+                .addLore("&7Has 9 inventory slots.")
+                .addStringNBT("scname", "pocket_chest")
+                .setCustomModelNumber(1).build();
+
+        //Main.enderPearlRecipes.add(voidCrystal);
+
+        ShapedRecipe pocketChestRecipe = new ShapedRecipe(NamespacedKey.minecraft("pocket_chest"), pocketChest);
+        pocketChestRecipe.shape(
+                "XXX",
+                "XZX",
+                "XXX");
+
+        pocketChestRecipe.setIngredient('X', Material.CHEST);
+        pocketChestRecipe.setIngredient('Z', Material.ENDER_PEARL);
+
+        return pocketChestRecipe;
     }
 }
