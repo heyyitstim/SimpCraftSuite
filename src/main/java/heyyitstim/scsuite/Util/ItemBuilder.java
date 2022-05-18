@@ -1,5 +1,7 @@
 package heyyitstim.scsuite.Util;
 
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
 import heyyitstim.scsuite.Main;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -8,7 +10,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.inventory.meta.SkullMeta;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -63,6 +67,32 @@ public class ItemBuilder {
 
     public ItemBuilder addAttribute(Attribute attribute, String name, double amount, EquipmentSlot slot) {
         meta.addAttributeModifier(attribute, new AttributeModifier(UUID.randomUUID(), name, amount, AttributeModifier.Operation.ADD_NUMBER, slot));
+        return this;
+    }
+
+    public ItemBuilder addTexture(String value) {
+
+        if (value == null || value.isEmpty() || item.getType() != Material.SKELETON_SKULL)
+            return this;
+
+        SkullMeta skullMeta = (SkullMeta) item.getItemMeta();
+        GameProfile profile = new GameProfile(UUID.randomUUID(), null);
+        profile.getProperties().put("textures", new Property("textures", value));
+        Field profileField = null;
+
+        try {
+            profileField = skullMeta.getClass().getDeclaredField("profile");
+        } catch (NoSuchFieldException | SecurityException e) {
+            e.printStackTrace();
+        }
+        profileField.setAccessible(true);
+        try {
+            profileField.set(skullMeta, profile);
+        } catch (IllegalArgumentException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        item.setItemMeta(skullMeta);
         return this;
     }
 

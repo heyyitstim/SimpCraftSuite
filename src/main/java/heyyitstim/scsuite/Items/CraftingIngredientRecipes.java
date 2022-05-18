@@ -198,6 +198,7 @@ public class CraftingIngredientRecipes {
                 .setName("&9Compressed Shiny Sugar Cane")
                 .addGlow()
                 .addStringNBT("scname", "compressed_shiny_sugar_cane")
+                .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjA2NzA2ZWVjYjJkNTU4YWNlMjdhYmRhMGIwYjdiODAxZDM2ZDE3ZGQ3YTg5MGE5NTIwZGJlNTIyMzc0ZjhhNiJ9fX0=")
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe compressedShinySugarCaneRecipe = new ShapedRecipe((NamespacedKey.minecraft("compressed_shiny_sugar_cane")), compressedShinySugarCane);
