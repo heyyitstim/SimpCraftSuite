@@ -78,7 +78,7 @@ public class ItemBuilder {
 
         SkullMeta skullMeta = (SkullMeta) item.getItemMeta();
         GameProfile profile = new GameProfile(UUID.randomUUID(), null);
-        byte[] encodedData = Base64.encodeBase64(("{textures:{SKIN:{url:" + value + "}}}").getBytes());
+        byte[] encodedData = Base64.encodeBase64(String.format("{textures:{SKIN:{url:\"%s\"}}}", value).getBytes());
         profile.getProperties().put("textures", new Property("textures", new String(encodedData)));
 
         try {
@@ -87,7 +87,7 @@ public class ItemBuilder {
             profileField.set(skullMeta, profile);
         }catch (NoSuchFieldException | IllegalAccessException e) { e.printStackTrace(); }
 
-        item.setItemMeta(skullMeta);
+        meta = skullMeta;
         return this;
     }
 
