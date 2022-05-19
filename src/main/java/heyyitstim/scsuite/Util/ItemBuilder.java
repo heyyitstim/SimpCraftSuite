@@ -4,6 +4,7 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import heyyitstim.scsuite.Main;
 import org.bukkit.Material;
+import org.bukkit.craftbukkit.libs.org.codehaus.plexus.util.Base64;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
@@ -72,25 +73,19 @@ public class ItemBuilder {
 
     public ItemBuilder addTexture(String value) {
 
-        if (value == null || value.isEmpty() || item.getType() != Material.SKELETON_SKULL)
+        if (value == null || value.isEmpty() || item.getType() != Material.PLAYER_HEAD)
             return this;
 
         SkullMeta skullMeta = (SkullMeta) item.getItemMeta();
         GameProfile profile = new GameProfile(UUID.randomUUID(), null);
-        profile.getProperties().put("textures", new Property("textures", value));
-        Field profileField = null;
+        byte[] encodedData = Base64.encodeBase64(("{textures:{SKIN:{url:" + value + "}}}").getBytes());
+        profile.getProperties().put("textures", new Property("textures", new String(encodedData)));
 
         try {
-            profileField = skullMeta.getClass().getDeclaredField("profile");
-        } catch (NoSuchFieldException | SecurityException e) {
-            e.printStackTrace();
-        }
-        profileField.setAccessible(true);
-        try {
+            Field profileField = skullMeta.getClass().getDeclaredField("profile");
+            profileField.setAccessible(true);
             profileField.set(skullMeta, profile);
-        } catch (IllegalArgumentException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        }catch (NoSuchFieldException | IllegalAccessException e) { e.printStackTrace(); }
 
         item.setItemMeta(skullMeta);
         return this;
