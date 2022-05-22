@@ -78,7 +78,6 @@ public class UtilityItemRecipes {
         ItemStack pocketChest = new ItemBuilder(Material.PLAYER_HEAD)
                 .setName("&5Pocket Chest")
                 .addLore("")
-                .addLore("&bAbility: Saving Grace")
                 .addLore("&7Virtual storage!")
                 .addLore("&7Has 9 inventory slots.")
                 .addStringNBT("scname", "pocket_chest")
