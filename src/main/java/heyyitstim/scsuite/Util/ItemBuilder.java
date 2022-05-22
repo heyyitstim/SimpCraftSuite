@@ -3,6 +3,7 @@ package heyyitstim.scsuite.Util;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import heyyitstim.scsuite.Main;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.craftbukkit.libs.org.codehaus.plexus.util.Base64;
 import org.bukkit.enchantments.Enchantment;
@@ -11,6 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import java.lang.reflect.Field;
@@ -53,6 +55,19 @@ public class ItemBuilder {
     public ItemBuilder addStringNBT(String name, String value) {
         meta = NBTUtil.addTag(meta, name, value);
         item.setItemMeta(meta);
+        return this;
+    }
+
+    public ItemBuilder setLeatherColor(Color color) {
+        if (item.getType() != Material.LEATHER_BOOTS || item.getType() != Material.LEATHER_CHESTPLATE
+                || item.getType() != Material.LEATHER_HELMET || item.getType() != Material.LEATHER_HELMET) { return this; }
+
+        LeatherArmorMeta armorMeta = (LeatherArmorMeta) item.getItemMeta();
+        armorMeta.setColor(color);
+
+        item.setItemMeta(armorMeta);
+        this.meta = armorMeta;
+
         return this;
     }
 
