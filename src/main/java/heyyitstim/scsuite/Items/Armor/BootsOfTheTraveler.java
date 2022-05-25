@@ -21,12 +21,10 @@ public class BootsOfTheTraveller {
 
     private ShapedRecipe createBootsOfTheTraveler() {
         ItemStack bootsOfTheTraveler = new ItemBuilder(Material.LEATHER_BOOTS)
-                .setName("&5Boots Of The Traveler")
+                .setName("&5Boots of The Traveler")
                 .addLore("")
                 .addLore("&bPiece Bonus: Quick Step")
                 .addLore("&7Gain permanent speed 1 while wearing.")
-                .addLore("&7Has the armor rating of diamond,")
-                .addLore("&7but the durability of leather.")
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 3, EquipmentSlot.FEET)
                 .addStringNBT("scname", "boots_of_the_traveler")
                 .setLeatherColor(Color.PURPLE)
