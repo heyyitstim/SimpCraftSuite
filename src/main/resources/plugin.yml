@@ -1,10 +1,10 @@
-name: L2Dragon
+name: SimpCraftSuite
 version: ${project.version}
 main: heyyitstim.scsuite.Main
 api-version: 1.17
 prefix: [ SCSuite ]
 authors: [ heyyitstim, christianwdev ]
-description: A collection of new items and the addition of our own take on what end game Minecraft is
+description: Redefining the definition of end game.
 
 commands:
   scale:

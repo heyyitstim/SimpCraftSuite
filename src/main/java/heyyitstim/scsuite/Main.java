@@ -75,7 +75,6 @@ public final class Main extends JavaPlugin {
         getCommand("scale").setExecutor(this);
         getCommand("coin").setExecutor(this);
 
-        System.out.println("SCSuite has been enabled!");
     }
 
     @Override
@@ -112,8 +111,8 @@ public final class Main extends JavaPlugin {
         return false;
     }
 
-    @Override
+    /*@Override
     public void onDisable() {
         System.out.println("SCSuite has been disabled!");
-    }
+    }*/
 }
