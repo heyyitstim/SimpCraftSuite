@@ -12,7 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class BootsOfTheTravellerHandler implements Listener {
+public class BootsOfTheTravelerHandler implements Listener {
 
     private boolean checkArmor(ItemStack boots) {
         if (boots == null) return false;
@@ -54,6 +54,6 @@ public class BootsOfTheTravellerHandler implements Listener {
     }
 
     public boolean isBoots(ItemStack item) {
-        return NBTUtil.isItem("scname", "boots_of_the_traveller", item);
+        return NBTUtil.isItem("scname", "boots_of_the_traveler", item);
     }
 }

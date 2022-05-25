@@ -59,8 +59,8 @@ public class ItemBuilder {
     }
 
     public ItemBuilder setLeatherColor(Color color) {
-        if (item.getType() != Material.LEATHER_BOOTS || item.getType() != Material.LEATHER_CHESTPLATE
-                || item.getType() != Material.LEATHER_HELMET || item.getType() != Material.LEATHER_HELMET) { return this; }
+        if (item.getType() != Material.LEATHER_BOOTS && item.getType() != Material.LEATHER_CHESTPLATE
+                && item.getType() != Material.LEATHER_HELMET && item.getType() != Material.LEATHER_LEGGINGS) { return this; }
 
         LeatherArmorMeta armorMeta = (LeatherArmorMeta) item.getItemMeta();
         armorMeta.setColor(color);

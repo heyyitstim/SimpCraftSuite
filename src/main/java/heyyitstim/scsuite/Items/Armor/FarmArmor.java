@@ -38,8 +38,8 @@ public class FarmArmor {
                 .addLore("&bFull Set Bonus: Farm Hand")
                 .addLore("&7Hoes will not lose durability.")
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 2, EquipmentSlot.HEAD)
-                .setLeatherColor(Color.YELLOW)
                 .addStringNBT("scname", "farm_helmet")
+                .setLeatherColor(Color.YELLOW)
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe farmHelmetRecipe = new ShapedRecipe(NamespacedKey.minecraft("farm_helmet"), farmHelmet);
@@ -60,8 +60,8 @@ public class FarmArmor {
                 .addLore("&bFull Set Bonus: Farm Hand")
                 .addLore("&7Hoes will not lose durability.")
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 5, EquipmentSlot.CHEST)
-                .setLeatherColor(Color.YELLOW)
                 .addStringNBT("scname", "farm_chestplate")
+                .setLeatherColor(Color.YELLOW)
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe farmChestplateRecipe = new ShapedRecipe(NamespacedKey.minecraft("farm_chestplate"), farmChestplate);
@@ -107,8 +107,8 @@ public class FarmArmor {
                 .addLore("&bPiece Bonus: Light Footed")
                 .addLore("&7Crops won't trample while wearing.")
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 1, EquipmentSlot.FEET)
-                .setLeatherColor(Color.YELLOW)
                 .addStringNBT("scname", "farm_boots")
+                .setLeatherColor(Color.YELLOW)
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe farmBootsRecipe = new ShapedRecipe(NamespacedKey.minecraft("farm_boots"), farmBoots);
@@ -132,8 +132,8 @@ public class FarmArmor {
                 .addLore("&bPiece Bonus: Light Footed")
                 .addLore("&7Crops won't trample while wearing.")
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 1, EquipmentSlot.FEET)
-                .setLeatherColor(Color.YELLOW)
                 .addStringNBT("scname", "farm_boots")
+                .setLeatherColor(Color.YELLOW)
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe farmBootsRecipeAlternate = new ShapedRecipe(NamespacedKey.minecraft("farm_boots_alt"), farmBoots);

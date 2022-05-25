@@ -42,7 +42,7 @@ public class UtilityItemRecipes {
                 "XXX",
                 "YYY");
 
-        enderBedRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted shining ender pearl
+        enderBedRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted ender pearl
         enderBedRecipe.setIngredient('Y', Material.END_STONE); // end stone
 
         return enderBedRecipe;
@@ -68,7 +68,7 @@ public class UtilityItemRecipes {
                 "XZX",
                 "XXX");
 
-        voidCrystalRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted shining ender pearl
+        voidCrystalRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted ender pearl
         voidCrystalRecipe.setIngredient('Z', Material.NETHER_STAR);
 
         return voidCrystalRecipe;

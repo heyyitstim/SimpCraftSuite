@@ -20,7 +20,7 @@ public class CraftingIngredientRecipes {
     private void registerRecipes() {
         ShapedRecipe compressedRottenFlesh = createCompressedRottenFlesh();
         ShapedRecipe shinyEnderPearl = createShinyEnderPearl();
-        ShapedRecipe compressedShinyEnderPearl = createCompressedShinyEnderPearl();
+        ShapedRecipe compactedEnderPearl = createCompactedEnderPearl();
         ShapedRecipe compressedString = createCompressedString();
         ShapedRecipe packedHay = createPackedHay();
         ShapedRecipe tightlyPackedHay = createTightlyPackedHay();
@@ -30,7 +30,7 @@ public class CraftingIngredientRecipes {
 
         Main.instance.getServer().addRecipe(compressedRottenFlesh);
         Main.instance.getServer().addRecipe(shinyEnderPearl);
-        Main.instance.getServer().addRecipe(compressedShinyEnderPearl);
+        Main.instance.getServer().addRecipe(compactedEnderPearl);
         Main.instance.getServer().addRecipe(compressedString);
         Main.instance.getServer().addRecipe(packedHay);
         Main.instance.getServer().addRecipe(tightlyPackedHay);
@@ -75,26 +75,26 @@ public class CraftingIngredientRecipes {
         return shinyEnderPearlRecipe;
     }
 
-    private ShapedRecipe createCompressedShinyEnderPearl() {
-        ItemStack compressedShinyEnderPearl = new ItemBuilder(Material.PLAYER_HEAD)
-                .setName("&9Compacted Shiny Ender Pearl")
+    private ShapedRecipe createCompactedEnderPearl() {
+        ItemStack compactedEnderPearl = new ItemBuilder(Material.PLAYER_HEAD)
+                .setName("&9Compacted Ender Pearl")
                 .addGlow()
-                .addStringNBT("scname", "compacted_shiny_ender_pearl")
+                .addStringNBT("scname", "compacted_ender_pearl")
                 .setCustomModelNumber(1).build();
 
-        SkullMeta meta = (SkullMeta)compressedShinyEnderPearl.getItemMeta();
+        SkullMeta meta = (SkullMeta)compactedEnderPearl.getItemMeta();
         meta.setOwningPlayer(Bukkit.getOfflinePlayer("Cypiea"));
-        compressedShinyEnderPearl.setItemMeta(meta);
+        compactedEnderPearl.setItemMeta(meta);
 
-        ShapedRecipe compressedShinyEnderPearlRecipe = new ShapedRecipe((NamespacedKey.minecraft("compressed_shiny_ender_pearl")), compressedShinyEnderPearl);
-        compressedShinyEnderPearlRecipe.shape(
+        ShapedRecipe compactedEnderPearlRecipe = new ShapedRecipe((NamespacedKey.minecraft("compacted_ender_pearl")), compactedEnderPearl);
+        compactedEnderPearlRecipe.shape(
                 "XXX",
                 "XXX",
                 "XXX");
 
-        compressedShinyEnderPearlRecipe.setIngredient('X', Material.ENDER_EYE);
+        compactedEnderPearlRecipe.setIngredient('X', Material.ENDER_EYE);
 
-        return compressedShinyEnderPearlRecipe;
+        return compactedEnderPearlRecipe;
     }
 
     private ShapedRecipe createCompressedString() {
