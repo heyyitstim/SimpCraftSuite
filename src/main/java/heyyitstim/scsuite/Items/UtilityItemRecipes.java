@@ -16,11 +16,11 @@ public class UtilityItemRecipes {
     private void registerRecipes() {
         ShapedRecipe enderBed = createEnderBed();
         ShapedRecipe voidCrystal = createVoidCrystal();
-        ShapedRecipe pocketChest = createPocketChest();
+        //ShapedRecipe pocketChest = createPocketChest();
 
         Main.instance.getServer().addRecipe(enderBed);
         Main.instance.getServer().addRecipe(voidCrystal);
-        Main.instance.getServer().addRecipe(pocketChest);
+        //Main.instance.getServer().addRecipe(pocketChest);
     }
 
     private ShapedRecipe createEnderBed() {
@@ -74,7 +74,7 @@ public class UtilityItemRecipes {
         return voidCrystalRecipe;
     }
 
-    private ShapedRecipe createPocketChest() {
+    /*private ShapedRecipe createPocketChest() {
         ItemStack pocketChest = new ItemBuilder(Material.PLAYER_HEAD)
                 .setName("&5Pocket Chest")
                 .addLore("")
@@ -95,5 +95,5 @@ public class UtilityItemRecipes {
         pocketChestRecipe.setIngredient('Z', Material.ENDER_PEARL);
 
         return pocketChestRecipe;
-    }
+    }*/
 }

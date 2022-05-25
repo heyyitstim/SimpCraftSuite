@@ -11,6 +11,7 @@ import heyyitstim.scsuite.Items.*;
 import heyyitstim.scsuite.Events.DragonHandler;
 import heyyitstim.scsuite.Items.Armor.BootsOfTheTraveler;
 import heyyitstim.scsuite.Items.Armor.FarmArmor;
+import heyyitstim.scsuite.Items.Armor.SkeletonHelmet;
 import heyyitstim.scsuite.Util.ChatUtil;
 import heyyitstim.scsuite.Util.ItemBuilder;
 import org.bukkit.Bukkit;
@@ -50,6 +51,7 @@ public final class Main extends JavaPlugin {
         new CraftingIngredientRecipes();
         new FarmArmor();
         new BootsOfTheTraveler();
+        new SkeletonHelmet();
 
         // Events
         Bukkit.getPluginManager().registerEvents(new DragonHandler(), this);

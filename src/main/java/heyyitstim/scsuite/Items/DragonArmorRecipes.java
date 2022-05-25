@@ -41,7 +41,7 @@ public class DragonArmorRecipes {
                 .addLore("")
                 .addLore("&8This item can hold runes!")
                 .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.FEET)
-                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 3, EquipmentSlot.FEET)
+                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 4, EquipmentSlot.FEET)
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 5, EquipmentSlot.FEET)
                 .addStringNBT("scname", "dragon_helmet")
                 .setCustomModelNumber(1).build();
@@ -66,7 +66,7 @@ public class DragonArmorRecipes {
                 .addLore("")
                 .addLore("&8This item can hold runes!")
                 .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.CHEST)
-                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 3, EquipmentSlot.CHEST)
+                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 4, EquipmentSlot.CHEST)
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 10, EquipmentSlot.CHEST)
                 .addStringNBT("scname", "dragon_chestplate")
                 .setCustomModelNumber(1).build();
@@ -91,7 +91,7 @@ public class DragonArmorRecipes {
                 .addLore("")
                 .addLore("&8This item can hold runes!")
                 .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.LEGS)
-                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 3, EquipmentSlot.LEGS)
+                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 4, EquipmentSlot.LEGS)
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 8, EquipmentSlot.LEGS)
                 .addStringNBT("scname", "dragon_leggings")
                 .setCustomModelNumber(1).build();
@@ -116,7 +116,7 @@ public class DragonArmorRecipes {
                 .addLore("")
                 .addLore("&8This item can hold runes!")
                 .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.FEET)
-                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 3, EquipmentSlot.FEET)
+                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 4, EquipmentSlot.FEET)
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 5, EquipmentSlot.FEET)
                 .addStringNBT("scname", "dragon_boots")
                 .setCustomModelNumber(1).build();
@@ -141,7 +141,7 @@ public class DragonArmorRecipes {
                 .addLore("")
                 .addLore("&8This item can hold runes!")
                 .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.FEET)
-                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 3, EquipmentSlot.FEET)
+                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 4, EquipmentSlot.FEET)
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 5, EquipmentSlot.FEET)
                 .addStringNBT("scname", "dragon_boots_alternate")
                 .setCustomModelNumber(1).build();

@@ -18,21 +18,21 @@ public class DragonDrops {
     public static void rewardPlayer(Player player, double scale) {
         int randomInt = ThreadLocalRandom.current().nextInt(1001);
 
-        if (randomInt <= 100 * scale) {
+        if (randomInt <= 200 * scale) {
             SCALE.setAmount(3);
             player.getInventory().addItem(SCALE);
 
             return;
         }
 
-        if (randomInt <= 200 * scale) {
+        if (randomInt <= 300 * scale) {
             SCALE.setAmount(2);
             player.getInventory().addItem(SCALE);
 
             return;
         }
 
-        if (randomInt <= 300 * scale) {
+        if (randomInt <= 400 * scale) {
             SCALE.setAmount(1);
             player.getInventory().addItem(SCALE);
         }
