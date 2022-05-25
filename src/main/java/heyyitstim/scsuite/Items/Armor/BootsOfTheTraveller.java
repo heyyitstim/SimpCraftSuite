@@ -30,7 +30,7 @@ public class BootsOfTheTraveller {
                 .addStringNBT("scname", "boots_of_the_traveller")
                 .setCustomModelNumber(1).build();
 
-        ShapedRecipe bootsOfTheTravellerRecipe = new ShapedRecipe(NamespacedKey.minecraft("farm_helmet"), bootsOfTheTraveller);
+        ShapedRecipe bootsOfTheTravellerRecipe = new ShapedRecipe(NamespacedKey.minecraft("boots_of_the_traveller"), bootsOfTheTraveller);
         bootsOfTheTravellerRecipe.shape(
                 "XXX",
                 "XYX",

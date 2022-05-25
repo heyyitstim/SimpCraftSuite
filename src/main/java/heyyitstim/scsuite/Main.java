@@ -1,12 +1,16 @@
 package heyyitstim.scsuite;
 
 import heyyitstim.scsuite.Enchantments.*;
+import heyyitstim.scsuite.Events.ArmorEffects.BootsOfTheTravellerHandler;
+import heyyitstim.scsuite.Events.ArmorEffects.FarmArmorHandler;
 import heyyitstim.scsuite.Events.GenerateLoot;
 import heyyitstim.scsuite.Events.JerryHandler;
 import heyyitstim.scsuite.Events.RecipeChecker;
 import heyyitstim.scsuite.Events.*;
 import heyyitstim.scsuite.Items.*;
 import heyyitstim.scsuite.Events.DragonHandler;
+import heyyitstim.scsuite.Items.Armor.BootsOfTheTraveller;
+import heyyitstim.scsuite.Items.Armor.FarmArmor;
 import heyyitstim.scsuite.Util.ChatUtil;
 import heyyitstim.scsuite.Util.ItemBuilder;
 import org.bukkit.Bukkit;
@@ -44,6 +48,8 @@ public final class Main extends JavaPlugin {
         new WeaponRecipes();
         new UtilityItemRecipes();
         new CraftingIngredientRecipes();
+        new FarmArmor();
+        new BootsOfTheTraveller();
 
         // Events
         Bukkit.getPluginManager().registerEvents(new DragonHandler(), this);
@@ -53,6 +59,8 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new EnderBedHandler(), this);
         Bukkit.getPluginManager().registerEvents(new JerryHandler(), this);
         Bukkit.getPluginManager().registerEvents(new CustomTextureHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new BootsOfTheTravellerHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new FarmArmorHandler(), this);
 
         // Enchantments
         Bukkit.getPluginManager().registerEvents(new Beheading(), this);

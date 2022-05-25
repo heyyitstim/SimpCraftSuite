@@ -86,7 +86,7 @@ public class FarmArmor {
                 .addStringNBT("scname", "farm_chestplate")
                 .setCustomModelNumber(1).build();
 
-        ShapedRecipe farmLeggingsRecipe = new ShapedRecipe(NamespacedKey.minecraft("farm_chestplate"), farmLeggings);
+        ShapedRecipe farmLeggingsRecipe = new ShapedRecipe(NamespacedKey.minecraft("farm_leggings"), farmLeggings);
         farmLeggingsRecipe.shape(
                 "XXX",
                 "X X",
@@ -136,7 +136,7 @@ public class FarmArmor {
                 .addStringNBT("scname", "farm_boots")
                 .setCustomModelNumber(1).build();
 
-        ShapedRecipe farmBootsRecipeAlternate = new ShapedRecipe(NamespacedKey.minecraft("farm_boots"), farmBoots);
+        ShapedRecipe farmBootsRecipeAlternate = new ShapedRecipe(NamespacedKey.minecraft("farm_boots_alt"), farmBoots);
         farmBootsRecipeAlternate.shape(
                 "X X",
                 "X X",
