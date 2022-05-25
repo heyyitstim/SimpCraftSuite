@@ -44,7 +44,7 @@ public class RecipeChecker implements Listener {
             handleItemStacks(e.getInventory(), Material.ENDER_PEARL, 16);
         }
 
-        if (isItem(e.getRecipe().getResult(), "compacted_shiny_ender_pearl")) {
+        if (isItem(e.getRecipe().getResult(), "compacted_ender_pearl")) {
             handleItemStacks(e.getInventory(), Material.ENDER_EYE, 16, "shiny_ender_pearl");
         }
 
@@ -60,8 +60,8 @@ public class RecipeChecker implements Listener {
             handleItemStacks(e.getInventory(), Material.ROTTEN_FLESH, 64);
         }
 
-        if (isItem(e.getRecipe().getResult(), "compressed_shiny_sugar_cane")) {
-            handleItemStacks(e.getInventory(), Material.SUGAR, 1, "shiny_sugar_cane");
+        if (isItem(e.getRecipe().getResult(), "compressed_sugar_cane")) {
+            handleItemStacks(e.getInventory(), Material.SUGAR, 1, "shiny_sugar");
         }
     }
 
@@ -72,12 +72,12 @@ public class RecipeChecker implements Listener {
             return;
         }
 
-        if (isItem(e.getRecipe().getResult(), "shining_ender_pearl")) {
+        if (isItem(e.getRecipe().getResult(), "shiny_ender_pearl")) {
             for (ItemStack item : e.getInventory().getMatrix())
                 item.setAmount(0);
         }
 
-        if (isItem(e.getRecipe().getResult(), "compacted_shining_ender_pearl")) {
+        if (isItem(e.getRecipe().getResult(), "compacted_ender_pearl")) {
             for (ItemStack item : e.getInventory().getMatrix())
                 item.setAmount(0);
         }

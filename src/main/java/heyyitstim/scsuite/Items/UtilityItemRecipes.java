@@ -16,11 +16,11 @@ public class UtilityItemRecipes {
     private void registerRecipes() {
         ShapedRecipe enderBed = createEnderBed();
         ShapedRecipe voidCrystal = createVoidCrystal();
-        ShapedRecipe pocketChest = createPocketChest();
+        //ShapedRecipe pocketChest = createPocketChest();
 
         Main.instance.getServer().addRecipe(enderBed);
         Main.instance.getServer().addRecipe(voidCrystal);
-        Main.instance.getServer().addRecipe(pocketChest);
+        //Main.instance.getServer().addRecipe(pocketChest);
     }
 
     private ShapedRecipe createEnderBed() {
@@ -42,7 +42,7 @@ public class UtilityItemRecipes {
                 "XXX",
                 "YYY");
 
-        enderBedRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted shining ender pearl
+        enderBedRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted ender pearl
         enderBedRecipe.setIngredient('Y', Material.END_STONE); // end stone
 
         return enderBedRecipe;
@@ -68,17 +68,16 @@ public class UtilityItemRecipes {
                 "XZX",
                 "XXX");
 
-        voidCrystalRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted shining ender pearl
+        voidCrystalRecipe.setIngredient('X', Material.PLAYER_HEAD); // compacted ender pearl
         voidCrystalRecipe.setIngredient('Z', Material.NETHER_STAR);
 
         return voidCrystalRecipe;
     }
 
-    private ShapedRecipe createPocketChest() {
+    /*private ShapedRecipe createPocketChest() {
         ItemStack pocketChest = new ItemBuilder(Material.PLAYER_HEAD)
                 .setName("&5Pocket Chest")
                 .addLore("")
-                .addLore("&bAbility: Saving Grace")
                 .addLore("&7Virtual storage!")
                 .addLore("&7Has 9 inventory slots.")
                 .addStringNBT("scname", "pocket_chest")
@@ -96,5 +95,5 @@ public class UtilityItemRecipes {
         pocketChestRecipe.setIngredient('Z', Material.ENDER_PEARL);
 
         return pocketChestRecipe;
-    }
+    }*/
 }

@@ -1,12 +1,17 @@
 package heyyitstim.scsuite;
 
 import heyyitstim.scsuite.Enchantments.*;
+import heyyitstim.scsuite.Events.ArmorEffects.BootsOfTheTravelerHandler;
+import heyyitstim.scsuite.Events.ArmorEffects.FarmArmorHandler;
 import heyyitstim.scsuite.Events.GenerateLoot;
 import heyyitstim.scsuite.Events.JerryHandler;
 import heyyitstim.scsuite.Events.RecipeChecker;
 import heyyitstim.scsuite.Events.*;
 import heyyitstim.scsuite.Items.*;
 import heyyitstim.scsuite.Events.DragonHandler;
+import heyyitstim.scsuite.Items.Armor.BootsOfTheTraveler;
+import heyyitstim.scsuite.Items.Armor.FarmArmor;
+import heyyitstim.scsuite.Items.Armor.SkeletonHelmet;
 import heyyitstim.scsuite.Util.ChatUtil;
 import heyyitstim.scsuite.Util.ItemBuilder;
 import org.bukkit.Bukkit;
@@ -44,6 +49,9 @@ public final class Main extends JavaPlugin {
         new WeaponRecipes();
         new UtilityItemRecipes();
         new CraftingIngredientRecipes();
+        new FarmArmor();
+        new BootsOfTheTraveler();
+        new SkeletonHelmet();
 
         // Events
         Bukkit.getPluginManager().registerEvents(new DragonHandler(), this);
@@ -53,6 +61,8 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new EnderBedHandler(), this);
         Bukkit.getPluginManager().registerEvents(new JerryHandler(), this);
         Bukkit.getPluginManager().registerEvents(new CustomTextureHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new BootsOfTheTravelerHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new FarmArmorHandler(), this);
 
         // Enchantments
         Bukkit.getPluginManager().registerEvents(new Beheading(), this);
@@ -65,7 +75,6 @@ public final class Main extends JavaPlugin {
         getCommand("scale").setExecutor(this);
         getCommand("coin").setExecutor(this);
 
-        System.out.println("SCSuite has been enabled!");
     }
 
     @Override
@@ -102,8 +111,8 @@ public final class Main extends JavaPlugin {
         return false;
     }
 
-    @Override
+    /*@Override
     public void onDisable() {
         System.out.println("SCSuite has been disabled!");
-    }
+    }*/
 }

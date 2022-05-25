@@ -8,6 +8,7 @@ import org.bukkit.Material;
 import org.bukkit.craftbukkit.libs.org.codehaus.plexus.util.Base64;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -60,8 +61,8 @@ public class ItemBuilder {
     }
 
     public ItemBuilder setLeatherColor(Color color) {
-        if (item.getType() != Material.LEATHER_BOOTS || item.getType() != Material.LEATHER_CHESTPLATE
-                || item.getType() != Material.LEATHER_HELMET || item.getType() != Material.LEATHER_HELMET) { return this; }
+        if (item.getType() != Material.LEATHER_BOOTS && item.getType() != Material.LEATHER_CHESTPLATE
+                && item.getType() != Material.LEATHER_HELMET && item.getType() != Material.LEATHER_LEGGINGS) { return this; }
 
         LeatherArmorMeta armorMeta = (LeatherArmorMeta) item.getItemMeta();
         armorMeta.setColor(color);
@@ -115,5 +116,10 @@ public class ItemBuilder {
     public ItemStack build() {
         item.setItemMeta(meta);
         return item;
+    }
+
+    public ItemBuilder hideEnchants() {
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        return this;
     }
 }
