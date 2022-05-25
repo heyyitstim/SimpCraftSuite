@@ -24,7 +24,6 @@ public class CraftingIngredientRecipes {
         ShapedRecipe compressedString = createCompressedString();
         ShapedRecipe packedHay = createPackedHay();
         ShapedRecipe tightlyPackedHay = createTightlyPackedHay();
-        ShapedRecipe hardenedDiamond = createHardenedDiamond();
         ShapedRecipe shinySugar = createShinySugar();
         ShapedRecipe compressedSugarCane = createCompressedSugarCane();
 
@@ -34,7 +33,6 @@ public class CraftingIngredientRecipes {
         Main.instance.getServer().addRecipe(compressedString);
         Main.instance.getServer().addRecipe(packedHay);
         Main.instance.getServer().addRecipe(tightlyPackedHay);
-        Main.instance.getServer().addRecipe(hardenedDiamond);
         Main.instance.getServer().addRecipe(shinySugar);
         Main.instance.getServer().addRecipe(compressedSugarCane);
     }
@@ -150,24 +148,6 @@ public class CraftingIngredientRecipes {
         tightlyPackedHayRecipe.setIngredient('X', Material.HAY_BLOCK);
 
         return tightlyPackedHayRecipe;
-    }
-
-    private ShapedRecipe createHardenedDiamond() {
-        ItemStack hardenedDiamond = new ItemBuilder(Material.DIAMOND)
-                .setName("&9Hardened Diamond")
-                .addGlow()
-                .addStringNBT("scname", "hardened_diamond")
-                .setCustomModelNumber(1).build();
-
-        ShapedRecipe hardenedDiamondRecipe = new ShapedRecipe((NamespacedKey.minecraft("hardened_diamond")), hardenedDiamond);
-        hardenedDiamondRecipe.shape(
-                "XXX",
-                "XYX",
-                "XXX");
-
-        hardenedDiamondRecipe.setIngredient('X', Material.DIAMOND);
-
-        return hardenedDiamondRecipe;
     }
 
     private ShapedRecipe createShinySugar() {
