@@ -23,11 +23,7 @@ public class Undead implements Listener {
     }
 
     private boolean isUndeadSword(ItemStack item) {
-        if (!item.hasItemMeta())
-            return false;
-
-        ItemMeta meta = item.getItemMeta();
-        String tag = NBTUtil.getStringTag(meta, "scname");
+        String tag = NBTUtil.getStringTag(item, "scname");
 
         if (tag == null)
             return false;

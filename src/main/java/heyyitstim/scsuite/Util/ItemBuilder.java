@@ -3,14 +3,13 @@ package heyyitstim.scsuite.Util;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import heyyitstim.scsuite.Main;
+import org.apache.commons.codec.binary.Base64;
 import org.bukkit.Color;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.libs.org.codehaus.plexus.util.Base64;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -55,8 +54,8 @@ public class ItemBuilder {
     }
 
     public ItemBuilder addStringNBT(String name, String value) {
-        meta = NBTUtil.addTag(meta, name, value);
         item.setItemMeta(meta);
+        item = NBTUtil.addTag(item, name, value);
         return this;
     }
 
@@ -64,10 +63,9 @@ public class ItemBuilder {
         if (item.getType() != Material.LEATHER_BOOTS && item.getType() != Material.LEATHER_CHESTPLATE
                 && item.getType() != Material.LEATHER_HELMET && item.getType() != Material.LEATHER_LEGGINGS) { return this; }
 
-        LeatherArmorMeta armorMeta = (LeatherArmorMeta) item.getItemMeta();
+        LeatherArmorMeta armorMeta = (LeatherArmorMeta) meta;
         armorMeta.setColor(color);
 
-        item.setItemMeta(armorMeta);
         this.meta = armorMeta;
 
         return this;
@@ -93,10 +91,9 @@ public class ItemBuilder {
         if (value == null || value.isEmpty() || item.getType() != Material.PLAYER_HEAD)
             return this;
 
-        SkullMeta skullMeta = (SkullMeta) item.getItemMeta();
+        SkullMeta skullMeta = (SkullMeta) meta;
         GameProfile profile = new GameProfile(UUID.randomUUID(), null);
-        byte[] encodedData = Base64.encodeBase64(String.format("{textures:{SKIN:{url:\"%s\"}}}", value).getBytes());
-        profile.getProperties().put("textures", new Property("textures", new String(encodedData)));
+        profile.getProperties().put("textures", new Property("textures", value));
 
         try {
             Field profileField = skullMeta.getClass().getDeclaredField("profile");
@@ -104,7 +101,6 @@ public class ItemBuilder {
             profileField.set(skullMeta, profile);
         }catch (NoSuchFieldException | IllegalAccessException e) { e.printStackTrace(); }
 
-        meta = skullMeta;
         return this;
     }
 

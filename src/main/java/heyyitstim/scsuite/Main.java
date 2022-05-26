@@ -4,7 +4,6 @@ import heyyitstim.scsuite.Enchantments.*;
 import heyyitstim.scsuite.Events.ArmorEffects.BootsOfTheTravelerHandler;
 import heyyitstim.scsuite.Events.ArmorEffects.FarmArmorHandler;
 import heyyitstim.scsuite.Events.GenerateLoot;
-import heyyitstim.scsuite.Events.JerryHandler;
 import heyyitstim.scsuite.Events.RecipeChecker;
 import heyyitstim.scsuite.Events.*;
 import heyyitstim.scsuite.Items.*;
@@ -59,7 +58,6 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new GenerateLoot(), this);
         Bukkit.getPluginManager().registerEvents(new VoidHandler(), this);
         Bukkit.getPluginManager().registerEvents(new EnderBedHandler(), this);
-        Bukkit.getPluginManager().registerEvents(new JerryHandler(), this);
         Bukkit.getPluginManager().registerEvents(new CustomTextureHandler(), this);
         Bukkit.getPluginManager().registerEvents(new BootsOfTheTravelerHandler(), this);
         Bukkit.getPluginManager().registerEvents(new FarmArmorHandler(), this);

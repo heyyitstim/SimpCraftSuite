@@ -1,37 +1,30 @@
 package heyyitstim.scsuite.Util;
 
-import heyyitstim.scsuite.Main;
-import org.bukkit.NamespacedKey;
+import de.tr7zw.nbtapi.NBTItem;
+import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.persistence.PersistentDataContainer;
-import org.bukkit.persistence.PersistentDataType;
 
 public class NBTUtil {
 
-    public static ItemMeta addTag(ItemMeta meta, String name, String value) {
-        NamespacedKey key = new NamespacedKey(Main.instance, name);
-        meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, value);
-        return meta;
+    public static ItemStack addTag(ItemStack item, String name, String value) {
+        if (item == null || item.getType() == Material.AIR) { return null; }
+
+        NBTItem nbti = new NBTItem(item);
+        nbti.setString(name, value);
+        return nbti.getItem();
     }
 
-    public static String getStringTag(ItemMeta meta, String name) {
-        NamespacedKey key = new NamespacedKey(Main.instance, name);
-        PersistentDataContainer container = meta.getPersistentDataContainer();
+    public static String getStringTag(ItemStack item, String name) {
+        if (item == null || item.getType() == Material.AIR) { return null; }
 
-        if(container.has(key , PersistentDataType.STRING)) {
-            return container.get(key, PersistentDataType.STRING);
-        }
-
-        return null;
+        NBTItem nbti = new NBTItem(item);
+        return nbti.getString(name);
     }
 
     public static boolean isItem(String name, String equal, ItemStack item) {
-        if (!item.hasItemMeta())
-            return false;
+        if (item == null || item.getType() == Material.AIR) { return false; }
 
-        ItemMeta meta = item.getItemMeta();
-        String tag = NBTUtil.getStringTag(meta, name);
+        String tag = getStringTag(item, name);
 
         if (tag == null)
             return false;

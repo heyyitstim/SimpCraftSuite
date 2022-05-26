@@ -78,7 +78,8 @@ public class CraftingIngredientRecipes {
                 .setName("&9Compacted Ender Pearl")
                 .addGlow()
                 .addStringNBT("scname", "compacted_ender_pearl")
-                .setCustomModelNumber(1).build();
+                .setCustomModelNumber(1)
+                .build();
 
         SkullMeta meta = (SkullMeta)compactedEnderPearl.getItemMeta();
         meta.setOwningPlayer(Bukkit.getOfflinePlayer("Cypiea"));
@@ -136,7 +137,7 @@ public class CraftingIngredientRecipes {
                 .setName("&9Tightly Packed Hay")
                 .addGlow()
                 .addStringNBT("scname", "tightly_packed_hay")
-                .addTexture("http://textures.minecraft.net/texture/768ffd4c3d73f32d39eade310556150ba490e0d934ec4a6923c9ebbabbb9c246")
+                .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzY4ZmZkNGMzZDczZjMyZDM5ZWFkZTMxMDU1NjE1MGJhNDkwZTBkOTM0ZWM0YTY5MjNjOWViYmFiYmI5YzI0NiJ9fX0=")
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe tightlyPackedHayRecipe = new ShapedRecipe((NamespacedKey.minecraft("tightly_packed_hay")), tightlyPackedHay);
@@ -173,7 +174,7 @@ public class CraftingIngredientRecipes {
                 .setName("&9Compressed Sugar Cane")
                 .addGlow()
                 .addStringNBT("scname", "compressed_sugar_cane")
-                .addTexture("http://textures.minecraft.net/texture/f06706eecb2d558ace27abda0b0b7b801d36d17dd7a890a9520dbe522374f8a6")
+                .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODYyNGJhY2I1ZjE5ODZlNjQ3N2FiY2U0YWU3ZGNhMTgyMGE1MjYwYjYyMzNiNTViYTFkOWJhOTM2Yzg0YiJ9fX0=")
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe compressedSugarCaneRecipe = new ShapedRecipe((NamespacedKey.minecraft("compressed_sugar_cane")), compressedSugarCane);
