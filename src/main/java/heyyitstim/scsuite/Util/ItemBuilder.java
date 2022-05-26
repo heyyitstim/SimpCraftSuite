@@ -56,6 +56,7 @@ public class ItemBuilder {
     public ItemBuilder addStringNBT(String name, String value) {
         item.setItemMeta(meta);
         item = NBTUtil.addTag(item, name, value);
+        meta = item.getItemMeta();
         return this;
     }
 
