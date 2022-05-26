@@ -82,8 +82,8 @@ public class FarmArmor {
                 .addLore("&bFull Set Bonus: Farm Hand")
                 .addLore("&7Hoes will not lose durability.")
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 4, EquipmentSlot.LEGS)
+                .addStringNBT("scname", "farm_leggings")
                 .setLeatherColor(Color.YELLOW)
-                .addStringNBT("scname", "farm_chestplate")
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe farmLeggingsRecipe = new ShapedRecipe(NamespacedKey.minecraft("farm_leggings"), farmLeggings);

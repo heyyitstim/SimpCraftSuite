@@ -12,6 +12,10 @@ import org.bukkit.inventory.ShapedRecipe;
 
 public class BootsOfTheTraveler {
 
+    public BootsOfTheTraveler() {
+        registerRecipes();
+    }
+
     public void registerRecipes() {
 
         ShapedRecipe bootsOfTheTravelerRecipe = createBootsOfTheTraveler();
