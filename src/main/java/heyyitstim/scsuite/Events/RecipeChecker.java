@@ -63,6 +63,10 @@ public class RecipeChecker implements Listener {
         if (isItem(e.getRecipe().getResult(), "compressed_sugar_cane")) {
             handleItemStacks(e.getInventory(), Material.SUGAR, 1, "shiny_sugar");
         }
+
+        if (isItem(e.getRecipe().getResult(), "packed_hay")) {
+            handleItemStacks(e.getInventory(), Material.HAY_BLOCK, 1);
+        }
     }
 
     @EventHandler

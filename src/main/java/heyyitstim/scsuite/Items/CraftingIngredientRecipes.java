@@ -5,6 +5,7 @@ import heyyitstim.scsuite.Util.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -23,7 +24,6 @@ public class CraftingIngredientRecipes {
         ShapedRecipe compactedEnderPearl = createCompactedEnderPearl();
         ShapedRecipe compressedString = createCompressedString();
         ShapedRecipe packedHay = createPackedHay();
-        ShapedRecipe tightlyPackedHay = createTightlyPackedHay();
         ShapedRecipe shinySugar = createShinySugar();
         ShapedRecipe compressedSugarCane = createCompressedSugarCane();
 
@@ -32,7 +32,6 @@ public class CraftingIngredientRecipes {
         Main.instance.getServer().addRecipe(compactedEnderPearl);
         Main.instance.getServer().addRecipe(compressedString);
         Main.instance.getServer().addRecipe(packedHay);
-        Main.instance.getServer().addRecipe(tightlyPackedHay);
         Main.instance.getServer().addRecipe(shinySugar);
         Main.instance.getServer().addRecipe(compressedSugarCane);
     }
@@ -40,7 +39,9 @@ public class CraftingIngredientRecipes {
     private ShapedRecipe createCompressedRottenFlesh() {
         ItemStack compressedRottenFlesh = new ItemBuilder(Material.ROTTEN_FLESH)
                 .setName("&aCompressed Rotten Flesh")
-                .addGlow()
+                //.addGlow()
+                .addEnchant(Enchantment.WATER_WORKER, 1)
+                .hideEnchants()
                 .addStringNBT("scname", "compressed_rotten_flesh")
                 .setCustomModelNumber(1).build();
 
@@ -58,7 +59,9 @@ public class CraftingIngredientRecipes {
     private ShapedRecipe createShinyEnderPearl() {
         ItemStack shinyEnderPearl = new ItemBuilder(Material.ENDER_EYE)
                 .setName("&aShiny Ender Pearl")
-                .addGlow()
+                //.addGlow()
+                .addEnchant(Enchantment.WATER_WORKER, 1)
+                .hideEnchants()
                 .addStringNBT("scname", "shiny_ender_pearl")
                 .setCustomModelNumber(1).build();
 
@@ -76,14 +79,14 @@ public class CraftingIngredientRecipes {
     private ShapedRecipe createCompactedEnderPearl() {
         ItemStack compactedEnderPearl = new ItemBuilder(Material.PLAYER_HEAD)
                 .setName("&9Compacted Ender Pearl")
-                .addGlow()
+                .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWNiN2MyMWNjNDNkYzE3Njc4ZWU2ZjE2NTkxZmZhYWIxZjYzN2MzN2Y0ZjZiYmQ4Y2VhNDk3NDUxZDc2ZGI2ZCJ9fX0=")
                 .addStringNBT("scname", "compacted_ender_pearl")
                 .setCustomModelNumber(1)
                 .build();
 
-        SkullMeta meta = (SkullMeta)compactedEnderPearl.getItemMeta();
+        /*SkullMeta meta = (SkullMeta)compactedEnderPearl.getItemMeta();
         meta.setOwningPlayer(Bukkit.getOfflinePlayer("Cypiea"));
-        compactedEnderPearl.setItemMeta(meta);
+        compactedEnderPearl.setItemMeta(meta);*/
 
         ShapedRecipe compactedEnderPearlRecipe = new ShapedRecipe((NamespacedKey.minecraft("compacted_ender_pearl")), compactedEnderPearl);
         compactedEnderPearlRecipe.shape(
@@ -99,7 +102,9 @@ public class CraftingIngredientRecipes {
     private ShapedRecipe createCompressedString() {
         ItemStack compressedString = new ItemBuilder(Material.WHITE_WOOL)
                 .setName("&aCompressed String")
-                .addGlow()
+                //.addGlow()
+                .addEnchant(Enchantment.WATER_WORKER, 1)
+                .hideEnchants()
                 .addStringNBT("scname", "compressed_string")
                 .setCustomModelNumber(1).build();
 
@@ -116,10 +121,10 @@ public class CraftingIngredientRecipes {
     }
 
     private ShapedRecipe createPackedHay() {
-        ItemStack packedHay = new ItemBuilder(Material.HAY_BLOCK)
-                .setName("&aPacked Hay")
-                .addGlow()
-                .addStringNBT("scname", "packed_hay")
+        ItemStack packedHay = new ItemBuilder(Material.PLAYER_HEAD)
+                .setName("&9Packed Hay")
+                .addStringNBT("scname", "tightly_packed_hay")
+                .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzY4ZmZkNGMzZDczZjMyZDM5ZWFkZTMxMDU1NjE1MGJhNDkwZTBkOTM0ZWM0YTY5MjNjOWViYmFiYmI5YzI0NiJ9fX0=")
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe packedHayRecipe = new ShapedRecipe((NamespacedKey.minecraft("packed_hay")), packedHay);
@@ -132,29 +137,13 @@ public class CraftingIngredientRecipes {
 
         return packedHayRecipe;
     }
-    private ShapedRecipe createTightlyPackedHay() {
-        ItemStack tightlyPackedHay = new ItemBuilder(Material.PLAYER_HEAD)
-                .setName("&9Tightly Packed Hay")
-                .addGlow()
-                .addStringNBT("scname", "tightly_packed_hay")
-                .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzY4ZmZkNGMzZDczZjMyZDM5ZWFkZTMxMDU1NjE1MGJhNDkwZTBkOTM0ZWM0YTY5MjNjOWViYmFiYmI5YzI0NiJ9fX0=")
-                .setCustomModelNumber(1).build();
-
-        ShapedRecipe tightlyPackedHayRecipe = new ShapedRecipe((NamespacedKey.minecraft("tightly_packed_hay")), tightlyPackedHay);
-        tightlyPackedHayRecipe.shape(
-                "XXX",
-                "XXX",
-                "XXX");
-
-        tightlyPackedHayRecipe.setIngredient('X', Material.HAY_BLOCK);
-
-        return tightlyPackedHayRecipe;
-    }
 
     private ShapedRecipe createShinySugar() {
         ItemStack shinySugar = new ItemBuilder(Material.SUGAR)
                 .setName("&aShiny Sugar")
-                .addGlow()
+                //.addGlow()
+                .addEnchant(Enchantment.WATER_WORKER, 1)
+                .hideEnchants()
                 .addStringNBT("scname", "shiny_sugar")
                 .setCustomModelNumber(1).build();
 
@@ -170,9 +159,8 @@ public class CraftingIngredientRecipes {
     }
 
     private ShapedRecipe createCompressedSugarCane() {
-        ItemStack compressedSugarCane = new ItemBuilder(Material.PLAYER_HEAD)
+        ItemStack compressedSugarCane = new ItemBuilder(Material.SUGAR_CANE)
                 .setName("&9Compressed Sugar Cane")
-                .addGlow()
                 .addStringNBT("scname", "compressed_sugar_cane")
                 .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODYyNGJhY2I1ZjE5ODZlNjQ3N2FiY2U0YWU3ZGNhMTgyMGE1MjYwYjYyMzNiNTViYTFkOWJhOTM2Yzg0YiJ9fX0=")
                 .setCustomModelNumber(1).build();
