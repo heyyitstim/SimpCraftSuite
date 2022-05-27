@@ -45,7 +45,7 @@ public class FarmArmorHandler implements Listener {
 
     private boolean isHoe(ItemStack item) {
         if (item == null) { return false; }
-        return item.getType() == Material.WOODEN_HOE || item.getType() == Material.STONE_HOE || item.getType() == Material.IRON_HOE || item.getType() == Material.DIAMOND_HOE || item.getType() == Material.NETHERITE_HOE;
+        return item.getType() == Material.WOODEN_HOE || item.getType() == Material.STONE_HOE || item.getType() == Material.IRON_HOE || item.getType() == Material.GOLDEN_HOE || item.getType() == Material.DIAMOND_HOE || item.getType() == Material.NETHERITE_HOE;
     }
 
     @EventHandler
