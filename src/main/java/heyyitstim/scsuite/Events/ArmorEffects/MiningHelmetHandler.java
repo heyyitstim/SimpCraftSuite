@@ -35,8 +35,6 @@ public class MiningHelmetHandler implements Listener {
 
             Player player = (Player)e.getWhoClicked();
 
-            System.out.println(e.getSlot() + " " + e.getAction());
-
             if (e.getSlot() == 39) {
 
                 InventoryAction action = e.getAction();
