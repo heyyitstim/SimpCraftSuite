@@ -1,5 +1,6 @@
 package heyyitstim.scsuite.Events.ArmorEffects;
 
+import heyyitstim.scsuite.Main;
 import heyyitstim.scsuite.Util.NBTUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -10,6 +11,7 @@ import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class MiningHelmetHandler implements Listener {
 
@@ -33,15 +35,17 @@ public class MiningHelmetHandler implements Listener {
 
             Player player = (Player)e.getWhoClicked();
 
+            System.out.println(e.getSlot() + " " + e.getAction());
+
             if (e.getSlot() == 39) {
 
                 InventoryAction action = e.getAction();
                 ItemStack slotItem = e.getCurrentItem();
                 ItemStack holdingItem = e.getCursor();
 
-                if (action == InventoryAction.PLACE_ALL) {
+                if (action == InventoryAction.PLACE_ALL || action == InventoryAction.PICKUP_ALL || action == InventoryAction.SWAP_WITH_CURSOR) {
 
-                    if (isHelmet(slotItem)) {
+                    if (checkArmor(slotItem)) {
                         player.removePotionEffect(PotionEffectType.NIGHT_VISION);
                         return;
                     }
