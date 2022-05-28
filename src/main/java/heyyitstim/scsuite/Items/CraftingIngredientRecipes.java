@@ -159,7 +159,7 @@ public class CraftingIngredientRecipes {
     }
 
     private ShapedRecipe createCompressedSugarCane() {
-        ItemStack compressedSugarCane = new ItemBuilder(Material.SUGAR_CANE)
+        ItemStack compressedSugarCane = new ItemBuilder(Material.PLAYER_HEAD)
                 .setName("&9Compressed Sugar Cane")
                 .addStringNBT("scname", "compressed_sugar_cane")
                 .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODYyNGJhY2I1ZjE5ODZlNjQ3N2FiY2U0YWU3ZGNhMTgyMGE1MjYwYjYyMzNiNTViYTFkOWJhOTM2Yzg0YiJ9fX0=")

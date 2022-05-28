@@ -40,7 +40,7 @@ public class BootsOfTheTravelerHandler implements Listener {
                 ItemStack slotItem = e.getCurrentItem();
                 ItemStack holdingItem = e.getCursor();
 
-                if (action == InventoryAction.PLACE_ALL) {
+                if (action == InventoryAction.PLACE_ALL || action == InventoryAction.PICKUP_ALL || action == InventoryAction.SWAP_WITH_CURSOR) {
 
                     if (isBoots(slotItem)) {
                         player.removePotionEffect(PotionEffectType.SPEED);
