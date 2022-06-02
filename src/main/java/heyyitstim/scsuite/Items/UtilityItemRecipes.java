@@ -73,27 +73,4 @@ public class UtilityItemRecipes {
 
         return voidCrystalRecipe;
     }
-
-    /*private ShapedRecipe createPocketChest() {
-        ItemStack pocketChest = new ItemBuilder(Material.PLAYER_HEAD)
-                .setName("&5Pocket Chest")
-                .addLore("")
-                .addLore("&7Virtual storage!")
-                .addLore("&7Has 9 inventory slots.")
-                .addStringNBT("scname", "pocket_chest")
-                .setCustomModelNumber(1).build();
-
-        //Main.enderPearlRecipes.add(voidCrystal);
-
-        ShapedRecipe pocketChestRecipe = new ShapedRecipe(NamespacedKey.minecraft("pocket_chest"), pocketChest);
-        pocketChestRecipe.shape(
-                "XXX",
-                "XZX",
-                "XXX");
-
-        pocketChestRecipe.setIngredient('X', Material.CHEST);
-        pocketChestRecipe.setIngredient('Z', Material.ENDER_PEARL);
-
-        return pocketChestRecipe;
-    }*/
 }

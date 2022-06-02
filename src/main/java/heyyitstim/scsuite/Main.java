@@ -5,7 +5,8 @@ import heyyitstim.scsuite.Events.ArmorEffects.BootsOfTheTravelerHandler;
 import heyyitstim.scsuite.Events.ArmorEffects.FarmArmorHandler;
 import heyyitstim.scsuite.Events.ArmorEffects.MiningHelmetHandler;
 import heyyitstim.scsuite.Events.GenerateLoot;
-import heyyitstim.scsuite.Events.ItemEffects.HammerHandler;
+import heyyitstim.scsuite.Events.ItemEffects.PocketChestHandler;
+import heyyitstim.scsuite.Events.ToolEffects.HammerHandler;
 import heyyitstim.scsuite.Events.RecipeChecker;
 import heyyitstim.scsuite.Events.*;
 import heyyitstim.scsuite.Items.*;
@@ -15,6 +16,7 @@ import heyyitstim.scsuite.Items.Armor.FarmArmor;
 import heyyitstim.scsuite.Items.Armor.MiningHelmet;
 import heyyitstim.scsuite.Items.Armor.SkeletonHelmet;
 import heyyitstim.scsuite.Items.Tools.Hammer;
+import heyyitstim.scsuite.Items.Utility.PocketChest;
 import heyyitstim.scsuite.Util.ChatUtil;
 import heyyitstim.scsuite.Util.ItemBuilder;
 import org.bukkit.Bukkit;
@@ -57,6 +59,7 @@ public final class Main extends JavaPlugin {
         new SkeletonHelmet();
         new Hammer();
         new MiningHelmet();
+        new PocketChest();
 
         // Events
         Bukkit.getPluginManager().registerEvents(new DragonHandler(), this);
@@ -69,6 +72,8 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new FarmArmorHandler(), this);
         Bukkit.getPluginManager().registerEvents(new HammerHandler(), this);
         Bukkit.getPluginManager().registerEvents(new MiningHelmetHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new PocketChestHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new DisableHeadPlacement(), this);
 
         // Enchantments
         Bukkit.getPluginManager().registerEvents(new Beheading(), this);

@@ -1,4 +1,4 @@
-package heyyitstim.scsuite.Events.ItemEffects;
+package heyyitstim.scsuite.Events.ToolEffects;
 
 import heyyitstim.scsuite.Util.NBTUtil;
 import org.bukkit.block.Block;
