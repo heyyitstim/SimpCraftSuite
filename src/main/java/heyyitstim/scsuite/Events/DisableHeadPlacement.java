@@ -13,6 +13,9 @@ public class DisableHeadPlacement implements Listener {
         ItemStack inHand = e.getPlayer().getInventory().getItemInMainHand();
 
         String string = NBTUtil.getStringTag(inHand, "scname");
+        if (string == "") {
+            return;
+        }
         if (string != null || string.length() > 0) {
             e.setCancelled(true);
         }
