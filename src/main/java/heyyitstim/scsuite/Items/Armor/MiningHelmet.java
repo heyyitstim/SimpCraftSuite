@@ -23,7 +23,7 @@ public class MiningHelmet {
     }
 
     private ShapedRecipe createMiningHelmet() {
-        ItemStack miningHelmet = new ItemBuilder(Material.GOLDEN_HELMET)
+        ItemStack miningHelmet = new ItemBuilder(Material.CARVED_PUMPKIN)
                 .setName("&aMining Helmet")
                 .addLore("")
                 .addLore("&bPiece Bonus: True Sight")

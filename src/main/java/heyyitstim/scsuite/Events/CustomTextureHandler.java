@@ -16,7 +16,7 @@ public class CustomTextureHandler implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
 
-        e.getPlayer().setResourcePack("https://www.dropbox.com/s/003q8gt87zmasee/SimpCraft%20v2.0.zip?dl=1"); // resource pack link
+        e.getPlayer().setResourcePack("https://www.dropbox.com/s/xpmtj36r2mjzmzg/SimpCraft%20v2.0.zip?dl=1"); // resource pack link
 
         TextComponent message = new TextComponent("Click HERE to view the Wiki!");
         message.setColor(ChatColor.GREEN);
