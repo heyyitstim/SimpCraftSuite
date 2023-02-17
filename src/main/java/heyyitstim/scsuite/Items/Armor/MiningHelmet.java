@@ -29,6 +29,8 @@ public class MiningHelmet {
                 .addLore("&bPiece Bonus: True Sight")
                 .addLore("&7Grants the wearer heightened")
                 .addLore("&7visibility in darkness.")
+                .addLore("")
+                .addLore("&a&lUNCOMMON HELMET")
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 2, EquipmentSlot.HEAD)
                 .addGlow()
                 .hideEnchants()
@@ -41,7 +43,7 @@ public class MiningHelmet {
                 "XXX",
                 "X X");
 
-        miningHelmetRecipe.setIngredient('X', Material.GOLD_INGOT);
+        miningHelmetRecipe.setIngredient('X', Material.GOLD_BLOCK);
         miningHelmetRecipe.setIngredient('Y', Material.REDSTONE_LAMP);
 
         return miningHelmetRecipe;

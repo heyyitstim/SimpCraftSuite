@@ -1,9 +1,7 @@
 package heyyitstim.scsuite;
 
 import heyyitstim.scsuite.Enchantments.*;
-import heyyitstim.scsuite.Events.ArmorEffects.BootsOfTheTravelerHandler;
-import heyyitstim.scsuite.Events.ArmorEffects.FarmArmorHandler;
-import heyyitstim.scsuite.Events.ArmorEffects.MiningHelmetHandler;
+import heyyitstim.scsuite.Events.ArmorEffects.*;
 import heyyitstim.scsuite.Events.GenerateLoot;
 import heyyitstim.scsuite.Events.ItemEffects.PocketChestHandler;
 import heyyitstim.scsuite.Events.ToolEffects.HammerHandler;
@@ -11,10 +9,7 @@ import heyyitstim.scsuite.Events.RecipeChecker;
 import heyyitstim.scsuite.Events.*;
 import heyyitstim.scsuite.Items.*;
 import heyyitstim.scsuite.Events.DragonHandler;
-import heyyitstim.scsuite.Items.Armor.BootsOfTheTraveler;
-import heyyitstim.scsuite.Items.Armor.FarmArmor;
-import heyyitstim.scsuite.Items.Armor.MiningHelmet;
-import heyyitstim.scsuite.Items.Armor.SkeletonHelmet;
+import heyyitstim.scsuite.Items.Armor.*;
 import heyyitstim.scsuite.Items.Tools.Hammer;
 import heyyitstim.scsuite.Items.Utility.PocketChest;
 import heyyitstim.scsuite.Util.ChatUtil;
@@ -60,6 +55,8 @@ public final class Main extends JavaPlugin {
         new Hammer();
         new MiningHelmet();
         new PocketChest();
+        new ScubaSuit();
+        new HelmetOfWisdom();
 
         // Events
         Bukkit.getPluginManager().registerEvents(new DragonHandler(), this);
@@ -74,6 +71,9 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new MiningHelmetHandler(), this);
         Bukkit.getPluginManager().registerEvents(new PocketChestHandler(), this);
         Bukkit.getPluginManager().registerEvents(new DisableHeadPlacement(), this);
+        Bukkit.getPluginManager().registerEvents(new HelmetOfWisdomHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new ScubaArmorHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new AnyHelmet(), this);
 
         // Enchantments
         Bukkit.getPluginManager().registerEvents(new Beheading(), this);
@@ -95,7 +95,8 @@ public final class Main extends JavaPlugin {
         if (player.isOp()) {
             if (command.getName().equalsIgnoreCase("scale")){
                 ItemStack SCALE = new ItemBuilder(Material.IRON_NUGGET)
-                        .setName("&cDragon Scale")
+                        .setName("&6Dragon Scale")
+                        .addLore("&6&lLEGENDARY")
                         .addGlow()
                         .addStringNBT("scname", "dragon_scale")
                         .setCustomModelNumber(1).build();
@@ -108,6 +109,7 @@ public final class Main extends JavaPlugin {
             if (command.getName().equalsIgnoreCase("coin")){
                 ItemStack GoldCoin = new ItemBuilder(Material.GOLD_NUGGET)
                         .setName("&6Gold Coin")
+                        .addLore("&6&lLEGENDARY")
                         .addStringNBT("scname", "gold_coin")
                         .setCustomModelNumber(1).build();
 

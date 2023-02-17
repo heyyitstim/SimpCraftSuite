@@ -29,6 +29,8 @@ public class BootsOfTheTraveler {
                 .addLore("")
                 .addLore("&bPiece Bonus: Quick Step")
                 .addLore("&7Gain permanent speed 1 while wearing.")
+                .addLore("")
+                .addLore("&5&lEPIC BOOTS")
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 3, EquipmentSlot.FEET)
                 .addStringNBT("scname", "boots_of_the_traveler")
                 .setLeatherColor(Color.PURPLE)

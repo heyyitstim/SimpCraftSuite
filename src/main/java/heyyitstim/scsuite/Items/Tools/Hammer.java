@@ -22,11 +22,13 @@ public class Hammer {
 
     private ShapedRecipe createHammer() {
         ItemStack hammer = new ItemBuilder(Material.DIAMOND_PICKAXE)
-                .setName("&cHammer")
+                .setName("&6Hammer")
                 .addLore("")
                 .addLore("&bAbility: Tunnel")
-                .addLore("&7Grants the ability to mine")
-                .addLore("&7a larger than normal area.")
+                .addLore("&7Destroys blocks in")
+                .addLore("&7a &c3x3 &7area.")
+                .addLore("")
+                .addLore("&6&lLEGENDARY PICKAXE")
                 .addGlow()
                 .hideEnchants()
                 .addStringNBT("scname", "hammer")

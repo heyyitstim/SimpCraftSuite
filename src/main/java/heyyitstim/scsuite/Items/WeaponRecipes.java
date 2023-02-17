@@ -31,8 +31,12 @@ public class WeaponRecipes {
 
     private ShapedRecipe createVorpalSword() {
         ItemStack vorpalSword = new ItemBuilder(Material.NETHERITE_SWORD)
-                .setName("&eVorpal Sword")
-                .addLore("&7+5% Wither Skull Chance")
+                .setName("&5Vorpal Sword")
+                .addLore("")
+                .addLore("&c5% &7increase to drop chance of")
+                .addLore("&7Wither Skeleton Skulls.")
+                .addLore("")
+                .addLore("&5&lEPIC SWORD")
                 .addStringNBT("scname", "vorpal_sword")
                 .setCustomModelNumber(1).build();
 
@@ -50,8 +54,12 @@ public class WeaponRecipes {
 
     private ShapedRecipe createAdornedVorpalSword() {
         ItemStack adornedVorpalSword = new ItemBuilder(Material.NETHERITE_SWORD)
-                .setName("&9Adorned Vorpal Sword")
-                .addLore("&7+10% Wither Skull Chance")
+                .setName("&6Adorned Vorpal Sword")
+                .addLore("")
+                .addLore("&c10% &7increase to drop chance of")
+                .addLore("&7Wither Skeleton Skulls.")
+                .addLore("")
+                .addLore("&6&lLEGENDARY SWORD")
                 .addStringNBT("scname", "adorned_vorpal_sword")
                 .setCustomModelNumber(2).build();
 
@@ -71,8 +79,14 @@ public class WeaponRecipes {
 
     private ShapedRecipe createUndeadSword() {
         ItemStack undeadSword = new ItemBuilder(Material.IRON_SWORD)
-                .setName("&eUndead Sword")
-                .addLore("&7+50% Damage to Undead")
+                .setName("&aUndead Sword")
+                .addLore("")
+                .addLore("&7Deals &c+50% &7damage to")
+                .addLore("&7Zombies, Skeletons, Phantoms,")
+                .addLore("&7Wither Skeletons, Strays, Withers,")
+                .addLore("&7and Zoglins.")
+                .addLore("")
+                .addLore("&a&lUNCOMMON SWORD")
                 .addStringNBT("scname", "undead_sword")
                 .setCustomModelNumber(1).build();
 
@@ -92,8 +106,13 @@ public class WeaponRecipes {
 
     private ShapedRecipe createSpiderSword() {
         ItemStack spiderSword = new ItemBuilder(Material.IRON_SWORD)
-                .setName("&eSpider Sword")
-                .addLore("&7+50% Damage to Spiders")
+                .setName("&aSpider Sword")
+                .addLore("")
+                .addLore("&7Deals &c+50% &7damage to")
+                .addLore("&7Spiders, Cave Spiders,")
+                .addLore("&7and Silverfish.")
+                .addLore("")
+                .addLore("&a&lUNCOMMON SWORD")
                 .addStringNBT("scname", "spider_sword")
                 .setCustomModelNumber(2).build();
 
@@ -113,9 +132,14 @@ public class WeaponRecipes {
 
     private ShapedRecipe createEnderSpoon() {
         ItemStack enderSpoon = new ItemBuilder(Material.DIAMOND_SHOVEL)
-                .setName("&eEnder Spoon")
+                .setName("&9Ender Spoon")
                 .addLore("&7+25% Base Damage")
-                .addLore("&7+50% Damage to End Creatures")
+                .addLore("")
+                .addLore("&7Deals &c+50% &7damage to")
+                .addLore("&7Enderman, Shulkers, and")
+                .addLore("&7Endermites.")
+                .addLore("")
+                .addLore("&9&lRARE SWORD")
                 .addAttribute(Attribute.GENERIC_ATTACK_DAMAGE, "generic.attack.damage", 7, EquipmentSlot.HAND)
                 .addStringNBT("scname", "ender_spoon")
                 .setCustomModelNumber(1).build();

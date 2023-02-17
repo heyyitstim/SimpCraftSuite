@@ -30,6 +30,8 @@ public class SkeletonHelmet {
                 .addLore("&bPiece Bonus: Bone Shield")
                 .addLore("&7Grants the wearer increased")
                 .addLore("&7resistance to projectiles.")
+                .addLore("")
+                .addLore("&5&lEPIC HELMET")
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 3, EquipmentSlot.HEAD)
                 .addEnchant(Enchantment.PROTECTION_PROJECTILE, 4)
                 .addGlow()

@@ -30,6 +30,8 @@ public class UtilityItemRecipes {
                 .addLore("&bAbility: Instant Transmission")
                 .addLore("&7Instantly teleports you to your spawn point.")
                 .addLore("&c&oShatters after one use.")
+                .addLore("")
+                .addLore("&e&lEPIC")
                 .addGlow()
                 .addStringNBT("scname", "ender_bed")
                 .setCustomModelNumber(1).build();
@@ -50,13 +52,15 @@ public class UtilityItemRecipes {
 
     private ShapedRecipe createVoidCrystal() {
         ItemStack voidCrystal = new ItemBuilder(Material.NETHER_STAR)
-                .setName("&6Void Crystal")
+                .setName("&5Void Crystal")
                 .addLore("")
                 .addLore("&bAbility: Saving Grace")
                 .addLore("&7Upon falling into the void, this item")
                 .addLore("&7will sacrifice itself to save")
                 .addLore("&7you from death.")
                 .addLore("&c&oShatters after one use.")
+                .addLore("")
+                .addLore("&e&lEPIC")
                 .addStringNBT("scname", "void_crystal")
                 .setCustomModelNumber(1).build();
 

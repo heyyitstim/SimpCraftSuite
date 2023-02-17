@@ -26,6 +26,8 @@ public class PocketChest {
                 .addLore("&7Can open a chest from anywhere!")
                 .addLore("&7Right click a chest to link")
                 .addLore("&7this item to that chest.")
+                .addLore("")
+                .addLore("&5&lEPIC")
                 .addStringNBT("scname", "pocket_chest")
                 .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODA2ZGJhNjMzZjc2ODI5MDA0OGI5NGFmOWQyNjI5YWIzMjZjZjZkYzExM2JmOTM1ZTQ3NDcxMjU2MGI1YjUzNCJ9fX0=")
                 .setCustomModelNumber(1).build();

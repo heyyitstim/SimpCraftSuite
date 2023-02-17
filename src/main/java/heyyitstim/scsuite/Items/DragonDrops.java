@@ -10,7 +10,9 @@ import java.util.concurrent.ThreadLocalRandom;
 public class DragonDrops {
 
     private static final ItemStack SCALE = new ItemBuilder(Material.IRON_NUGGET)
-            .setName("&cDragon Scale")
+            .setName("&6Dragon Scale")
+            .addLore("")
+            .addLore("&6&lLEGENDARY")
             .addGlow()
             .addStringNBT("scname", "dragon_scale")
             .build();
