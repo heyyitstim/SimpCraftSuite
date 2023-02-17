@@ -1,8 +1,10 @@
 package heyyitstim.scsuite.Events.ItemEffects;
 
 import heyyitstim.scsuite.Util.NBTUtil;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Chest;
@@ -44,7 +46,7 @@ public class PocketChestHandler implements Listener {
 
                 lore.add("");
                 lore.add(ChatColor.GRAY + "" + ChatColor.ITALIC + "Linked to chest at:");
-                lore.add(b.getX() + "," + b.getY() + "," + b.getZ());
+                lore.add(b.getWorld().getName() + "," + b.getX() + "," + b.getY() + "," + b.getZ());
                 meta.setLore(lore);
                 e.getPlayer().getInventory().getItemInMainHand().setItemMeta(meta);
             }
@@ -60,10 +62,12 @@ public class PocketChestHandler implements Listener {
             List<String> lore = e.getItem().getItemMeta().getLore();
             if (lore.size() > 7) {
                 String[] locationXYZ = lore.get(7).split(",");
-                int x = Integer.parseInt(locationXYZ[0]);
-                int y = Integer.parseInt(locationXYZ[1]);
-                int z = Integer.parseInt(locationXYZ[2]);
-                BlockState bs = e.getPlayer().getWorld().getBlockAt(x, y, z).getState();
+                String worldName = locationXYZ[0];
+                World world = Bukkit.getWorld(worldName);
+                int x = Integer.parseInt(locationXYZ[1]);
+                int y = Integer.parseInt(locationXYZ[2]);
+                int z = Integer.parseInt(locationXYZ[3]);
+                BlockState bs = world.getBlockAt(x, y, z).getState();
                 Chest c = (Chest) bs;
                 e.getPlayer().openInventory(c.getInventory());
             }
