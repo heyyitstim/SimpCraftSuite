@@ -33,7 +33,7 @@ public class ScubaSuit {
     }
 
     private ShapedRecipe createScubaHelmet() {
-        ItemStack scubaHelmet = new ItemBuilder(Material.CARVED_PUMPKIN)
+        ItemStack scubaHelmet = new ItemBuilder(Material.PLAYER_HEAD)
                 .setName("&9Scuba Helmet")
                 .addLore("")
                 .addLore("&bFull Set Bonus: PUCS")
@@ -46,6 +46,8 @@ public class ScubaSuit {
                 .addLore("&9&lRARE HELMET")
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 2, EquipmentSlot.HEAD)
                 .addEnchant(Enchantment.WATER_WORKER, 1)
+                .addEnchant(Enchantment.OXYGEN, 6)
+                .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTIxMmVlYWU4MDcyZTdlNDkwMzM0YjA5MzBkOWI2NTM0NmMwMjA4OGRmMTAzZTc5MzA4Y2FlMmM3ZTRmMzY2NSJ9fX0=")
                 .addStringNBT("scname", "scuba_helmet")
                 .setCustomModelNumber(1).build();
 

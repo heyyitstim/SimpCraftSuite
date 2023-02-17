@@ -72,7 +72,6 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PocketChestHandler(), this);
         Bukkit.getPluginManager().registerEvents(new DisableHeadPlacement(), this);
         Bukkit.getPluginManager().registerEvents(new HelmetOfWisdomHandler(), this);
-        Bukkit.getPluginManager().registerEvents(new ScubaArmorHandler(), this);
         Bukkit.getPluginManager().registerEvents(new AnyHelmet(), this);
 
         // Enchantments

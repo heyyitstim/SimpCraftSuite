@@ -22,7 +22,7 @@ public class HelmetOfWisdom {
     }
 
     private ShapedRecipe createHelmetOfWisdom() {
-        ItemStack helmetOfWisdom = new ItemBuilder(Material.SEA_LANTERN)
+        ItemStack helmetOfWisdom = new ItemBuilder(Material.PLAYER_HEAD)
                 .setName("&5Helmet of Wisdom")
                 .addLore("")
                 .addLore("&bPiece Bonus: Big Brain")
@@ -33,8 +33,8 @@ public class HelmetOfWisdom {
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 2, EquipmentSlot.HEAD)
                 .addGlow()
                 .hideEnchants()
+                .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGFmMWJiY2ZmMDJjYzZlZjY1ZTI0OGEwNDI0YzUxZDMzNDg5MDNkNzk3N2JiOGFkMzVkOTQyNzU3Y2Q1YzdiZiJ9fX0=")
                 .addStringNBT("scname", "helmet_of_wisdom")
-                .addStringNBT("schelm", "true")
                 .setCustomModelNumber(1).build();
 
         ShapedRecipe helmetOfWisdomRecipe = new ShapedRecipe(NamespacedKey.minecraft("helmet_of_wisdom"), helmetOfWisdom);
@@ -45,7 +45,7 @@ public class HelmetOfWisdom {
 
         helmetOfWisdomRecipe.setIngredient('X', Material.LAPIS_BLOCK);
         helmetOfWisdomRecipe.setIngredient('Y', Material.EXPERIENCE_BOTTLE);
-        helmetOfWisdomRecipe.setIngredient('Z', Material.IRON_HELMET);
+        helmetOfWisdomRecipe.setIngredient('Z', Material.NETHERITE_HELMET);
 
         return helmetOfWisdomRecipe;
     }
