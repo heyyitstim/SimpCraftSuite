@@ -67,11 +67,12 @@ public class WeaponRecipes {
 
         ShapedRecipe adornedVorpalSwordRecipe = new ShapedRecipe(NamespacedKey.minecraft("adorned_vorpal_sword"), adornedVorpalSword);
         adornedVorpalSwordRecipe.shape(
-                " X ",
+                "YXY",
                 "XZX",
-                " X ");
+                "YXY");
 
         adornedVorpalSwordRecipe.setIngredient('X', Material.IRON_NUGGET); // dragon scales
+        adornedVorpalSwordRecipe.setIngredient('Y', Material.WITHER_SKELETON_SKULL); //
         adornedVorpalSwordRecipe.setIngredient('Z', Material.NETHERITE_SWORD); // vorpal sword
 
         return adornedVorpalSwordRecipe;
