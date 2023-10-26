@@ -31,9 +31,13 @@ public class DragonToolRecipes {
 
     private ShapedRecipe createDragonPickaxe() {
         ItemStack dragonPickaxe = new ItemBuilder(Material.NETHERITE_PICKAXE)
-                .setName("&cDragon Scale Pickaxe")
+                .setName("&dDragon Scale Pickaxe")
                 .addLore("")
-                .addLore("&8This item can hold runes!")
+                .addLore("&bAbility: Smelting Touch")
+                .addLore("&7Mining iron and gold ore")
+                .addLore("&7will yield ingots.")
+                .addLore("")
+                .addLore("&d&lMAGICAL PICKAXE")
                 .addStringNBT("scname", "dragon_pickaxe")
                 .setCustomModelNumber(1).build();
 
@@ -53,11 +57,15 @@ public class DragonToolRecipes {
 
     private ShapedRecipe createDragonSword() {
         ItemStack dragonSword = new ItemBuilder(Material.NETHERITE_SWORD)
-                .setName("&cDragon Scale Sword")
+                .setName("&dDragon Scale Sword")
                 .addLore("")
-                .addLore("&8This item can hold runes!")
+                .addLore("&bAbility: Dragon's Breath")
+                .addLore("&7Monsters in front of you")
+                .addLore("&7take large knockback.")
+                .addLore("")
+                .addLore("&d&lMAGICAL SWORD")
                 .addStringNBT("scname", "dragon_sword")
-                .setCustomModelNumber(1).build();
+                .setCustomModelNumber(3).build();
 
         Main.nuggetRecipes.add(dragonSword);
 
@@ -75,9 +83,13 @@ public class DragonToolRecipes {
 
     private ShapedRecipe createDragonShovel() {
         ItemStack dragonShovel = new ItemBuilder(Material.NETHERITE_SHOVEL)
-                .setName("&cDragon Scale Shovel")
+                .setName("&dDragon Scale Shovel")
                 .addLore("")
-                .addLore("&8This item can hold runes!")
+                .addLore("&bAbility: Excavate")
+                .addLore("&7Destroys blocks in")
+                .addLore("&7a 3x3 area.")
+                .addLore("")
+                .addLore("&d&lMAGICAL SHOVEL")
                 .addStringNBT("scname", "dragon_shovel")
                 .setCustomModelNumber(1).build();
 
@@ -97,9 +109,14 @@ public class DragonToolRecipes {
 
     private ShapedRecipe createDragonAxe() {
         ItemStack dragonAxe = new ItemBuilder(Material.NETHERITE_AXE)
-                .setName("&cDragon Scale Axe")
+                .setName("&dDragon Scale Axe")
                 .addLore("")
-                .addLore("&8This item can hold runes!")
+                .addLore("&bAbility: Tree Feller")
+                .addLore("&7Can knock down entire trees")
+                .addLore("&7with one swing!")
+                .addLore("&8Disabled while sneaking.")
+                .addLore("")
+                .addLore("&d&lMAGICAL AXE")
                 .addStringNBT("scname", "dragon_axe")
                 .setCustomModelNumber(1).build();
 
@@ -119,9 +136,15 @@ public class DragonToolRecipes {
 
     private ShapedRecipe createDragonBow() {
         ItemStack dragonBow = new ItemBuilder(Material.BOW)
-                .setName("&cDragon Scale Axe")
+                .setName("&dDragon Scale Bow")
                 .addLore("")
-                .addLore("&8This item can hold runes!")
+                .addLore("&bAbility: Dragon Hunter")
+                .addLore("&7Instantly shoots!")
+                .addLore("&7Deals increased damage")
+                .addLore("&7to dragons.")
+                .addLore("&7Shot Cooldown: &a1s")
+                .addLore("")
+                .addLore("&d&lMAGICAL BOW")
                 .addStringNBT("scname", "dragon_bow")
                 .setCustomModelNumber(1).build();
 

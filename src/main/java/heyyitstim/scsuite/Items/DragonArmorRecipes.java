@@ -2,6 +2,7 @@ package heyyitstim.scsuite.Items;
 
 import heyyitstim.scsuite.Main;
 import heyyitstim.scsuite.Util.ItemBuilder;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
@@ -36,13 +37,14 @@ public class DragonArmorRecipes {
     }
 
     private ShapedRecipe createDragonHelmet() {
-        ItemStack dragonHelmet = new ItemBuilder(Material.NETHERITE_HELMET)
-                .setName("&cDragon Scale Helmet")
+        ItemStack dragonHelmet = new ItemBuilder(Material.PLAYER_HEAD)
+                .setName("&dDragon Scale Helmet")
                 .addLore("")
-                .addLore("&8This item can hold runes!")
-                .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.FEET)
-                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 4, EquipmentSlot.FEET)
-                .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 5, EquipmentSlot.FEET)
+                .addLore("&d&lMAGICAL HELMET")
+                .addTexture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGMxZTJkNGJkMzllYTI1M2RkYTZhMzZmNmJjMzUyZjY5ZWYxNjlmYWNjMmI3Njc3OThjMTgxNmFhZjcwZjQ5OCJ9fX0=")
+                .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.HEAD)
+                .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 4, EquipmentSlot.HEAD)
+                .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 5, EquipmentSlot.HEAD)
                 .addStringNBT("scname", "dragon_helmet")
                 .setCustomModelNumber(1).build();
 
@@ -61,10 +63,11 @@ public class DragonArmorRecipes {
     }
 
     private ShapedRecipe createDragonChestplate() {
-        ItemStack dragonPlate = new ItemBuilder(Material.NETHERITE_CHESTPLATE)
-                .setName("&cDragon Scale Chestplate")
+        ItemStack dragonPlate = new ItemBuilder(Material.LEATHER_CHESTPLATE)
+                .setName("&dDragon Scale Chestplate")
                 .addLore("")
-                .addLore("&8This item can hold runes!")
+                .addLore("&d&lMAGICAL CHESTPLATE")
+                .setLeatherColor(Color.BLACK)
                 .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.CHEST)
                 .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 4, EquipmentSlot.CHEST)
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 10, EquipmentSlot.CHEST)
@@ -86,10 +89,11 @@ public class DragonArmorRecipes {
     }
 
     private ShapedRecipe createDragonLeggings() {
-        ItemStack dragonLeggings = new ItemBuilder(Material.NETHERITE_LEGGINGS)
-                .setName("&cDragon Scale Greaves")
+        ItemStack dragonLeggings = new ItemBuilder(Material.LEATHER_LEGGINGS)
+                .setName("&dDragon Scale Greaves")
                 .addLore("")
-                .addLore("&8This item can hold runes!")
+                .addLore("&d&lMAGICAL LEGGINGS")
+                .setLeatherColor(Color.BLACK)
                 .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.LEGS)
                 .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 4, EquipmentSlot.LEGS)
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 8, EquipmentSlot.LEGS)
@@ -111,10 +115,11 @@ public class DragonArmorRecipes {
     }
 
     private ShapedRecipe createDragonBoots() {
-        ItemStack dragonBoots = new ItemBuilder(Material.NETHERITE_BOOTS)
-                .setName("&cDragon Scale Boots")
+        ItemStack dragonBoots = new ItemBuilder(Material.LEATHER_BOOTS)
+                .setName("&dDragon Scale Boots")
                 .addLore("")
-                .addLore("&8This item can hold runes!")
+                .addLore("&d&lMAGICAL BOOTS")
+                .setLeatherColor(Color.BLACK)
                 .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.FEET)
                 .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 4, EquipmentSlot.FEET)
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 5, EquipmentSlot.FEET)
@@ -136,10 +141,11 @@ public class DragonArmorRecipes {
     }
 
     private ShapedRecipe createDragonBootsAlternate() {
-        ItemStack dragonBootsAlternate = new ItemBuilder(Material.NETHERITE_BOOTS)
-                .setName("&cDragon Scale Boots")
+        ItemStack dragonBootsAlternate = new ItemBuilder(Material.LEATHER_BOOTS)
+                .setName("&dDragon Scale Boots")
                 .addLore("")
-                .addLore("&8This item can hold runes!")
+                .addLore("&d&lMAGICAL BOOTS")
+                .setLeatherColor(Color.BLACK)
                 .addAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE, "generic.knockback.resistance", .2, EquipmentSlot.FEET)
                 .addAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS, "generic.armor.toughness", 4, EquipmentSlot.FEET)
                 .addAttribute(Attribute.GENERIC_ARMOR, "generic.armor", 5, EquipmentSlot.FEET)

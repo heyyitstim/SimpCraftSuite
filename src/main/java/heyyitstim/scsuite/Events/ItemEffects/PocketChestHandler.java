@@ -41,7 +41,7 @@ public class PocketChestHandler implements Listener {
                 ItemMeta meta = pocketChest.getItemMeta();
                 List<String> lore = e.getItem().getItemMeta().getLore();
 
-                if (lore.size() >= 7)
+                if (lore.size() >= 8)
                     return;
 
                 lore.add("");
@@ -60,8 +60,8 @@ public class PocketChestHandler implements Listener {
                 return;
 
             List<String> lore = e.getItem().getItemMeta().getLore();
-            if (lore.size() > 7) {
-                String[] locationXYZ = lore.get(7).split(",");
+            if (lore.size() > 8) {
+                String[] locationXYZ = lore.get(9).split(",");
                 String worldName = locationXYZ[0];
                 World world = Bukkit.getWorld(worldName);
                 int x = Integer.parseInt(locationXYZ[1]);

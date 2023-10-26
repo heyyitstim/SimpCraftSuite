@@ -4,6 +4,7 @@ import heyyitstim.scsuite.Enchantments.*;
 import heyyitstim.scsuite.Events.ArmorEffects.*;
 import heyyitstim.scsuite.Events.GenerateLoot;
 import heyyitstim.scsuite.Events.ItemEffects.PocketChestHandler;
+import heyyitstim.scsuite.Events.ToolEffects.DragonToolEffects.*;
 import heyyitstim.scsuite.Events.ToolEffects.HammerHandler;
 import heyyitstim.scsuite.Events.RecipeChecker;
 import heyyitstim.scsuite.Events.*;
@@ -72,8 +73,12 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PocketChestHandler(), this);
         Bukkit.getPluginManager().registerEvents(new DisableHeadPlacement(), this);
         Bukkit.getPluginManager().registerEvents(new HelmetOfWisdomHandler(), this);
-        Bukkit.getPluginManager().registerEvents(new ScubaArmorHandler(), this);
         Bukkit.getPluginManager().registerEvents(new AnyHelmet(), this);
+        Bukkit.getPluginManager().registerEvents(new DragonSwordHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new DragonBowHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new DragonPickaxeHandler(),this);
+        Bukkit.getPluginManager().registerEvents(new DragonShovelHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new DragonAxeHandler(), this);
 
         // Enchantments
         Bukkit.getPluginManager().registerEvents(new Beheading(), this);
