@@ -88,19 +88,19 @@ public class ItemBuilder {
     }
 
     public ItemBuilder addTexture(String value) {
-
-        if (value == null || value.isEmpty() || item.getType() != Material.PLAYER_HEAD)
-            return this;
-
-        SkullMeta skullMeta = (SkullMeta) meta;
-        GameProfile profile = new GameProfile(UUID.randomUUID(), null);
-        profile.getProperties().put("textures", new Property("textures", value));
-
-        try {
-            Field profileField = skullMeta.getClass().getDeclaredField("profile");
-            profileField.setAccessible(true);
-            profileField.set(skullMeta, profile);
-        }catch (NoSuchFieldException | IllegalAccessException e) { e.printStackTrace(); }
+//
+//        if (value == null || value.isEmpty() || item.getType() != Material.PLAYER_HEAD)
+//            return this;
+//
+//        SkullMeta skullMeta = (SkullMeta) meta;
+//        GameProfile profile = new GameProfile(UUID.randomUUID(), null);
+//        profile.getProperties().put("textures", new Property("textures", value));
+//
+//        try {
+//            Field profileField = skullMeta.getClass().getDeclaredField("profile");
+//            profileField.setAccessible(true);
+//            profileField.set(skullMeta, profile);
+//        }catch (NoSuchFieldException | IllegalAccessException e) { e.printStackTrace(); }
 
         return this;
     }
