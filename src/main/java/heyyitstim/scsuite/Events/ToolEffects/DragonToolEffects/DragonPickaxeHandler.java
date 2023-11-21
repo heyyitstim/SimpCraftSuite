@@ -34,7 +34,10 @@ public class DragonPickaxeHandler implements Listener {
                 smeltedItem = new ItemStack(Material.IRON_INGOT, 1);
             } else if (block.getType().equals(Material.GOLD_ORE)) {
                 smeltedItem = new ItemStack(Material.GOLD_INGOT, 1);
+            } else if (block.getType().equals(Material.COPPER_ORE)) {
+                smeltedItem = new ItemStack(Material.COPPER_INGOT, 1);
             }
+
 
             if (fortuneLevel > 0) {
                 int additionalItems = new Random().nextInt(fortuneLevel + 1);
@@ -53,6 +56,8 @@ public class DragonPickaxeHandler implements Listener {
                 smeltedItem = new ItemStack(Material.IRON_BLOCK, 1);
             } else if (block.getType().equals(Material.RAW_GOLD_BLOCK)) {
                 smeltedItem = new ItemStack(Material.GOLD_BLOCK, 1);
+            } else if (block.getType().equals(Material.RAW_COPPER_BLOCK)) {
+                smeltedItem = new ItemStack(Material.COPPER_BLOCK, 1);
             }
 
             block.setType(Material.AIR);
